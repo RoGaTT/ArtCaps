@@ -1,0 +1,22 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  position: relative;
+}
+
+.content {
+  width: 100%;
+  position: relative;
+  z-index: 20;
+}
+
+.modal {
+  &-content {
+    padding: 0 !important;
+    &:first-child {
+      padding-top: 0 !important;
+    }
+  }
+}

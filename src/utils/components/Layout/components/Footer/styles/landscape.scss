@@ -1,0 +1,82 @@
+.root {
+  padding-bottom: 40px;
+  padding-left: 4%;
+  padding-right: 4%;
+}
+
+.news {
+  margin-bottom: 103px;
+  &-image {
+    flex-basis: 43%;
+  }
+  &-text {
+    flex-basis: 54%;
+    & > h5 {
+      font-size: 32px;
+      line-height: 46px;
+      margin-bottom: 10px;
+    }
+    & > p {
+      font-size: 20px;
+      line-height: 34px;
+      margin-bottom: 20px;
+    }
+    & > button {
+      font-size: 16px;
+      line-height: 19px;
+      font-weight: 600;
+      padding: 15px 108px;
+    }
+  }
+}
+
+.info {
+  align-items: flex-start;
+  &-logo {
+    flex-basis: 33%;
+    padding-right: 7%;
+    & > img {
+      width: 90%;
+      margin-bottom: 12px;
+    }
+    &__contact {
+      margin-top: 12px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: flex-start;
+      & > div {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        width: 20px;
+        height: 20px;
+        margin-right: 10px;
+      }
+      & > span {
+        font-family: "Manrope";
+        font-size: 14px;
+        font-weight: 800;
+        line-height: 24px;
+        letter-spacing: 0em;
+        color: #222;
+      }
+    }
+  }
+  &-text {
+    flex-basis: 67%;
+    & > h6 {
+      font-size: 16px;
+      line-height: 24px;
+      margin-bottom: 10px;
+    }
+    & > p {
+      font-size: 16px;
+      line-height: 24px;
+    }
+    &__contact {
+      display: none;
+    }
+  }
+}

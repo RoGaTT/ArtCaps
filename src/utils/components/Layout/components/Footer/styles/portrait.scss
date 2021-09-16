@@ -1,0 +1,59 @@
+.root {
+  padding-bottom: 37px;
+}
+
+.news {
+  padding-top: 37px;
+  margin-bottom: 37px;
+  &-image {
+    display: none;
+  }
+  &-text {
+    flex-basis: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    & > h5 {
+      font-size: 33px;
+      line-height: 42px;
+      margin-bottom: 6px;
+    }
+    &__image {
+      display: block;
+      width: 95%;
+      margin-bottom: 14px;
+      max-width: 400px;
+      & > picture > img {
+        width: 100%;
+        filter: drop-shadow(0px 20.4945px 63.4355px rgba(202, 202, 238, 0.5));
+      }
+    }
+    & > p {
+      font-size: 24px;
+      line-height: 37px;
+      margin-bottom: 25px;
+    }
+    & > button {
+      font-size: 16px;
+      line-height: 19px;
+      font-weight: 600;
+      padding: 15px 108px;
+      width: 100%;
+      max-width: 450px;
+    }
+  }
+}
+
+.info {
+  flex-direction: column;
+  align-items: center;
+  &-logo {
+    flex-basis: initial;
+    margin-bottom: 33px;
+    padding-right: 0;
+    width: initial;
+  }
+  &-text {
+    flex-basis: initial;
+  }
+}

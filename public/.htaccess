@@ -1,0 +1,22 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /
+    RewriteRule ^index\.html$ - [L]
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME} !-l
+    RewriteRule . /index.html [L]
+</IfModule>
+
+<ifModule mod_headers.c>
+    <FilesMatch "\.(flv|swf|ico|gif|jpg|jpeg|png|webp|svg|woff2)$">
+        Header set Cache-Control "max-age=604800"
+    </FilesMatch>
+    Header set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
+    Header set X-Content-Type-Options nosniff
+    Header always append X-Frame-Options DENY
+    Header set X-XSS-Protection "1; mode=block"
+    Header set Referrer-Policy same-origin
+    {{ HEADER_CSP }}
+</IfModule>
+

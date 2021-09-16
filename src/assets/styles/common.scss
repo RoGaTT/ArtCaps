@@ -1,0 +1,10 @@
+* {
+  box-sizing: border-box;
+}
+
+@include media-mobile-xl {
+  body::-webkit-scrollbar {
+    // width: 52px;
+    display: none;
+  }
+}
