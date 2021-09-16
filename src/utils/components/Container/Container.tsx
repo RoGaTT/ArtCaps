@@ -1,3 +1,4 @@
+/* eslint-disable react/require-default-props */
 import React, { FC } from 'react';
 import clsx from 'clsx';
 

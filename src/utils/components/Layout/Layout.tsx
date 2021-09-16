@@ -4,6 +4,7 @@ import React, {
 } from 'react';
 
 import Header from './components/Header';
+import '@fontsource/press-start-2p';
 
 import classes from './Layout.module.scss';
 
