@@ -1,0 +1,141 @@
+.root {
+  display: flex;
+  flex-direction: column !important;
+  align-items: center !important;
+  width: 100%;
+  padding-top: 48px;
+}
+
+.header {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 64px;
+  & > img {
+    margin-bottom: 56px;
+  }
+  & > h4 {
+    font-family: 'Press Start 2P';
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 20px;
+    letter-spacing: 6.48px;
+    color: #FDA80A;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+}
+
+.timer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding-bottom: 60px;
+  &-wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+  & > span, & > div > span {
+    font-family: 'Press Start 2P';
+    font-weight: 400;
+    font-size: 100px;
+    line-height: 1;
+    letter-spacing: 6.48px;
+    color: #FCC855;
+  }
+  & > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    & > span {
+      margin-bottom: 32px;
+      display: flex;
+    }
+  }
+  &-minor {
+    flex-direction: column;
+    justify-content: space-between;
+    padding-left: 40px;
+    & > div {
+      align-items: flex-start;
+      &:first-child {
+        margin-bottom: 40px;
+      }
+      & > span {
+        font-size: 30px;
+        margin-bottom: 20px;
+        letter-spacing: 0;
+      }
+    }
+  }
+}
+
+.mint-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+  padding-top: 32px;
+  padding-bottom: 32px;
+  margin-bottom: 32px;
+  & > img {
+    position: absolute;
+    right: 92%;
+    height: 100%;
+  }
+}
+
+.links {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 52px;
+  & > div {
+    margin-right: 36px;
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+  &-follow {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    & > img {
+      &:first-child {
+        margin-right: 24px;
+      }
+      &.inverted {
+        transform: rotate(180deg);
+      }
+    }
+  }
+  &-icons {
+    & > img {
+      margin-right: 28px;
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+}
+
+.location {
+  font-family: "Press Start 2P";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 20px;
+
+  letter-spacing: 2px;
+  text-transform: uppercase;
+
+  color: white;
+  color: black;
+}

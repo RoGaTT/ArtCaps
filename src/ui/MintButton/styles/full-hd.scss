@@ -1,0 +1,30 @@
+.root {
+  background: none;
+  border: none;
+  position: relative;
+}
+
+.img {
+  z-index: 10;
+}
+
+.extraImg {
+  position: absolute;
+  &.default {
+    right: 103%;
+    width: 60%;
+    bottom: 48px;
+  }
+  &.ready_soon {
+
+  }
+  &.with_coins {
+
+  }
+  &.waiting {
+
+  }
+  &.final {
+
+  }
+}

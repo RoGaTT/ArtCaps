@@ -1,8 +1,8 @@
-import Button from '@/ui/Button';
-import { goBlank, goWithScroll } from '@/utils/functions/dom';
 import clsx from 'clsx';
 import React, { FC, useCallback, useEffect } from 'react';
 import { useHistory } from 'react-router';
+import { goBlank, goWithScroll } from '@/utils/functions/dom';
+import Button from '@/ui/MintButton';
 import classes from './AsideMenu.module.scss';
 
 type IProps = {

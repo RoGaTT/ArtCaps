@@ -4,7 +4,7 @@ import Home from './Home';
 
 const HomePage: FC = () => (
   <>
-    <Helmet title="Oculus University - Платформа обучения">
+    <Helmet title="ArtCaps">
       <link rel="preload" as="image" />
     </Helmet>
     <Home />

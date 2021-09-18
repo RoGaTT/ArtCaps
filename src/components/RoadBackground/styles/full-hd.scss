@@ -1,0 +1,18 @@
+.root {
+  background: linear-gradient(180deg, #5E0CC3 9.69%, #320E43 38.43%, #000000 100%);
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.sector {
+  width: 90px;
+  position: relative;
+}
+
+.item {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
