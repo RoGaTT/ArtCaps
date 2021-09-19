@@ -1,0 +1,127 @@
+.wrapper {
+  width: 100%;
+}
+
+.root {
+  padding-top: 80px;
+  padding-bottom: 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  & > img {
+    margin-bottom: 32px;
+  }
+}
+
+.content {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.column {
+  flex-basis: 45%;
+  & h6 {
+    text-transform: uppercase;
+    color: #FDA80A;
+    font-size: 20px;
+    line-height: 20px;
+    letter-spacing: 2px;
+    font-family: 'Press Start 2P';
+    margin-bottom: 30px;
+    &.green {
+      color: #2AB408;
+    }
+  }
+  & .status{
+    &-number {
+      position: relative;
+      & > span {
+        color: #FCC855;
+        font-size: 80px;
+        line-height: 80px;
+        font-family: 'Press Start 2P';
+        position: relative;
+        z-index: 20;
+        &:last-child {
+          position: absolute;
+          top: 5px;
+          left: 0;
+          color: #FF4681;
+          z-index: 10;
+        }
+      }
+    }
+    & > p {
+      font-size: 20px;
+      color: white;
+      font-family: 'Futura LT';
+      line-height: 26px;
+      text-transform: uppercase;
+      margin-top: 30px;
+      margin-bottom: 40px;
+    }
+  }
+  & > .title {
+    display: flex;
+    flex-direction: row;
+    & > h6 {
+      flex-basis: 30%;
+      text-align: right;
+    }
+  }
+  & .checkpoint {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    margin-bottom: 30px;
+    width: 100%;
+    &:last-child {
+      margin-bottom: 0;
+    }
+    &.green {
+      & > span, & > p {
+        color: #2AB408;
+      }
+    }
+    & > div {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-end;
+      flex: 1 0 31%;
+      width: 100%;
+      & > span {
+        color: #848484;
+        font-size: 32px;
+        line-height: 1;
+        font-family: 'Press Start 2P';
+        padding-right: 19px;
+        text-align: right;
+        white-space: normal;
+      }
+    }
+    & > span {
+      color: #848484;
+      font-size: 32px;
+      line-height: 1;
+      font-family: 'Press Start 2P';
+      padding-right: 18px;
+      text-align: right;
+      white-space: normal;
+    }
+    & > p {
+      width: 100%;
+      flex: 1 0 69%;
+      color: #848484;
+      font-size: 12px;
+      line-height: 1.33;
+      font-weight: 500;
+      text-align: left;
+      text-transform: uppercase;
+      font-family: 'Futura LT';
+    }
+  }
+}

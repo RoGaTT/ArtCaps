@@ -1,0 +1,67 @@
+.wrapper {
+  background-color: #FDCE0A;
+  width: 100%;
+}
+
+.root {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 48px;
+  padding-bottom: 48px;
+}
+
+.title {
+  max-width: 48%;
+  margin-bottom: 32px;
+  & > img {
+    margin-bottom: 32px;
+  }
+  & > p {
+    font-family: 'Futura LT';
+    font-size: 18px;
+    color: black;
+    line-height: 24px;
+  }
+}
+
+.cards {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  &-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    margin-right: 15px;
+    flex-basis: 33%;
+    &:last-child {
+      margin-right: 0;
+    }
+    & > img {
+      margin-bottom: 32px;
+    }
+    &__text {
+      & > h6 {
+        font-family: 'Press Start 2P';
+        font-size: 30px;
+        line-height: 36px;
+        text-align: center;
+        color: black;
+        margin-bottom: 16px;
+        width: 100%;
+      }
+      & > p {
+        text-align: center;
+        font-family: 'Futura LT';
+        font-size: 20px;
+        line-height: 26px;
+        color: black;
+      }
+    }
+  }
+}
