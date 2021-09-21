@@ -46,8 +46,8 @@ const ROAD_CONFIG: RoadConfigType = {
     },
     color: Object.values(RoadLineColorEnum),
     speed: {
-      min: 5000,
-      max: 10000,
+      min: 7000,
+      max: 20000,
     },
     delay: {
       min: 0,

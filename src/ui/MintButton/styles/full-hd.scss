@@ -2,29 +2,65 @@
   background: none;
   border: none;
   position: relative;
+  & > .img {
+    z-index: 10;
+    width: 250px;
+    position: relative;
+    z-index: 20;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+  & > .extraImg {    
+    position: absolute;
+    animation-name: slideInUpWithScale;
+    animation-duration: 6s;
+    animation-iteration-count: infinite;
+    &.default {
+      right: 105%;
+      width: 60%;
+      bottom: 70%;
+    }
+    &.ready_soon {
+      right: 105%;
+      bottom: 48px;
+      width: 70%;
+    }
+    &.with_coins {
+      width: 30%;
+      right: 35%;
+      bottom: 30%;
+    }
+    &.waiting {
+      right: 105%;
+      bottom: 48px;
+      width: 80%;
+    }
+    &.final {
+      z-index: 10;
+      top: -80px;
+      width: 80%;
+      left: 45%;
+      // animation: none;
+    }
+  }
 }
 
-.img {
-  z-index: 10;
-}
-
-.extraImg {
-  position: absolute;
-  &.default {
-    right: 103%;
-    width: 60%;
-    bottom: 48px;
+@keyframes slideInUpWithScale {
+  from {
+    transform: translate3d(0, 20%, 0);
+    visibility: visible;
+    transform: scale(1);
   }
-  &.ready_soon {
-
+  
+  50% {
+    transform: translate3d(0, 0, 0);
+    transform: scale(0.7);
   }
-  &.with_coins {
 
-  }
-  &.waiting {
-
-  }
-  &.final {
-
+  to {
+    transform: translate3d(0, 20%, 0);
+    transform: scale(1);
   }
 }

@@ -6,7 +6,7 @@ import clsx from 'clsx';
 
 import classes from './RoadBackground.module.scss';
 import { getScreenHeight, getScreenWidth } from '@/utils/functions/dom';
-import { generateNumArrayBySize, generateRandomIntNumber } from '@/utils/functions/generator';
+import { generateRandomIntNumber } from '@/utils/functions/generator';
 import ROAD_CONFIG, { RoadItemTypeEnum, RoadLineColorEnum } from '@/const/road';
 
 interface PropsType {
@@ -20,6 +20,7 @@ type RoadItemConfigType = {
   position: number,
   width: number,
   height: number,
+  speed: number,
   color?: RoadLineColorEnum
 }
 
@@ -34,42 +35,33 @@ const RoadBackground: FC<PropsType> = ({
   }), []);
   const memoSectorsAmount = useMemo(() => Math.ceil(memoScreenSize.width / 90), [memoScreenSize]);
 
-  const memoSectorsComponents = useMemo(() => (
-    <>
-      {
-        generateNumArrayBySize(memoSectorsAmount).map((el, elIndex) => (
-          <div className={classes.sector} key={`sector_${elIndex}`}>
-            dasda
-          </div>
-        ))
-      }
-    </>
-  ), [memoSectorsAmount]);
-
   const memoCreateLineItem = useCallback(createLineItem, []);
-  const memoCreateItemSet = useCallback(createItemSet, [itemSetList, memoCreateLineItem, memoSectorsAmount]);
+  const memoCreateItemSet = useCallback(createItemSet, [memoCreateLineItem, memoSectorsAmount]);
 
-  // useEffect(() => {
-  //   setInterval(memoCreateItemSet, 2000);
-  // // eslint-disable-next-line react-hooks/exhaustive-deps
-  // }, []);
-
-  // useEffect(() => {
-  //   console.log(itemSetList);
-  // }, [itemSetList]);
+  useEffect(() => {
+    const setList = [];
+    // eslint-disable-next-line no-plusplus
+    for (let i = 0; i < 5; i++) {
+      setList.push(memoCreateItemSet());
+    }
+    setItemSetList(setList);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <div className={clsx(classes.root, className)}>
       {
         itemSetList.map((itemSet, itemSetIndex) => itemSet.map((item, itemIndex) => (
           <div
-            className={classes.item}
+            className={clsx(classes.item, 'animate__animated')}
             key={`line_${itemSetIndex}-${itemIndex}`}
             style={{
               backgroundColor: item.color,
               width: item.width,
               height: item.height,
-              left: itemSetIndex * ROAD_CONFIG.sectorWidth + item.position,
+              left: (itemIndex * ROAD_CONFIG.sectorWidth) + item.position,
+              animationDelay: `${item.delay * itemIndex * 5}ms`,
+              animationDuration: `${item.speed}ms`,
             }}
           />
         )))
@@ -86,6 +78,7 @@ const RoadBackground: FC<PropsType> = ({
       width,
       height: generateRandomIntNumber(ROAD_CONFIG.line.height.min, ROAD_CONFIG.line.height.max),
       color: ROAD_CONFIG.line.color[generateRandomIntNumber(0, ROAD_CONFIG.line.color.length)],
+      speed: generateRandomIntNumber(ROAD_CONFIG.line.speed.min, ROAD_CONFIG.line.speed.max),
     };
   }
 
@@ -95,8 +88,7 @@ const RoadBackground: FC<PropsType> = ({
     for (let i = 0; i < memoSectorsAmount; i++) {
       itemSet.push(memoCreateLineItem());
     }
-
-    setItemSetList([...itemSetList, itemSet]);
+    return itemSet;
   }
 };
 

@@ -11,15 +11,12 @@ type PropsType = {
     children: React.ReactNode
 }
 
-const Layout: FC<PropsType> = ({ children }) => {
-  console.log('object');
-  return (
-    <div className={classes.root}>
-      <div className={classes.content}>
-        {children}
-      </div>
+const Layout: FC<PropsType> = ({ children }) => (
+  <div className={classes.root}>
+    <div className={classes.content}>
+      {children}
     </div>
-  );
-};
+  </div>
+);
 
 export default Layout;

@@ -107,6 +107,12 @@
     display: flex;
     flex-direction: row;
     align-items: center;
+    animation-name: slideInLeft;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    &:last-child {
+      animation-name: slideInRight;
+    }
     & > img {
       &:first-child {
         margin-right: 24px;
@@ -137,4 +143,34 @@
   text-transform: uppercase;
 
   color: white;
+}
+
+@keyframes slideInLeft {
+  from {
+    transform: translate3d(-20%, 0, 0);
+    visibility: visible;
+  }
+
+  50% {
+    transform: translate3d(0, 0, 0);
+  }
+
+  to {
+    transform: translate3d(-20%, 0, 0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translate3d(20%, 0, 0);
+    visibility: visible;
+  }
+
+  50% {
+    transform: translate3d(0, 0, 0);
+  }
+
+  to {
+    transform: translate3d(20%, 0, 0);
+  }
 }

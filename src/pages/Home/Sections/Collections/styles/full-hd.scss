@@ -20,7 +20,7 @@
     margin-bottom: 32px;
   }
   & > p {
-    font-family: 'Futura LT';
+    font-family: 'Futura PT';
     font-size: 18px;
     color: black;
     line-height: 24px;
@@ -38,12 +38,13 @@
     align-items: center;
     justify-content: flex-start;
     margin-right: 15px;
-    flex-basis: 33%;
+    flex-basis: 29%;
     &:last-child {
       margin-right: 0;
     }
     & > img {
       margin-bottom: 32px;
+      width: 100%;
     }
     &__text {
       & > h6 {
@@ -57,7 +58,7 @@
       }
       & > p {
         text-align: center;
-        font-family: 'Futura LT';
+        font-family: 'Futura PT';
         font-size: 20px;
         line-height: 26px;
         color: black;

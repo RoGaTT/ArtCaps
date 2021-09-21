@@ -112,7 +112,7 @@ const Button: FC<PropsType> = ({
       </div>
       <div className={classes.links}>
         <div className={classes['links-follow']}>
-          <img src={FollowUsTextIcon} alt="" />
+          <img src={FollowUsTextIcon} alt="" className="animate__animated" />
           <img src={FollowArrowsRightIcon} alt="" />
         </div>
         <div className={classes['links-icons']}>
@@ -122,7 +122,7 @@ const Button: FC<PropsType> = ({
         </div>
         <div className={classes['links-follow']}>
           <img src={FollowArrowsRightIcon} alt="" className={classes.inverted} />
-          <img src={FollowUsTextIcon} alt="" />
+          <img src={FollowUsTextIcon} alt="" className="animate__animated" />
         </div>
       </div>
       <h6 className={classes.location}>Artcaps on opensea</h6>

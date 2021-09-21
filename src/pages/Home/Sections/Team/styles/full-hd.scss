@@ -1,0 +1,95 @@
+.root {
+  margin-top: 90px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  padding: 0 !important;
+  margin-bottom: 48px;
+}
+
+.content {
+  width: 100%;
+  min-height: 716px;
+}
+
+.slide {
+  &_0 {
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    &--title {
+      flex-basis: 39%;
+      & > img {
+        margin-bottom: 32px;
+      }
+      & > p {
+        font-family: "Futura PT";
+        font-size: 20px;
+        color: white;
+        line-height: 1.35;
+        font-weight: 500;
+      }
+    }
+    &--items {
+      flex-basis: 61%;
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-end;
+      align-items: center;
+      flex-wrap: wrap;
+      & > div {
+        padding-left: 4.5vw;
+        margin-bottom: 36px;
+      }
+    }
+  }
+  &_1 {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    & > .card-wrapper {
+      display: flex;
+      flex-direction: row;      
+      align-items: center;
+      justify-content: center;
+      flex-basis: 26%;
+      margin-bottom: 48px;
+    }
+    & > .separator {
+      display: flex;
+      flex-basis: 10%;
+    }
+  }
+}
+
+.controls {
+  display: flex;
+  flex-direction: row;
+  margin-top: 12px;
+  &-item {
+    width: 15px;
+    height: 15px;
+    min-height: 15px;
+    min-width: 15px;
+    max-height: 15px;
+    max-width: 15px;
+    background-color: #A7A7A7;
+    border-radius: 50%;
+    margin-right: 12px;
+    cursor: pointer;
+    &:last-child {
+      margin-right: 0;
+    }
+    &__active {
+      background-color: white;
+    }
+  }
+}

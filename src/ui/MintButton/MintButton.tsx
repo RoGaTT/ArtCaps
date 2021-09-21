@@ -1,4 +1,7 @@
-import React, { FC, useState } from 'react';
+/* eslint-disable react/require-default-props */
+import React, {
+  FC, useMemo,
+} from 'react';
 import clsx from 'clsx';
 
 import classes from './MintButton.module.scss';
@@ -9,6 +12,7 @@ import ReadySoonStateButtonImg from '@/assets/img/mint/ready_soon.svg';
 import ReadySoonStateButtonExtraImg from '@/assets/img/mint/ready_soon_extra.svg';
 import WithCoinsStateButtonImg from '@/assets/img/mint/with_coins.svg';
 import WithCoinsStateButtonExtraImg from '@/assets/img/mint/with_coins_extra.svg';
+import WithCoinsStateButtonExtraSetImg from '@/assets/img/mint/with_coins_extra_set.svg';
 import WaitingStateButtonImg from '@/assets/img/mint/waiting.svg';
 import WaitingStateButtonExtraImg from '@/assets/img/mint/waiting_extra.svg';
 import FinalStateButtonImg from '@/assets/img/mint/final.svg';
@@ -22,9 +26,9 @@ export enum MintButtonStateEnum {
   FINAL = 'final',
 }
 
-interface PropsType extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  // eslint-disable-next-line react/require-default-props
-  state?: MintButtonStateEnum
+interface PropsType {
+  type?: MintButtonStateEnum,
+  className?: string
 }
 
 type ButtonConfig = {
@@ -61,27 +65,30 @@ const ButtonConfigDict: Record<string, ButtonConfig> = {
   },
 };
 
-const Button: FC<PropsType> = ({
-  className,
+const MintButton: FC<PropsType> = ({
   type = MintButtonStateEnum.DEFAULT,
-  ...rest
+  className,
 }) => {
-  const [config, setConfig] = useState(ButtonConfigDict[type]);
+  const memoConfig = useMemo(() => ButtonConfigDict[type], [type]);
 
   return (
     <button
       type="button"
       className={clsx(classes.root, className)}
-      {...rest}
     >
-      <img className={classes.img} src={config.img} alt="" />
+      <img className={classes.img} src={memoConfig.img} alt="" />
       {
         type !== MintButtonStateEnum.WITH_COINS && (
-          <img className={clsx(classes.extraImg, classes[config.class])} src={config.extraImg} alt="" />
+          <img className={clsx(classes.extraImg, classes[memoConfig.class], 'animated__animate')} src={memoConfig.extraImg} alt="" />
+        )
+      }
+      {
+        type === MintButtonStateEnum.WITH_COINS && (
+          <img className={clsx(classes.extraImg, classes[memoConfig.class], 'animated__animate')} src={WithCoinsStateButtonExtraSetImg} alt="" />
         )
       }
     </button>
   );
 };
 
-export default Button;
+export default MintButton;
