@@ -1,0 +1,74 @@
+.root {
+  margin-bottom: 16px;
+}
+
+.header {
+  margin-bottom: 9vw;
+  & > h4 {
+    font-size: 20px;
+  }
+}
+
+.timer {
+  padding-bottom: 5px;
+  & > span, & > div > span {
+    font-size: 8vw;
+    margin-bottom: 2vw;
+  }
+  & > span {
+    width: 8vw;
+  }
+  & > div {
+    & > img {
+      height: 5vw;
+    }
+  }
+  &-minor {
+    padding-left: 16px;
+    width: 9vw;
+    & > div {
+      &:first-child {
+        margin-bottom: 6vw;
+      }
+      & > span {
+        font-size: 3.5vw;
+      }
+      & > img {
+        height: 11px;
+      }
+    }
+  }
+}
+
+.mint-wrapper {
+  padding-top: 24px;
+  padding-bottom: 0;
+  margin-bottom: 32px;
+  & > img {
+    display: none;
+  }
+}
+
+.follow-mobile {
+  display: flex;
+  margin-bottom: 32px;
+}
+
+.links {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  &-follow {
+    display: none;
+  }
+  & > div {
+    margin-right: 0;
+  }
+}
+
+.location {
+  font-size: 3vw;
+  text-align: center;
+}

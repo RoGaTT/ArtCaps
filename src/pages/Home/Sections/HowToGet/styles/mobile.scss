@@ -1,0 +1,21 @@
+.onlyMobile {
+  display: flex !important;
+}
+
+.noMobile {
+  display: none !important;
+}
+
+.root {
+  & > img {
+    height: 55px;
+  }
+  & > .content {
+    display: flex;
+    flex-direction: column;
+    margin-top: 56px;
+    & > .item {
+      margin-bottom: 48px;
+    }
+  }
+}

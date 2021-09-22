@@ -52,12 +52,13 @@ const Team: FC<PropsType> = ({
       wrapperClassName={classes.wrapper}
     >
       <div className={clsx(classes.content)}>
+        <img src={TeamTextImg} alt="" />
         <div className={clsx(classes[`slide_${activeSlideIndex}`], 'animate__animated', memoGetAnimationClass(waitingDirection))}>
           {
             activeSlideIndex === 0 && (
               <>
                 <div className={classes['slide_0--title']}>
-                  <img src={TeamTextImg} alt="" />
+                  <img className={classes.noMobile} src={TeamTextImg} alt="" />
                   <p>
                     ArtCaps is a community, which is passionate about crypto-art. We have nine team members, each making special contribution to the project’s development. We believe, that NFT – is the NEW art, which will leave its mark in the modern and world’s art.
                   </p>
@@ -111,7 +112,7 @@ const Team: FC<PropsType> = ({
                     twitterBio=""
                   />
                 </div>
-                <div className={classes.separator} />
+                <div className={clsx(classes.separator, classes.noMobile)} />
                 <div className={classes['card-wrapper']}>
                   <TeamCard
                     img={TeamCardChipImage7}
@@ -120,6 +121,7 @@ const Team: FC<PropsType> = ({
                     twitterBio=""
                   />
                 </div>
+                <div className={clsx(classes.separator, classes.onlyMobile)} />
                 <div className={classes['card-wrapper']}>
                   <TeamCard
                     img={TeamCardChipImage8}
@@ -128,7 +130,7 @@ const Team: FC<PropsType> = ({
                     twitterBio=""
                   />
                 </div>
-                <div className={classes.separator} />
+                <div className={clsx(classes.separator, classes.noMobile)} />
                 <div className={classes['card-wrapper']}>
                   <TeamCard
                     img={TeamCardChipImage9}

@@ -1,3 +1,4 @@
+/* eslint-disable react/no-array-index-key */
 /* eslint-disable react/display-name */
 /* eslint-disable max-len */
 /* eslint-disable @typescript-eslint/no-explicit-any */
@@ -69,7 +70,10 @@ const HowToGet: FC<PropsType> = ({
       id="how_to_get"
     >
       <img src={HowToGetTextImg} alt="" />
-      <div className={classes.content} onWheel={memoOnWheel}>
+      <div
+        className={clsx(classes.content, classes.noMobile)}
+        onWheel={memoOnWheel}
+      >
         <div className={clsx(classes.item, 'animate__animated', memoGetAnimationClass(waitingDirection))}>
           <div>
             <span>{activeItemIndex + 1}</span>
@@ -81,6 +85,19 @@ const HowToGet: FC<PropsType> = ({
           type={memoItemList[activeItemIndex].buttonState}
           className={clsx('animate__animated', memoGetAnimationClass(waitingDirection))}
         />
+      </div>
+      <div className={clsx(classes.content, classes.onlyMobile)}>
+        {
+          itemList.map((item, itemIndex) => (
+            <div className={clsx(classes.item)} key={`item_${itemIndex}`}>
+              <div>
+                <span>{itemIndex + 1}</span>
+                <span>{itemIndex + 1}</span>
+              </div>
+              <p>{item.text()}</p>
+            </div>
+          ))
+        }
       </div>
     </Container>
   );

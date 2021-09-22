@@ -85,6 +85,9 @@ const Facts: FC<PropsType> = ({
           </p>
         </div>
       </div>
+      <p className={classes.onlyMobile}>
+        First ArtCaps token owners will receive 3 exclusive materials, inspired by our artists
+      </p>
     </div>
   </Container>
 );

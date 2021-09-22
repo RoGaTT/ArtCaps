@@ -1,3 +1,5 @@
+/* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
+/* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable react/require-default-props */
 import React, {
   FC, useEffect, useRef, useState,
@@ -23,6 +25,7 @@ import InstagramIcon from '@/assets/img/icons/instagram.svg';
 import { RELEASE_DATE } from '@/const/time';
 import { addZeroToNumber } from '@/utils/functions/number';
 import MintButton from '@/ui/MintButton';
+import { goBlank } from '@/utils/functions/dom';
 
 interface PropsType extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   className?: string;
@@ -110,15 +113,16 @@ const Button: FC<PropsType> = ({
         <img src={TimerChipIcon} alt="" />
         <MintButton />
       </div>
+      <img className={classes['follow-mobile']} src={FollowUsTextIcon} alt="" />
       <div className={classes.links}>
         <div className={classes['links-follow']}>
           <img src={FollowUsTextIcon} alt="" className="animate__animated" />
           <img src={FollowArrowsRightIcon} alt="" />
         </div>
         <div className={classes['links-icons']}>
-          <img src={TwitterIcon} alt="" />
-          <img src={DiscordIcon} alt="" />
-          <img src={InstagramIcon} alt="" />
+          <img onClick={goBlank('https://twitter.com/ar1caps')} src={TwitterIcon} alt="" />
+          <img onClick={goBlank('https://discord.gg/xuTPCQRtfq')} src={DiscordIcon} alt="" />
+          <img onClick={goBlank('https://instagram.com/ar1caps')} src={InstagramIcon} alt="" />
         </div>
         <div className={classes['links-follow']}>
           <img src={FollowArrowsRightIcon} alt="" className={classes.inverted} />

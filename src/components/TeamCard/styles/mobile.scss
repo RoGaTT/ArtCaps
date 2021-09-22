@@ -1,0 +1,12 @@
+.root {
+  & > span {
+    font-size: 18px;
+  }
+  & > div {
+    & > div {
+      & > a {
+        bottom: 24px;
+      }
+    }
+  }
+}

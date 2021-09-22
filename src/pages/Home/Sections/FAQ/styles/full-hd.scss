@@ -56,3 +56,19 @@
     }
   }
 }
+
+.socials {
+  display: flex !important;
+  flex-direction: row !important;
+  & > img {
+    margin-right: 32px;
+    cursor: pointer;
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
+
+.onlyMobile {
+  display: none !important;
+}

@@ -1,0 +1,11 @@
+.root {
+  & > .img {
+    width: 200px;
+  }
+  & > .extraImg {
+    &.default {
+      display: none;
+      width: 45%;
+    }
+  }
+}

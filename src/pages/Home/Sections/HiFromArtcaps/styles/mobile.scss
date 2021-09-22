@@ -1,0 +1,71 @@
+.onlyMobile {
+  display: flex;
+}
+
+.noMobile {
+  display: none;
+}
+
+.title {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  width: 100%;
+  height: 120px;
+  margin-bottom: 23px;
+  & > img {
+    height: 100%;
+  }
+}
+
+.content {
+  min-height: 170px;
+}
+
+.mobileSlide {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  & > div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 100%;
+    height: 60vw;
+    & > img {
+      width: 45%;
+      position: absolute;
+      &:first-child {
+        top: 0;
+        right: 18%;
+        z-index: 10;
+      }
+      &:last-child {
+        width: 43%;
+        position: absolute;
+        bottom: 18%;
+        left: 18%;
+        z-index: 9;
+      }
+    }
+  }
+  & > img, & > div  {
+    height: 62vw;
+    padding-bottom: 48px;
+  }
+  & > p {
+    width: 100%;
+    min-height: 182px;
+    font-family: "Futura PT";
+    font-size: 24px;
+    color: white;
+    line-height: 1.2;
+    font-weight: 500;
+    &.big {
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+  }
+}

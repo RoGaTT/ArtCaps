@@ -12,6 +12,9 @@
 .content {
   width: 100%;
   min-height: 716px;
+  & > img {
+    display: none;
+  }
 }
 
 .slide {
@@ -43,8 +46,9 @@
       align-items: center;
       flex-wrap: wrap;
       & > div {
-        padding-left: 4.5vw;
+        margin-left: 4.5vw;
         margin-bottom: 36px;
+        width: 260px;
       }
     }
   }
@@ -60,8 +64,9 @@
       flex-direction: row;      
       align-items: center;
       justify-content: center;
-      flex-basis: 26%;
+      // flex-basis: 26%;
       margin-bottom: 48px;
+      width: 260px;
     }
     & > .separator {
       display: flex;
@@ -92,4 +97,8 @@
       background-color: white;
     }
   }
+}
+
+.onlyMobile {
+  display: none !important;
 }

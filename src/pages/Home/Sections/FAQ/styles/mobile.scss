@@ -1,0 +1,27 @@
+.onlyMobile {
+  display: flex !important;
+}
+
+.noMobile {
+  display: none !important;
+}
+
+.content {
+  flex-basis: initial;
+  & > img {
+    height: 60px;
+    margin-bottom: 48px;
+  }
+  & > div {
+    & > span {
+      font-size: 25px;
+      line-height: 1.2;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+  }
+}
+
+.socials {
+  justify-content: center !important;
+}

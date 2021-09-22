@@ -1,0 +1,46 @@
+.content {
+  min-height: 700px;
+  & > img {
+    display: flex;
+    height: 60px;
+    margin-bottom: 32px;
+  }
+}
+.slide {
+  &_0 {
+    display: flex;
+    flex-direction: column;
+    height: initial;
+    &--title {
+      margin-bottom: 48px;
+      flex-basis: initial;
+    }
+    &--items {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      flex-basis: initial;
+      & > div {
+        width: 45%;
+        margin-left: 0;
+      }
+    }
+  }
+  &_1 {
+    display: flex;
+    justify-content: center;
+    & > .card-wrapper {
+      width: 45%;
+      margin-left: 0;
+      margin-bottom: 24px;
+    }
+  }
+}
+
+.onlyMobile {
+  display: flex !important;
+}
+
+.noMobile {
+  display: none !important;
+}

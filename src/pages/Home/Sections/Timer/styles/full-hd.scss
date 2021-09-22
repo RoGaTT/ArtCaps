@@ -91,6 +91,10 @@
   }
 }
 
+.follow-mobile {
+  display: none;
+}
+
 .links {
   display: flex;
   flex-direction: row;
@@ -124,6 +128,7 @@
   }
   &-icons {
     & > img {
+      cursor: pointer;
       margin-right: 28px;
       &:last-child {
         margin-right: 0;
