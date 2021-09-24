@@ -32,10 +32,13 @@ const Team: FC<PropsType> = ({
   const [activeSlideIndex, setActiveSlideIndex] = useState(0);
   const [waitingDirection, setWaitingDirection] = useState<'left' | 'right' | null>(null);
   const [lastWaitingDirection, setLastWaitingDirection] = useState<'left' | 'right' | null>(null);
+  const [touchStart, setTouchStart] = useState<null | number>(null);
 
   const memoGetAnimationClass = useCallback(getAnimationClass, [lastWaitingDirection]);
   const memoOnSwitch = useCallback(onSwitch, []);
   const memoOnClick = useCallback(onClick, [activeSlideIndex, waitingDirection, memoOnSwitch]);
+  const memoOnTouchStart = useCallback(onTouchStart, []);
+  const memoOnTouchEnd = useCallback(onTouchEnd, [activeSlideIndex, memoOnClick, touchStart]);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -53,7 +56,11 @@ const Team: FC<PropsType> = ({
     >
       <div className={clsx(classes.content)}>
         <img src={TeamTextImg} alt="" />
-        <div className={clsx(classes[`slide_${activeSlideIndex}`], 'animate__animated', memoGetAnimationClass(waitingDirection))}>
+        <div
+          className={clsx(classes[`slide_${activeSlideIndex}`], 'animate__animated', memoGetAnimationClass(waitingDirection))}
+          onTouchStart={memoOnTouchStart}
+          onTouchEnd={memoOnTouchEnd}
+        >
           {
             activeSlideIndex === 0 && (
               <>
@@ -166,6 +173,17 @@ const Team: FC<PropsType> = ({
       </div>
     </Container>
   );
+
+  function onTouchStart(e: React.TouchEvent<HTMLDivElement>) {
+    setTouchStart(e.touches[0].clientX);
+  }
+  function onTouchEnd(e: React.TouchEvent<HTMLDivElement>) {
+    if ((touchStart !== null) && (touchStart > e.changedTouches[0].pageX)) {
+      memoOnClick((activeSlideIndex + 1) % 2)();
+    } else if ((touchStart !== null) && (touchStart < e.changedTouches[0].pageX)) {
+      memoOnClick(activeSlideIndex === 0 ? 1 : (activeSlideIndex - 1) % 2)();
+    }
+  }
 
   function onClick(index: number) {
     return () => {

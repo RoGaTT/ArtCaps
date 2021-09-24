@@ -29,11 +29,13 @@ const HiFromArtcaps: FC<PropsType> = ({
   const [activeSlideIndex, setActiveSlideIndex] = useState(0);
   const [waitingDirection, setWaitingDirection] = useState<'left' | 'right' | null>(null);
   const [lastWaitingDirection, setLastWaitingDirection] = useState<'left' | 'right' | null>(null);
+  const [touchStart, setTouchStart] = useState<null | number>(null);
 
   const memoGetAnimationClass = useCallback(getAnimationClass, [lastWaitingDirection]);
   const memoOnSwitch = useCallback(onSwitch, []);
   const memoOnClick = useCallback(onClick, [activeSlideIndex, waitingDirection, memoOnSwitch]);
-
+  const memoOnTouchStart = useCallback(onTouchStart, []);
+  const memoOnTouchEnd = useCallback(onTouchEnd, [activeSlideIndex, memoOnClick, touchStart]);
   // useEffect(() => {
   //   const interval = setInterval(() => {
   //     memoOnClick((activeSlideIndex + 1) % 3)();
@@ -102,7 +104,8 @@ const HiFromArtcaps: FC<PropsType> = ({
             )
           }
         </div>
-        <div className={
+        <div
+          className={
           clsx(
             classes.mobileSlide,
             'animate__animated',
@@ -110,6 +113,8 @@ const HiFromArtcaps: FC<PropsType> = ({
             memoGetAnimationClass(waitingDirection),
           )
         }
+          onTouchStart={memoOnTouchStart}
+          onTouchEnd={memoOnTouchEnd}
         >
           {
             activeSlideIndex === 0 && (
@@ -197,6 +202,17 @@ const HiFromArtcaps: FC<PropsType> = ({
       </div>
     </Container>
   );
+
+  function onTouchStart(e: React.TouchEvent<HTMLDivElement>) {
+    setTouchStart(e.touches[0].clientX);
+  }
+  function onTouchEnd(e: React.TouchEvent<HTMLDivElement>) {
+    if ((touchStart !== null) && (touchStart > e.changedTouches[0].pageX)) {
+      memoOnClick((activeSlideIndex + 1) % 3)();
+    } else if ((touchStart !== null) && (touchStart < e.changedTouches[0].pageX)) {
+      memoOnClick(activeSlideIndex === 0 ? 2 : (activeSlideIndex - 1) % 3)();
+    }
+  }
 
   function onClick(index: number) {
     return () => {

@@ -91,6 +91,7 @@ const Collections: FC<PropsType> = ({
   const [activeSlideIndex, setActiveSlideIndex] = useState(0);
   const [waitingDirection, setWaitingDirection] = useState<'left' | 'right' | null>(null);
   const [lastWaitingDirection, setLastWaitingDirection] = useState<'left' | 'right' | null>(null);
+  const [touchStart, setTouchStart] = useState<null | number>(null);
 
   const size = useResize();
 
@@ -98,6 +99,8 @@ const Collections: FC<PropsType> = ({
   const memoGetAnimationClass = useCallback(getAnimationClass, [lastWaitingDirection]);
   const memoOnSwitch = useCallback(onSwitch, []);
   const memoOnClick = useCallback(onClick, [activeSlideIndex, waitingDirection, memoOnSwitch]);
+  const memoOnTouchStart = useCallback(onTouchStart, []);
+  const memoOnTouchEnd = useCallback(onTouchEnd, [activeSlideIndex, memoOnClick, touchStart]);
 
   useEffect(() => {
     let interval: NodeJS.Timer | null = null;
@@ -236,7 +239,7 @@ const Collections: FC<PropsType> = ({
           </div>
         )
       }
-      <div className={clsx(classes.cards, classes.onlyMobile)}>
+      <div className={clsx(classes.cards, classes.onlyMobile)} onTouchStart={memoOnTouchStart} onTouchEnd={memoOnTouchEnd}>
         <div className={
           clsx(
             classes.mobileSlide,
@@ -322,6 +325,17 @@ const Collections: FC<PropsType> = ({
       </div>
     </Container>
   );
+
+  function onTouchStart(e: React.TouchEvent<HTMLDivElement>) {
+    setTouchStart(e.touches[0].clientX);
+  }
+  function onTouchEnd(e: React.TouchEvent<HTMLDivElement>) {
+    if ((touchStart !== null) && (touchStart > e.changedTouches[0].pageX)) {
+      memoOnClick((activeSlideIndex + 1) % 3)();
+    } else if ((touchStart !== null) && (touchStart < e.changedTouches[0].pageX)) {
+      memoOnClick(activeSlideIndex === 0 ? 2 : (activeSlideIndex - 1) % 3)();
+    }
+  }
 
   function updateItem(index: number, state: [boolean, boolean], needTimerToClose?: boolean) {
     return () => {
