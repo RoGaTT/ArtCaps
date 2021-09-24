@@ -40,6 +40,7 @@
     "react-transition-group": "^4.4.2",
     "resolve": "1.20.0",
     "resolve-url-loader": "^4.0.0",
+    "scroll-lock": "^2.1.5",
     "semver": "7.3.5",
     "ts-pnp": "1.2.0"
   },
@@ -86,6 +87,7 @@
     "@types/react-gtm-module": "^2.0.0",
     "@types/react-router": "^5.1.14",
     "@types/react-router-dom": "^5.1.7",
+    "@types/scroll-lock": "^2.1.0",
     "@typescript-eslint/eslint-plugin": "^4.5.0",
     "@typescript-eslint/parser": "^4.5.0",
     "babel-eslint": "^10.1.0",

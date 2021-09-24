@@ -8,6 +8,7 @@ import React, {
 } from 'react';
 import clsx from 'clsx';
 
+import { disablePageScroll, enablePageScroll } from 'scroll-lock';
 import classes from './HowToGet.module.scss';
 import Container from '@/utils/components/Container';
 
@@ -58,6 +59,8 @@ const HowToGet: FC<PropsType> = ({
   const memoGetAnimationClass = useCallback(getAnimationClass, [lastWaitingDirection]);
   const memoOnSwitch = useCallback(onSwitch, []);
   const memoOnWheel = useCallback(onWheel, [activeItemIndex, waitingDirection, memoItemList.length, memoOnSwitch]);
+  const memoOnMouseLeave = useCallback(onMouseLeave, []);
+  const memoOnMouseEnter = useCallback(onMouseEnter, []);
 
   useEffect(() => {
     if (lastWaitingDirection) setLastWaitingDirection(null);
@@ -73,6 +76,8 @@ const HowToGet: FC<PropsType> = ({
       <div
         className={clsx(classes.content, classes.noMobile)}
         onWheel={memoOnWheel}
+        onMouseEnter={memoOnMouseEnter}
+        onMouseLeave={memoOnMouseLeave}
       >
         <div className={clsx(classes.item, 'animate__animated', memoGetAnimationClass(waitingDirection))}>
           <div>
@@ -101,6 +106,13 @@ const HowToGet: FC<PropsType> = ({
       </div>
     </Container>
   );
+
+  function onMouseEnter() {
+    disablePageScroll();
+  }
+  function onMouseLeave() {
+    enablePageScroll();
+  }
 
   function onWheel(e: React.WheelEvent<HTMLDivElement>) {
     // eslint-disable-next-line max-len
