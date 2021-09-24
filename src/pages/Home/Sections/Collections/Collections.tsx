@@ -8,6 +8,7 @@ import React, {
 } from 'react';
 import clsx from 'clsx';
 
+import { Transition, TransitionGroup } from 'react-transition-group';
 import classes from './Collections.module.scss';
 import Container from '@/utils/components/Container';
 
@@ -29,6 +30,7 @@ import CollectionsChipImg_3_3 from '@/assets/img/chips/3/3.png';
 import CollectionsChipImg_3_4 from '@/assets/img/chips/3/4.png';
 import CollectionsChipImg_3_5 from '@/assets/img/chips/3/5.png';
 import CollectionChipBackImg from '@/assets/img/chips/back.png';
+import useResize from '@/utils/hooks/useResize';
 
 interface PropsType {
   className?: string;
@@ -58,27 +60,56 @@ const CARD_LIST = [
   ],
 ];
 
+type ItemConfig = {
+  isOpening: boolean,
+  isClosing: boolean,
+  imgIndex: number,
+}
+
 const Collections: FC<PropsType> = ({
   className,
 }) => {
   const [activeItem, setActiveItem] = useState(0);
-  const [itemIndexList, setItemIndexList] = useState([0, 0, 0]);
+  const [itemList, setItemIndexList] = useState<ItemConfig[]>([
+    {
+      isOpening: true,
+      isClosing: false,
+      imgIndex: 0,
+    },
+    {
+      isOpening: false,
+      isClosing: true,
+      imgIndex: 0,
+    },
+    {
+      isOpening: false,
+      isClosing: true,
+      imgIndex: 0,
+    },
+  ]);
 
   const [activeSlideIndex, setActiveSlideIndex] = useState(0);
   const [waitingDirection, setWaitingDirection] = useState<'left' | 'right' | null>(null);
   const [lastWaitingDirection, setLastWaitingDirection] = useState<'left' | 'right' | null>(null);
 
-  const memoUpdateItemIndexList = useCallback(updateItemIndexList, [activeItem, itemIndexList]);
+  const size = useResize();
+
+  const memoUpdateItem = useCallback(updateItem, [itemList]);
   const memoGetAnimationClass = useCallback(getAnimationClass, [lastWaitingDirection]);
   const memoOnSwitch = useCallback(onSwitch, []);
   const memoOnClick = useCallback(onClick, [activeSlideIndex, waitingDirection, memoOnSwitch]);
 
   useEffect(() => {
-    const interval = setInterval(memoUpdateItemIndexList, 1000);
+    let interval: NodeJS.Timer | null = null;
+    if (size.width > 450) {
+      interval = setInterval(() => {
+        setActiveItem((activeItem + 1) % 3);
+      }, 3000);
+    }
     return () => {
-      clearInterval(interval);
+      if (interval) clearInterval(interval);
     };
-  }, [memoUpdateItemIndexList]);
+  }, [activeItem, size.width]);
 
   return (
     <Container
@@ -91,39 +122,120 @@ const Collections: FC<PropsType> = ({
           ArtCaps is a 3 different token collections from three original painters. Each collection consists of 10000 AI-generated collectibles popping on the Ethereum Blockchain
         </p>
       </div>
-      <div className={clsx(classes.cards, classes.noMobile)}>
-        <div className={classes['cards-item']}>
-          <img src={activeItem !== 0 ? CollectionChipBackImg : CARD_LIST[0][itemIndexList[0]]} alt="" />
-          <div className={classes['cards-item__text']}>
-            <h6>Queen of glitch</h6>
-            <p>Nadin Ego</p>
+      {
+        size.width > 450 && (
+          <div className={clsx(classes.cards, classes.noMobile)}>
+            <div className={clsx(classes['cards-item'])}>
+              {/* <TransitionGroup> */}
+              <Transition
+                in={!itemList[0].isClosing && activeItem === 0}
+                timeout={500}
+                unmountOnExit
+                onEnter={memoUpdateItem(0, [true, false])}
+                onExited={memoUpdateItem(0, [false, true])}
+              >
+                {
+                  (state) => (
+                    <img src={CARD_LIST[0][itemList[0].imgIndex]} alt="" className={clsx('animate__animated', state !== 'exiting' ? 'animate__flipInY' : 'animate__flipOutY')} />
+                  )
+                }
+              </Transition>
+              <Transition
+                in={!itemList[0].isOpening && activeItem !== 0}
+                timeout={500}
+                unmountOnExit
+                onEnter={memoUpdateItem(0, [false, true])}
+                onExited={memoUpdateItem(0, [true, false])}
+              >
+                {
+                  (state) => (
+                    <img src={CollectionChipBackImg} alt="" className={clsx('animate__animated', state !== 'exiting' ? 'animate__flipInY' : 'animate__flipOutY')} />
+                  )
+                }
+              </Transition>
+              {/* </TransitionGroup> */}
+              <div className={classes['cards-item__text']}>
+                <h6>Queen of glitch</h6>
+                <p>Nadin Ego</p>
+              </div>
+            </div>
+            <div className={classes['cards-item']}>
+              <Transition
+                in={!itemList[1].isClosing && activeItem === 1}
+                timeout={500}
+                unmountOnExit
+                onEnter={memoUpdateItem(1, [true, false])}
+                onExited={memoUpdateItem(1, [false, true])}
+              >
+                {
+                  (state) => (
+                    <img src={CARD_LIST[1][itemList[1].imgIndex]} alt="" className={clsx('animate__animated', state !== 'exiting' ? 'animate__flipInY' : 'animate__flipOutY')} />
+                  )
+                }
+              </Transition>
+              <Transition
+                in={!itemList[1].isOpening && activeItem !== 1}
+                timeout={500}
+                unmountOnExit
+                onEnter={memoUpdateItem(1, [false, true])}
+                onExited={memoUpdateItem(1, [true, false])}
+              >
+                {
+                  (state) => (
+                    <img src={CollectionChipBackImg} alt="" className={clsx('animate__animated', state !== 'exiting' ? 'animate__flipInY' : 'animate__flipOutY')} />
+                  )
+                }
+              </Transition>
+              <div className={classes['cards-item__text']}>
+                <h6>
+                  Cult
+                  {' '}
+                  <br />
+                  {' '}
+                  Kids
+                </h6>
+                <p>GPOT</p>
+              </div>
+            </div>
+            <div className={classes['cards-item']}>
+              <Transition
+                in={!itemList[2].isClosing && activeItem === 2}
+                timeout={500}
+                unmountOnExit
+                onEnter={memoUpdateItem(2, [true, false])}
+                onExited={memoUpdateItem(2, [false, true])}
+              >
+                {
+                  (state) => (
+                    <img src={CARD_LIST[2][itemList[2].imgIndex]} alt="" className={clsx('animate__animated', state !== 'exiting' ? 'animate__flipInY' : 'animate__flipOutY')} />
+                  )
+                }
+              </Transition>
+              <Transition
+                in={!itemList[2].isOpening && activeItem !== 2}
+                timeout={500}
+                unmountOnExit
+                onEnter={memoUpdateItem(2, [false, true])}
+                onExited={memoUpdateItem(2, [true, false])}
+              >
+                {
+                  (state) => (
+                    <img src={CollectionChipBackImg} alt="" className={clsx('animate__animated', state !== 'exiting' ? 'animate__flipInY' : 'animate__flipOutY')} />
+                  )
+                }
+              </Transition>
+              <div className={classes['cards-item__text']}>
+                <h6>
+                  Katana
+                  <br />
+                  master
+                </h6>
+                <p>Krasovski</p>
+              </div>
+            </div>
           </div>
-        </div>
-        <div className={classes['cards-item']}>
-          <img src={activeItem !== 1 ? CollectionChipBackImg : CARD_LIST[1][itemIndexList[1]]} alt="" />
-          <div className={classes['cards-item__text']}>
-            <h6>
-              Cult
-              {' '}
-              <br />
-              {' '}
-              Kids
-            </h6>
-            <p>GPOT</p>
-          </div>
-        </div>
-        <div className={classes['cards-item']}>
-          <img src={activeItem !== 2 ? CollectionChipBackImg : CARD_LIST[2][itemIndexList[2]]} alt="" />
-          <div className={classes['cards-item__text']}>
-            <h6>
-              Katana
-              <br />
-              master
-            </h6>
-            <p>Krasovski</p>
-          </div>
-        </div>
-      </div>
+        )
+      }
       <div className={clsx(classes.cards, classes.onlyMobile)}>
         <div className={
           clsx(
@@ -211,13 +323,31 @@ const Collections: FC<PropsType> = ({
     </Container>
   );
 
-  function updateItemIndexList() {
-    setActiveItem((activeItem + 1) % 3);
-    const buffer = [...itemIndexList];
-    buffer[activeItem] = (itemIndexList[activeItem] + 1) % 5;
-    setItemIndexList(
-      buffer,
-    );
+  function updateItem(index: number, state: [boolean, boolean], needTimerToClose?: boolean) {
+    return () => {
+      const buffer = [...itemList];
+      buffer[index] = {
+        ...buffer[index],
+        isOpening: state[0],
+        isClosing: state[1],
+        imgIndex: (buffer[index].imgIndex + 1) % 5,
+      };
+
+      setItemIndexList(buffer);
+
+      // if (needTimerToClose) {
+      //   setTimeout(() => {
+      //     const buffer = [...itemList];
+      //     buffer[index] = {
+      //       ...buffer[index],
+      //       isOpening: false,
+      //       isClosing: false,
+      //     };
+
+      //     setItemIndexList(buffer);
+      //   }, 2000);
+      // }
+    };
   }
 
   function onClick(index: number) {

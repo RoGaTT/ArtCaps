@@ -37,6 +37,7 @@
     "react-refresh": "^0.8.3",
     "react-router": "^5.2.0",
     "react-router-dom": "^5.2.0",
+    "react-transition-group": "^4.4.2",
     "resolve": "1.20.0",
     "resolve-url-loader": "^4.0.0",
     "semver": "7.3.5",
