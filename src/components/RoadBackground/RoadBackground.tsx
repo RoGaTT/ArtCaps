@@ -41,7 +41,7 @@ const RoadBackground: FC<PropsType> = ({
   useEffect(() => {
     const setList = [];
     // eslint-disable-next-line no-plusplus
-    for (let i = 0; i < 5; i++) {
+    for (let i = 0; i < 3; i++) {
       setList.push(memoCreateItemSet());
     }
     setItemSetList(setList);

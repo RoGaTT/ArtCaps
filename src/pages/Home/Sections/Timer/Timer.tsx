@@ -66,7 +66,7 @@ const Button: FC<PropsType> = ({
           miliseconds: diff.getMilliseconds(),
         });
       }
-    }, 67);
+    }, 1000);
 
     return () => {
       if (timerIntervalRef.current) clearInterval(timerIntervalRef.current);
@@ -99,10 +99,10 @@ const Button: FC<PropsType> = ({
           </div>
         </div>
         <div className={clsx(classes.timer, classes['timer-minor'])}>
-          <div>
+          {/* <div>
             <span>{time.miliseconds}</span>
             <img src={TimerMsecTextImg} alt="" />
-          </div>
+          </div> */}
           <div>
             <span>{addZeroToNumber(time.seconds)}</span>
             <img src={TimerSecTextImg} alt="" />
@@ -110,7 +110,7 @@ const Button: FC<PropsType> = ({
         </div>
       </div>
       <div className={classes['mint-wrapper']}>
-        <img src={TimerChipIcon} alt="" />
+        {/* <img src={TimerChipIcon} alt="" /> */}
         <MintButton />
       </div>
       <img className={classes['follow-mobile']} src={FollowUsTextIcon} alt="" />
