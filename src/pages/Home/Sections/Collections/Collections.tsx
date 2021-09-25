@@ -116,7 +116,6 @@ const Collections: FC<PropsType> = ({
         setTimeout(() => {
           const buffer = [...slideImgIndexList];
           buffer[activeSlideIndex] = (buffer[activeSlideIndex] + 1) % 5;
-          console.log(activeSlideIndex);
           setSlideImgIndexList(buffer);
           setSlideChangingState(false);
         }, 500);
