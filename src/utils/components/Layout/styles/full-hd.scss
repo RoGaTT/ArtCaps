@@ -1,11 +1,12 @@
 .root {
-  width: 100%;
+  max-width: 100vw;
   display: flex;
   flex-direction: column;
   align-items: center;
   min-height: 100vh;
   background: linear-gradient(180deg, #5E0CC3 9.69%, #320E43 38.43%, #000000 100%);
   position: relative;
+  overflow-x: hidden;
 }
 
 .content {
