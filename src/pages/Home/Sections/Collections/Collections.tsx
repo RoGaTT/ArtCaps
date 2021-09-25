@@ -92,6 +92,8 @@ const Collections: FC<PropsType> = ({
   const [waitingDirection, setWaitingDirection] = useState<'left' | 'right' | null>(null);
   const [lastWaitingDirection, setLastWaitingDirection] = useState<'left' | 'right' | null>(null);
   const [touchStart, setTouchStart] = useState<null | number>(null);
+  const [slideImgIndexList, setSlideImgIndexList] = useState<number[]>([0, 0, 0]);
+  const [isSlideChanging, setSlideChangingState] = useState<boolean>(false);
 
   const size = useResize();
 
@@ -108,11 +110,22 @@ const Collections: FC<PropsType> = ({
       interval = setInterval(() => {
         setActiveItem((activeItem + 1) % 3);
       }, 3000);
+    } else {
+      interval = setInterval(() => {
+        setSlideChangingState(true);
+        setTimeout(() => {
+          const buffer = [...slideImgIndexList];
+          buffer[activeSlideIndex] = (buffer[activeSlideIndex] + 1) % 5;
+          console.log(activeSlideIndex);
+          setSlideImgIndexList(buffer);
+          setSlideChangingState(false);
+        }, 500);
+      }, 3000);
     }
     return () => {
       if (interval) clearInterval(interval);
     };
-  }, [activeItem, size.width]);
+  }, [activeItem, activeSlideIndex, size.width, slideImgIndexList]);
 
   return (
     <Container
@@ -252,7 +265,18 @@ const Collections: FC<PropsType> = ({
           {
             activeSlideIndex === 0 && (
               <>
-                <img src={CollectionsChipImg_1_1} alt="" />
+                <Transition
+                  in={!isSlideChanging}
+                  timeout={500}
+                  unmountOnExit
+                  mountOnEnter
+                >
+                  {
+                  (state) => (
+                    <img src={CARD_LIST[0][slideImgIndexList[0]]} alt="" className={clsx('animate__animated', state !== 'exiting' ? 'animate__flipInY' : 'animate__flipOutY')} />
+                  )
+                }
+                </Transition>
                 <div className={classes['cards-item__text']}>
                   <h6>Queen of glitch</h6>
                   <p>Nadin Ego</p>
@@ -263,7 +287,18 @@ const Collections: FC<PropsType> = ({
           {
             activeSlideIndex === 1 && (
               <>
-                <img src={CollectionsChipImg_2_1} alt="" />
+                <Transition
+                  in={!isSlideChanging}
+                  timeout={500}
+                  unmountOnExit
+                  mountOnEnter
+                >
+                  {
+                  (state) => (
+                    <img src={CARD_LIST[1][slideImgIndexList[1]]} alt="" className={clsx('animate__animated', state !== 'exiting' ? 'animate__flipInY' : 'animate__flipOutY')} />
+                  )
+                }
+                </Transition>
                 <div className={classes['cards-item__text']}>
                   <h6>
                     Cult
@@ -280,7 +315,18 @@ const Collections: FC<PropsType> = ({
           {
             activeSlideIndex === 2 && (
               <>
-                <img src={CollectionsChipImg_3_1} alt="" />
+                <Transition
+                  in={!isSlideChanging}
+                  timeout={500}
+                  unmountOnExit
+                  mountOnEnter
+                >
+                  {
+                  (state) => (
+                    <img src={CARD_LIST[2][slideImgIndexList[2]]} alt="" className={clsx('animate__animated', state !== 'exiting' ? 'animate__flipInY' : 'animate__flipOutY')} />
+                  )
+                }
+                </Transition>
                 <div className={classes['cards-item__text']}>
                   <h6>
                     Katana

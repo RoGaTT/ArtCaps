@@ -40,15 +40,6 @@ const Team: FC<PropsType> = ({
   const memoOnTouchStart = useCallback(onTouchStart, []);
   const memoOnTouchEnd = useCallback(onTouchEnd, [activeSlideIndex, memoOnClick, touchStart]);
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      memoOnClick((activeSlideIndex + 1) % 2)();
-    }, 10000);
-    return () => {
-      clearInterval(interval);
-    };
-  }, [activeSlideIndex, memoOnClick]);
-
   return (
     <Container
       className={clsx(classes.root, className)}

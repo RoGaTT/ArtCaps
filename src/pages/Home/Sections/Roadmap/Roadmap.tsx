@@ -12,7 +12,6 @@ import Container from '@/utils/components/Container';
 
 import RoadmapTextImg from '@/assets/img/texts/roadmap.svg';
 import RoadmapArrowYellowImg from '@/assets/img/icons/roadmap_arrow_yellow.svg';
-import RoadmapArrowGreenImg from '@/assets/img/icons/roadmap_arrow_green.svg';
 
 interface PropsType {
   className?: string;
