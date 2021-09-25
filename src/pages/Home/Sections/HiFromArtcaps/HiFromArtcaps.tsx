@@ -208,9 +208,9 @@ const HiFromArtcaps: FC<PropsType> = ({
   }
   function onTouchEnd(e: React.TouchEvent<HTMLDivElement>) {
     if ((touchStart !== null) && (touchStart > e.changedTouches[0].pageX)) {
-      memoOnClick((activeSlideIndex + 1) % 3)();
+      memoOnClick((activeSlideIndex + 1) % 4)();
     } else if ((touchStart !== null) && (touchStart < e.changedTouches[0].pageX)) {
-      memoOnClick(activeSlideIndex === 0 ? 2 : (activeSlideIndex - 1) % 3)();
+      memoOnClick(activeSlideIndex === 0 ? 3 : (activeSlideIndex - 1) % 4)();
     }
   }
 
