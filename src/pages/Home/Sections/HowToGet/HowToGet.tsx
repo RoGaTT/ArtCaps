@@ -13,6 +13,7 @@ import classes from './HowToGet.module.scss';
 import Container from '@/utils/components/Container';
 
 import HowToGetTextImg from '@/assets/img/texts/how_to_get.svg';
+import ScrollMeImg from '@/assets/img/icons/scroll_me.svg';
 import MintButton, { MintButtonStateEnum } from '@/ui/MintButton/MintButton';
 
 interface PropsType {
@@ -79,6 +80,10 @@ const HowToGet: FC<PropsType> = ({
         onMouseEnter={memoOnMouseEnter}
         onMouseLeave={memoOnMouseLeave}
       >
+        <div className={clsx(classes.scrollMe, classes.noMobile)}>
+          <img src={ScrollMeImg} alt="" />
+          <span>Scroll me</span>
+        </div>
         <div className={clsx(classes.item, 'animate__animated', memoGetAnimationClass(waitingDirection))}>
           <div>
             <span>{activeItemIndex + 1}</span>

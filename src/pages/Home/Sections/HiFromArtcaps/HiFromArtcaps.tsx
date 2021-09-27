@@ -1,12 +1,14 @@
+/* eslint-disable camelcase */
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable max-len */
 /* eslint-disable react/require-default-props */
 import React, {
-  FC, useCallback, useState,
+  FC, useCallback, useEffect, useState,
 } from 'react';
 import clsx from 'clsx';
 
+import { Transition } from 'react-transition-group';
 import classes from './HiFromArtcaps.module.scss';
 import Container from '@/utils/components/Container';
 import HiFromArtCapsTextImg from '@/assets/img/texts/hi_from_artcaps.svg';
@@ -17,9 +19,42 @@ import ArtCapsPrizeMobileImg from '@/assets/img/hi_from_artcaps/artcaps_prize_mo
 import ArtCapsChipSetImg from '@/assets/img/hi_from_artcaps/chip_set.png';
 import ArtCapsChipSetShortImg from '@/assets/img/hi_from_artcaps/chip_set_short.svg';
 import HiFromArtCapsChip1Img from '@/assets/img/chips/hi_from_artcaps_1.svg';
-import HiFromArtCapsChip2Img from '@/assets/img/chips/hi_from_artcaps_2.svg';
 
-interface PropsType extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+import CollectionsChipImg_1_1 from '@/assets/img/chips/1/1.png';
+import CollectionsChipImg_1_2 from '@/assets/img/chips/1/2.png';
+import CollectionsChipImg_1_3 from '@/assets/img/chips/1/3.png';
+import CollectionsChipImg_1_4 from '@/assets/img/chips/1/4.png';
+import CollectionsChipImg_1_5 from '@/assets/img/chips/1/5.png';
+import CollectionsChipImg_2_1 from '@/assets/img/chips/2/1.png';
+import CollectionsChipImg_2_2 from '@/assets/img/chips/2/2.png';
+import CollectionsChipImg_2_3 from '@/assets/img/chips/2/3.png';
+import CollectionsChipImg_2_4 from '@/assets/img/chips/2/4.png';
+import CollectionsChipImg_2_5 from '@/assets/img/chips/2/5.png';
+import CollectionsChipImg_3_1 from '@/assets/img/chips/3/1.png';
+import CollectionsChipImg_3_2 from '@/assets/img/chips/3/2.png';
+import CollectionsChipImg_3_3 from '@/assets/img/chips/3/3.png';
+import CollectionsChipImg_3_4 from '@/assets/img/chips/3/4.png';
+import CollectionsChipImg_3_5 from '@/assets/img/chips/3/5.png';
+
+const CHIP_LIST = [
+  CollectionsChipImg_1_1,
+  CollectionsChipImg_1_2,
+  CollectionsChipImg_1_3,
+  CollectionsChipImg_1_4,
+  CollectionsChipImg_1_5,
+  CollectionsChipImg_2_1,
+  CollectionsChipImg_2_2,
+  CollectionsChipImg_2_3,
+  CollectionsChipImg_2_4,
+  CollectionsChipImg_2_5,
+  CollectionsChipImg_3_1,
+  CollectionsChipImg_3_2,
+  CollectionsChipImg_3_3,
+  CollectionsChipImg_3_4,
+  CollectionsChipImg_3_5,
+];
+
+interface PropsType {
   className?: string;
 }
 
@@ -30,20 +65,27 @@ const HiFromArtcaps: FC<PropsType> = ({
   const [waitingDirection, setWaitingDirection] = useState<'left' | 'right' | null>(null);
   const [lastWaitingDirection, setLastWaitingDirection] = useState<'left' | 'right' | null>(null);
   const [touchStart, setTouchStart] = useState<null | number>(null);
+  const [activeSlideChipIndex, setActiveSlideChipIndex] = useState(0);
+  const [isSlideChipChanging, setSlideChipChanging] = useState(false);
 
   const memoGetAnimationClass = useCallback(getAnimationClass, [lastWaitingDirection]);
   const memoOnSwitch = useCallback(onSwitch, []);
   const memoOnClick = useCallback(onClick, [activeSlideIndex, waitingDirection, memoOnSwitch]);
   const memoOnTouchStart = useCallback(onTouchStart, []);
   const memoOnTouchEnd = useCallback(onTouchEnd, [activeSlideIndex, memoOnClick, touchStart]);
-  // useEffect(() => {
-  //   const interval = setInterval(() => {
-  //     memoOnClick((activeSlideIndex + 1) % 3)();
-  //   }, 10000);
-  //   return () => {
-  //     clearInterval(interval);
-  //   };
-  // }, [activeSlideIndex, memoOnClick]);
+  const memoSetNextActiveSlideChip = useCallback(setNextActiveSlideChip, [activeSlideChipIndex]);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setSlideChipChanging(true);
+      setTimeout(() => {
+        setActiveSlideIndex(activeSlideIndex % CHIP_LIST.length);
+      }, 500);
+    }, 4000);
+    return () => {
+      clearInterval(interval);
+    };
+  }, [activeSlideIndex, memoOnClick]);
 
   return (
     <Container
@@ -74,7 +116,20 @@ const HiFromArtcaps: FC<PropsType> = ({
                 </div>
                 <div className={classes['slide_0--chips']}>
                   <img src={HiFromArtCapsChip1Img} className={classes['chip-main']} alt="" />
-                  <img src={HiFromArtCapsChip2Img} className={classes['chip-extra']} alt="" />
+                  {/* <img src={HiFromArtCapsChip2Img} className={classes['chip-extra']} alt="" /> */}
+                  <Transition
+                    in={!isSlideChipChanging}
+                    timeout={800}
+                    unmountOnExit
+                    mountOnEnter
+                    onExited={memoSetNextActiveSlideChip}
+                  >
+                    {
+                    (state) => (
+                      <img src={CHIP_LIST[activeSlideChipIndex]} className={clsx(classes['chip-extra'], classes[state])} alt="" />
+                    )
+                  }
+                  </Transition>
                 </div>
               </>
             )
@@ -121,7 +176,20 @@ const HiFromArtcaps: FC<PropsType> = ({
               <>
                 <div>
                   <img src={HiFromArtCapsChip1Img} alt="" />
-                  <img src={HiFromArtCapsChip2Img} alt="" />
+                  <Transition
+                    in={!isSlideChipChanging}
+                    timeout={800}
+                    unmountOnExit
+                    mountOnEnter
+                    onExited={memoSetNextActiveSlideChip}
+                  >
+                    {
+                    (state) => (
+                      <img src={CHIP_LIST[activeSlideChipIndex]} className={classes[state]} alt="" />
+                    )
+                  }
+                  </Transition>
+                  {/* <img src={HiFromArtCapsChip2Img} alt="" /> */}
                 </div>
                 <p>
                   A unique NFT-token collection is already here! Are you ready? Tie your wallet to start the game! 30 000 unique tokens from various artists! Start your own collection!
@@ -202,6 +270,11 @@ const HiFromArtcaps: FC<PropsType> = ({
       </div>
     </Container>
   );
+
+  function setNextActiveSlideChip() {
+    setActiveSlideChipIndex((activeSlideChipIndex + 1) % CHIP_LIST.length);
+    setSlideChipChanging(false);
+  }
 
   function onTouchStart(e: React.TouchEvent<HTMLDivElement>) {
     setTouchStart(e.touches[0].clientX);

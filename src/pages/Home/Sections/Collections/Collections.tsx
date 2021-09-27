@@ -8,7 +8,7 @@ import React, {
 } from 'react';
 import clsx from 'clsx';
 
-import { Transition, TransitionGroup } from 'react-transition-group';
+import { Transition } from 'react-transition-group';
 import classes from './Collections.module.scss';
 import Container from '@/utils/components/Container';
 

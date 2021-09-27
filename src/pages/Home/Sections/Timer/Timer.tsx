@@ -13,8 +13,6 @@ import TimerDaysTextImg from '@/assets/img/texts/days.svg';
 import TimerHoursTextImg from '@/assets/img/texts/hours.svg';
 import TimerMinTextImg from '@/assets/img/texts/min.svg';
 import TimerSecTextImg from '@/assets/img/texts/sec.svg';
-import TimerMsecTextImg from '@/assets/img/texts/msec.svg';
-import TimerChipIcon from '@/assets/img/chips/timer.svg';
 
 import FollowUsTextIcon from '@/assets/img/texts/follow_us.svg';
 import FollowArrowsRightIcon from '@/assets/img/icons/follow_arrows_right.svg';

@@ -52,9 +52,18 @@
         width: 280px;
         height: 280px;
         position: absolute;
-        right: 60px;
-        top: 60px;
         z-index: 10;
+        top: 100px;
+        right: 100px;
+        &.entering {
+          animation: chipIn  0.8s ease-in-out;
+        }
+        &.exiting {
+          animation: chipOut  0.8s ease-in-out;
+        }
+        &.exited {
+          display: none;
+        }
       }
     }
   }
@@ -136,4 +145,30 @@
 
 .onlyMobile {
   display: none;
+}
+
+@keyframes chipIn {
+  from {
+    top: 0;
+    right: 0;
+    transform: scale((0.6));
+  }
+  to {
+    top: 100px;
+    right: 100px;
+    transform: scale((1));
+  }
+}
+
+@keyframes chipOut {
+  from {
+    top: 100px;
+    right: 100px;
+    transform: scale((1));
+  }
+  to {
+    top: 0;
+    right: 0;
+    transform: scale((0.6));
+  }
 }

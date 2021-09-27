@@ -42,8 +42,8 @@ const Roadmap: FC<PropsType> = ({
           <div className={classes.status}>
             <h6>Current status:</h6>
             <div className={classes['status-number']}>
-              <span>0%</span>
-              <span>0%</span>
+              <span>10%</span>
+              <span>10%</span>
             </div>
             <p>
               The first 100 tokens will be created for competitions, gifts, and our team’s collection
@@ -119,8 +119,8 @@ const Roadmap: FC<PropsType> = ({
               <div className={classes.status}>
                 <h6>Current status:</h6>
                 <div className={classes['status-number']}>
-                  <span>0%</span>
-                  <span>0%</span>
+                  <span>10%</span>
+                  <span>10%</span>
                 </div>
                 <p>
                   The first 100 tokens will be created for competitions, gifts, and our team’s collection
