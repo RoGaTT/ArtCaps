@@ -2,7 +2,7 @@
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable react/require-default-props */
 import React, {
-  FC, useEffect, useRef, useState,
+  FC, useCallback, useEffect, useRef, useState,
 } from 'react';
 import clsx from 'clsx';
 
@@ -44,34 +44,17 @@ const Button: FC<PropsType> = ({
     seconds: 49,
   });
 
+  const memoSetTimeData = useCallback(setTimeData, []);
+
   useEffect(() => {
-    timerIntervalRef.current = setInterval(() => {
-      const diff = new Date(+RELEASE_DATE - (+(new Date())));
-      const diffMiliseconds = +diff;
-      if (diffMiliseconds < 0) {
-        setTime({
-          days: 0,
-          hours: 0,
-          minutes: 0,
-          seconds: 0,
-          miliseconds: 0,
-        });
-        if (timerIntervalRef.current) clearInterval(timerIntervalRef.current);
-      } else {
-        setTime({
-          days: Math.floor(diffMiliseconds / (1000 * 60 * 60 * 24)),
-          hours: diff.getHours(),
-          minutes: diff.getMinutes(),
-          seconds: diff.getSeconds(),
-          miliseconds: diff.getMilliseconds(),
-        });
-      }
-    }, 1000);
+    timerIntervalRef.current = setInterval(memoSetTimeData, 1000);
+
+    memoSetTimeData();
 
     return () => {
       if (timerIntervalRef.current) clearInterval(timerIntervalRef.current);
     };
-  }, []);
+  }, [memoSetTimeData]);
 
   return (
     <Container
@@ -132,6 +115,29 @@ const Button: FC<PropsType> = ({
       <h6 className={classes.location}>Artcaps on opensea</h6>
     </Container>
   );
+
+  function setTimeData() {
+    const diff = new Date(+RELEASE_DATE - (+(new Date())));
+    const diffMiliseconds = +diff;
+    if (diffMiliseconds < 0) {
+      setTime({
+        days: 0,
+        hours: 0,
+        minutes: 0,
+        seconds: 0,
+        miliseconds: 0,
+      });
+      if (timerIntervalRef.current) clearInterval(timerIntervalRef.current);
+    } else {
+      setTime({
+        days: Math.floor(diffMiliseconds / (1000 * 60 * 60 * 24)),
+        hours: diff.getHours(),
+        minutes: diff.getMinutes(),
+        seconds: diff.getSeconds(),
+        miliseconds: diff.getMilliseconds(),
+      });
+    }
+  }
 };
 
 export default Button;

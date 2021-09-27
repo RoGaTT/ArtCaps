@@ -298,10 +298,16 @@ const Roadmap: FC<PropsType> = ({
     setTouchStart(e.touches[0].clientX);
   }
   function onTouchEnd(e: React.TouchEvent<HTMLDivElement>) {
+    if (touchStart === null) return;
+
+    if (Math.abs(touchStart - e.changedTouches[0].pageX) <= 80) return;
+
     if ((touchStart !== null) && (touchStart > e.changedTouches[0].pageX)) {
       memoOnClick((activeSlideIndex + 1) % 2)();
+      setTouchStart(null);
     } else if ((touchStart !== null) && (touchStart < e.changedTouches[0].pageX)) {
       memoOnClick(activeSlideIndex === 0 ? 1 : (activeSlideIndex - 1) % 2)();
+      setTouchStart(null);
     }
   }
 

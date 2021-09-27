@@ -65,25 +65,25 @@ const Team: FC<PropsType> = ({
                   <TeamCard
                     img={TeamCardChipImage1}
                     nickname="Xcurseovoid"
-                    role="Boss"
+                    role={() => (<>Boss</>)}
                     twitterBio="Xcurseovoid1"
                   />
                   <TeamCard
                     img={TeamCardChipImage2}
                     nickname="Nadin Ego"
-                    role="Queen of glitch"
+                    role={() => (<>Queen of glitch</>)}
                     twitterBio="Nadinegotrip"
                   />
                   <TeamCard
                     img={TeamCardChipImage3}
                     nickname="Krasovski"
-                    role="Katana Master"
+                    role={() => (<>Katana Master</>)}
                     twitterBio="KrasovskiArt"
                   />
                   <TeamCard
                     img={TeamCardChipImage4}
                     nickname="GPOT"
-                    role="Cult kids"
+                    role={() => (<>Cult kids</>)}
                     twitterBio="GPotArt"
                   />
                 </div>
@@ -97,7 +97,7 @@ const Team: FC<PropsType> = ({
                   <TeamCard
                     img={TeamCardChipImage5}
                     nickname="M. Segal"
-                    role="Art director"
+                    role={() => (<>Art director</>)}
                     twitterBio=""
                   />
                 </div>
@@ -106,7 +106,7 @@ const Team: FC<PropsType> = ({
                   <TeamCard
                     img={TeamCardChipImage6}
                     nickname="L9dnov"
-                    role="SMO"
+                    role={() => (<>SMO</>)}
                     twitterBio=""
                   />
                 </div>
@@ -115,7 +115,14 @@ const Team: FC<PropsType> = ({
                   <TeamCard
                     img={TeamCardChipImage7}
                     nickname="Sou1mate"
-                    role="Marketing Specialist"
+                    role={() => (
+                      <>
+                        Marketing
+                        <br />
+                        {' '}
+                        Specialist
+                      </>
+                    )}
                     twitterBio=""
                   />
                 </div>
@@ -124,7 +131,7 @@ const Team: FC<PropsType> = ({
                   <TeamCard
                     img={TeamCardChipImage8}
                     nickname="RoGaTT"
-                    role="CTO"
+                    role={() => (<>CTO</>)}
                     twitterBio=""
                   />
                 </div>
@@ -133,7 +140,7 @@ const Team: FC<PropsType> = ({
                   <TeamCard
                     img={TeamCardChipImage9}
                     nickname="ekyle"
-                    role="Designer"
+                    role={() => (<>Designer</>)}
                     twitterBio=""
                   />
                 </div>
@@ -169,10 +176,16 @@ const Team: FC<PropsType> = ({
     setTouchStart(e.touches[0].clientX);
   }
   function onTouchEnd(e: React.TouchEvent<HTMLDivElement>) {
+    if (touchStart === null) return;
+
+    if (Math.abs(touchStart - e.changedTouches[0].pageX) <= 80) return;
+
     if ((touchStart !== null) && (touchStart > e.changedTouches[0].pageX)) {
       memoOnClick((activeSlideIndex + 1) % 2)();
+      setTouchStart(null);
     } else if ((touchStart !== null) && (touchStart < e.changedTouches[0].pageX)) {
       memoOnClick(activeSlideIndex === 0 ? 1 : (activeSlideIndex - 1) % 2)();
+      setTouchStart(null);
     }
   }
 

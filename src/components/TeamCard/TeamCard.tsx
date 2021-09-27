@@ -15,7 +15,7 @@ interface PropsType {
   nickname: string;
   // eslint-disable-next-line react/require-default-props
   twitterBio?: string;
-  role: string;
+  role: () => JSX.Element;
 }
 
 const TeamCard: FC<PropsType> = ({
@@ -29,7 +29,7 @@ const TeamCard: FC<PropsType> = ({
     <div>
       <img src={img} alt="" />
       <div>
-        <span>{role}</span>
+        <span>{role()}</span>
         {
             twitterBio && (
               <a href={`https://twitter.com/${twitterBio}`} target="_blank" rel="noreferrer">
