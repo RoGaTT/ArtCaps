@@ -170,7 +170,7 @@ const Collections: FC<PropsType> = ({
               </Transition>
               {/* </TransitionGroup> */}
               <div className={classes['cards-item__text']}>
-                <h6>Queen of glitch</h6>
+                <h6>Queen of Glitch</h6>
                 <p>Nadin Ego</p>
               </div>
             </div>
@@ -243,7 +243,7 @@ const Collections: FC<PropsType> = ({
                 <h6>
                   Katana
                   <br />
-                  master
+                  Master
                 </h6>
                 <p>Krasovski</p>
               </div>
@@ -277,7 +277,7 @@ const Collections: FC<PropsType> = ({
                 }
                 </Transition>
                 <div className={classes['cards-item__text']}>
-                  <h6>Queen of glitch</h6>
+                  <h6>Queen of Glitch</h6>
                   <p>Nadin Ego</p>
                 </div>
               </>
@@ -330,7 +330,7 @@ const Collections: FC<PropsType> = ({
                   <h6>
                     Katana
                     <br />
-                    master
+                    Master
                   </h6>
                   <p>Krasovski</p>
                 </div>

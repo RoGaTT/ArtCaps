@@ -71,7 +71,7 @@ const Team: FC<PropsType> = ({
                   <TeamCard
                     img={TeamCardChipImage2}
                     nickname="Nadin Ego"
-                    role={() => (<>Queen of glitch</>)}
+                    role={() => (<>Queen of Glitch</>)}
                     twitterBio="Nadinegotrip"
                   />
                   <TeamCard
@@ -106,7 +106,7 @@ const Team: FC<PropsType> = ({
                   <TeamCard
                     img={TeamCardChipImage6}
                     nickname="L9dnov"
-                    role={() => (<>SMO</>)}
+                    role={() => (<>CMO</>)}
                     twitterBio=""
                   />
                 </div>
