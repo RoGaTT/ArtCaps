@@ -53,6 +53,12 @@
         height: 0;
         border: 2px solid #FDCE0A;
       }
+      &.noLineMobile {
+        margin-bottom: 0;
+        &::after {
+          content: none;
+        }
+      }
     }
   }
 }
