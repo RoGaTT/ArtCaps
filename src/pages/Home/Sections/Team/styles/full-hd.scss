@@ -49,6 +49,9 @@
         margin-left: 4.5vw;
         margin-bottom: 36px;
         width: 260px;
+        @media (min-width: 1920px) {
+          margin-left: 60px;
+        }
       }
     }
   }

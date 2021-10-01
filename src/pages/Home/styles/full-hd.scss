@@ -4,7 +4,7 @@
   flex-direction: column;
   align-items: center;
   min-height: 100vh;
-  background: linear-gradient(180deg, #5E0CC3 9.69%, #320E43 38.43%, #000000 100%);
+  // background: linear-gradient(180deg, #5E0CC3 9.69%, #320E43 38.43%, #000000 100%);
 }
 
 .first-screen {
@@ -13,7 +13,7 @@
   width: 100%;
   align-items: center;
   position: relative;
-  min-height: 100vh;
+  // min-height: 100vh;
   z-index: 100;
   &__bg {
     position: absolute;
