@@ -85,7 +85,7 @@ const Roadmap: FC<PropsType> = ({
                 <span>60%</span>
               </div>
               <p>
-                We are going to create a comic book and exclusive NFT-materials based on projects ArtCaps leading artists from leading painters from ArtCaps, which will go straight to the first participants for free. Every NFT holder at this point will get # exlcusive NFTs
+                We are going to create a comic book and exclusive NFT-materials based on projects from ArtCaps leading artists, which will go straight to the first participants for free. Every NFT holder at this point will get # exlcusive NFTs
               </p>
             </div>
             <div className={clsx(classes.checkpoint)}>
@@ -182,7 +182,7 @@ const Roadmap: FC<PropsType> = ({
                     <span>60%</span>
                   </div>
                   <p>
-                    We are going to create a comic book and exclusive NFT-materials based on projects ArtCaps leading artists from leading painters from ArtCaps, which will go straight to the first participants for free. Every NFT holder at this point will get # exlcusive NFTs
+                    We are going to create a comic book and exclusive NFT-materials based on projects from ArtCaps leading artists, which will go straight to the first participants for free. Every NFT holder at this point will get # exlcusive NFTs
                   </p>
                 </div>
                 <div className={clsx(classes.checkpoint)}>
@@ -238,7 +238,7 @@ const Roadmap: FC<PropsType> = ({
                     <span>60%</span>
                   </div>
                   <p>
-                    We are going to create a comic book and exclusive NFT-materials based on projects ArtCaps leading artists from leading painters from ArtCaps, which will go straight to the first participants for free. Every NFT holder at this point will get # exlcusive NFTs
+                    We are going to create a comic book and exclusive NFT-materials based on projects from ArtCaps leading artists, which will go straight to the first participants for free. Every NFT holder at this point will get # exlcusive NFTs
                   </p>
                 </div>
                 <div className={clsx(classes.checkpoint, classes.green)}>
