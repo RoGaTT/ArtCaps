@@ -134,7 +134,7 @@ const Collections: FC<PropsType> = ({
       <div className={classes.title}>
         <img src={CollectionsTextImg} alt="" />
         <p>
-          ArtCaps is a 3 different token collections from three original painters. Each collection consists of 10000 AI-generated collectibles popping on the Ethereum Blockchain
+          ArtCaps offers 3 different token collections from three original painters. Each collection consists of 10000 AI-generated collectibles popping on the Ethereum Blockchain
         </p>
       </div>
       {

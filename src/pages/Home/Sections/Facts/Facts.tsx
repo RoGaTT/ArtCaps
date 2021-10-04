@@ -24,7 +24,7 @@ const Facts: FC<PropsType> = ({
     <div className={classes.content}>
       <div className={classes.row}>
         <div className={classes.item}>
-          <p>1 token price</p>
+          <p>Token price</p>
           <div>
             <span>0.06 ETH</span>
             <span>0.06 ETH</span>
@@ -78,10 +78,10 @@ const Facts: FC<PropsType> = ({
             Blockchain storage
             <br />
             {' '}
-            with an access ensured
+            with access possible
             <br />
             {' '}
-            only to the owner
+            only by the owner
           </p>
         </div>
       </div>

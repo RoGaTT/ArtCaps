@@ -35,7 +35,11 @@ const itemList: Item[] = [
     buttonState: MintButtonStateEnum.READY_SOON,
   },
   {
-    text: () => (<>Make 0.06 ETH and gas-commission payment</>),
+    text: () => (
+      <>
+        Make 0.06 ETH plus gas fee payment
+      </>
+    ),
     buttonState: MintButtonStateEnum.WITH_COINS,
   },
   {

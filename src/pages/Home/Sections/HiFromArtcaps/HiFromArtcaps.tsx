@@ -87,7 +87,7 @@ const HiFromArtcaps: FC<PropsType> = ({
                 <div className={classes['slide_0--content']}>
                   <img src={HiFromArtCapsTextImg} alt="" />
                   <p>
-                    A unique NFT-token collection is already here! Are you ready? Tie your wallet to start the game! 30 000 unique tokens from various artists! Start your own collection!
+                    A unique NFT-token collection is already here! Are you ready? Connect your wallet to start the game! 30 000 unique tokens from various artists! Start your own collection!
                   </p>
                 </div>
                 <div className={classes['slide_0--chips']}>
@@ -114,12 +114,12 @@ const HiFromArtcaps: FC<PropsType> = ({
             activeSlideIndex === 1 && (
               <>
                 <div className="">
-                  <p>Our team not only wants to show how unique and multifaceted the universe of NFT is but also introduce you to the world of interesting and young authors.</p>
+                  <p>Our team not only wants to show how unique and multifaceted the NFT universe is but also to introduce you to the world of interesting and young authors.</p>
                   <img src={ArtCapsNftScreenImg} alt="" />
                 </div>
                 <div className="">
                   <img src={ArtCapsPrizeImg} alt="" />
-                  <p>As the project evolves we are planning to launch cool events for our NFT-gang. You will be able to participate in competitions and receive awesome goodies from our artists.</p>
+                  <p>As the project evolves we will launch cool events for our NFT-gang. You will be able to participate in competitions and receive awesome goodies from our artists.</p>
                 </div>
               </>
             )
@@ -168,7 +168,7 @@ const HiFromArtcaps: FC<PropsType> = ({
                   {/* <img src={HiFromArtCapsChip2Img} alt="" /> */}
                 </div>
                 <p>
-                  A unique NFT-token collection is already here! Are you ready? Tie your wallet to start the game! 30 000 unique tokens from various artists! Start your own collection!
+                  A unique NFT-token collection is already here! Are you ready? Connect your wallet to start the game! 30 000 unique tokens from various artists! Start your own collection!
                 </p>
               </>
             )
@@ -178,7 +178,7 @@ const HiFromArtcaps: FC<PropsType> = ({
               <>
                 <img src={ArtCapsNftScreenImg} alt="" />
                 <p>
-                  Our team not only wants to show how unique and multifaceted the universe of NFT is but also introduce you to the world of interesting and young authors.
+                  Our team not only wants to show how unique and multifaceted the NFT universe is but also to introduce you to the world of interesting and young authors.
                 </p>
               </>
             )
@@ -188,7 +188,7 @@ const HiFromArtcaps: FC<PropsType> = ({
               <>
                 <img src={ArtCapsPrizeMobileImg} alt="" />
                 <p>
-                  As the project evolves we are planning to launch cool events for our NFT-gang. You will be able to participate in competitions and receive awesome goodies from our artists.
+                  As the project evolves we will launch cool events for our NFT-gang. You will be able to participate in competitions and receive awesome goodies from our artists.
                 </p>
               </>
             )
