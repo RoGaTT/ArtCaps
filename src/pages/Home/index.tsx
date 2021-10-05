@@ -29,16 +29,31 @@ import CollectionsChipImg_1_2 from '@/assets/img/chips/1/2.png';
 import CollectionsChipImg_1_3 from '@/assets/img/chips/1/3.png';
 import CollectionsChipImg_1_4 from '@/assets/img/chips/1/4.png';
 import CollectionsChipImg_1_5 from '@/assets/img/chips/1/5.png';
+import CollectionsChipImg_1_6 from '@/assets/img/chips/1/6.png';
+import CollectionsChipImg_1_7 from '@/assets/img/chips/1/7.png';
+import CollectionsChipImg_1_8 from '@/assets/img/chips/1/8.png';
+import CollectionsChipImg_1_9 from '@/assets/img/chips/1/9.png';
+import CollectionsChipImg_1_10 from '@/assets/img/chips/1/10.png';
 import CollectionsChipImg_2_1 from '@/assets/img/chips/2/1.png';
 import CollectionsChipImg_2_2 from '@/assets/img/chips/2/2.png';
 import CollectionsChipImg_2_3 from '@/assets/img/chips/2/3.png';
 import CollectionsChipImg_2_4 from '@/assets/img/chips/2/4.png';
 import CollectionsChipImg_2_5 from '@/assets/img/chips/2/5.png';
+import CollectionsChipImg_2_6 from '@/assets/img/chips/2/6.png';
+import CollectionsChipImg_2_7 from '@/assets/img/chips/2/7.png';
+import CollectionsChipImg_2_8 from '@/assets/img/chips/2/8.png';
+import CollectionsChipImg_2_9 from '@/assets/img/chips/2/9.png';
+import CollectionsChipImg_2_10 from '@/assets/img/chips/2/10.png';
 import CollectionsChipImg_3_1 from '@/assets/img/chips/3/1.png';
 import CollectionsChipImg_3_2 from '@/assets/img/chips/3/2.png';
 import CollectionsChipImg_3_3 from '@/assets/img/chips/3/3.png';
 import CollectionsChipImg_3_4 from '@/assets/img/chips/3/4.png';
 import CollectionsChipImg_3_5 from '@/assets/img/chips/3/5.png';
+import CollectionsChipImg_3_6 from '@/assets/img/chips/3/6.png';
+import CollectionsChipImg_3_7 from '@/assets/img/chips/3/7.png';
+import CollectionsChipImg_3_8 from '@/assets/img/chips/3/8.png';
+import CollectionsChipImg_3_9 from '@/assets/img/chips/3/9.png';
+import CollectionsChipImg_3_10 from '@/assets/img/chips/3/10.png';
 import CollectionChipBackImg from '@/assets/img/chips/back.png';
 import LogoImg from '@/assets/img/logo.svg';
 import TimerDaysTextImg from '@/assets/img/texts/days.svg';
@@ -80,16 +95,31 @@ const HomePage: FC = () => (
       <link rel="preload" as="image" href={CollectionsChipImg_1_3} />
       <link rel="preload" as="image" href={CollectionsChipImg_1_4} />
       <link rel="preload" as="image" href={CollectionsChipImg_1_5} />
+      <link rel="preload" as="image" href={CollectionsChipImg_1_6} />
+      <link rel="preload" as="image" href={CollectionsChipImg_1_7} />
+      <link rel="preload" as="image" href={CollectionsChipImg_1_8} />
+      <link rel="preload" as="image" href={CollectionsChipImg_1_9} />
+      <link rel="preload" as="image" href={CollectionsChipImg_1_10} />
       <link rel="preload" as="image" href={CollectionsChipImg_2_1} />
       <link rel="preload" as="image" href={CollectionsChipImg_2_2} />
       <link rel="preload" as="image" href={CollectionsChipImg_2_3} />
       <link rel="preload" as="image" href={CollectionsChipImg_2_4} />
       <link rel="preload" as="image" href={CollectionsChipImg_2_5} />
+      <link rel="preload" as="image" href={CollectionsChipImg_2_6} />
+      <link rel="preload" as="image" href={CollectionsChipImg_2_7} />
+      <link rel="preload" as="image" href={CollectionsChipImg_2_8} />
+      <link rel="preload" as="image" href={CollectionsChipImg_2_9} />
+      <link rel="preload" as="image" href={CollectionsChipImg_2_10} />
       <link rel="preload" as="image" href={CollectionsChipImg_3_1} />
       <link rel="preload" as="image" href={CollectionsChipImg_3_2} />
       <link rel="preload" as="image" href={CollectionsChipImg_3_3} />
       <link rel="preload" as="image" href={CollectionsChipImg_3_4} />
       <link rel="preload" as="image" href={CollectionsChipImg_3_5} />
+      <link rel="preload" as="image" href={CollectionsChipImg_3_6} />
+      <link rel="preload" as="image" href={CollectionsChipImg_3_7} />
+      <link rel="preload" as="image" href={CollectionsChipImg_3_8} />
+      <link rel="preload" as="image" href={CollectionsChipImg_3_9} />
+      <link rel="preload" as="image" href={CollectionsChipImg_3_10} />
       <link rel="preload" as="image" href={CollectionChipBackImg} />
       <link rel="preload" as="image" href={LogoImg} />
       <link rel="preload" as="image" href={TimerDaysTextImg} />

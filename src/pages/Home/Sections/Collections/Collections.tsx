@@ -19,16 +19,31 @@ import CollectionsChipImg_1_2 from '@/assets/img/chips/1/2.png';
 import CollectionsChipImg_1_3 from '@/assets/img/chips/1/3.png';
 import CollectionsChipImg_1_4 from '@/assets/img/chips/1/4.png';
 import CollectionsChipImg_1_5 from '@/assets/img/chips/1/5.png';
+import CollectionsChipImg_1_6 from '@/assets/img/chips/1/6.png';
+import CollectionsChipImg_1_7 from '@/assets/img/chips/1/7.png';
+import CollectionsChipImg_1_8 from '@/assets/img/chips/1/8.png';
+import CollectionsChipImg_1_9 from '@/assets/img/chips/1/9.png';
+import CollectionsChipImg_1_10 from '@/assets/img/chips/1/10.png';
 import CollectionsChipImg_2_1 from '@/assets/img/chips/2/1.png';
 import CollectionsChipImg_2_2 from '@/assets/img/chips/2/2.png';
 import CollectionsChipImg_2_3 from '@/assets/img/chips/2/3.png';
 import CollectionsChipImg_2_4 from '@/assets/img/chips/2/4.png';
 import CollectionsChipImg_2_5 from '@/assets/img/chips/2/5.png';
+import CollectionsChipImg_2_6 from '@/assets/img/chips/2/6.png';
+import CollectionsChipImg_2_7 from '@/assets/img/chips/2/7.png';
+import CollectionsChipImg_2_8 from '@/assets/img/chips/2/8.png';
+import CollectionsChipImg_2_9 from '@/assets/img/chips/2/9.png';
+import CollectionsChipImg_2_10 from '@/assets/img/chips/2/10.png';
 import CollectionsChipImg_3_1 from '@/assets/img/chips/3/1.png';
 import CollectionsChipImg_3_2 from '@/assets/img/chips/3/2.png';
 import CollectionsChipImg_3_3 from '@/assets/img/chips/3/3.png';
 import CollectionsChipImg_3_4 from '@/assets/img/chips/3/4.png';
 import CollectionsChipImg_3_5 from '@/assets/img/chips/3/5.png';
+import CollectionsChipImg_3_6 from '@/assets/img/chips/3/6.png';
+import CollectionsChipImg_3_7 from '@/assets/img/chips/3/7.png';
+import CollectionsChipImg_3_8 from '@/assets/img/chips/3/8.png';
+import CollectionsChipImg_3_9 from '@/assets/img/chips/3/9.png';
+import CollectionsChipImg_3_10 from '@/assets/img/chips/3/10.png';
 import CollectionChipBackImg from '@/assets/img/chips/back.png';
 import useResize from '@/utils/hooks/useResize';
 
@@ -43,6 +58,11 @@ const CARD_LIST = [
     CollectionsChipImg_1_3,
     CollectionsChipImg_1_4,
     CollectionsChipImg_1_5,
+    CollectionsChipImg_1_6,
+    CollectionsChipImg_1_7,
+    CollectionsChipImg_1_8,
+    CollectionsChipImg_1_9,
+    CollectionsChipImg_1_10,
   ],
   [
     CollectionsChipImg_2_1,
@@ -50,6 +70,11 @@ const CARD_LIST = [
     CollectionsChipImg_2_3,
     CollectionsChipImg_2_4,
     CollectionsChipImg_2_5,
+    CollectionsChipImg_2_6,
+    CollectionsChipImg_2_7,
+    CollectionsChipImg_2_8,
+    CollectionsChipImg_2_9,
+    CollectionsChipImg_2_10,
   ],
   [
     CollectionsChipImg_3_1,
@@ -57,6 +82,11 @@ const CARD_LIST = [
     CollectionsChipImg_3_3,
     CollectionsChipImg_3_4,
     CollectionsChipImg_3_5,
+    CollectionsChipImg_3_6,
+    CollectionsChipImg_3_7,
+    CollectionsChipImg_3_8,
+    CollectionsChipImg_3_9,
+    CollectionsChipImg_3_10,
   ],
 ];
 
@@ -115,7 +145,7 @@ const Collections: FC<PropsType> = ({
         setSlideChangingState(true);
         setTimeout(() => {
           const buffer = [...slideImgIndexList];
-          buffer[activeSlideIndex] = (buffer[activeSlideIndex] + 1) % 5;
+          buffer[activeSlideIndex] = (buffer[activeSlideIndex] + 1) % CARD_LIST[activeSlideIndex].length;
           setSlideImgIndexList(buffer);
           setSlideChangingState(false);
         }, 500);
@@ -159,7 +189,7 @@ const Collections: FC<PropsType> = ({
                 in={!itemList[0].isOpening && activeItem !== 0}
                 timeout={500}
                 unmountOnExit
-                onEnter={memoUpdateItem(0, [false, true])}
+                onEnter={memoUpdateItem(0, [false, true], true)}
                 onExited={memoUpdateItem(0, [true, false])}
               >
                 {
@@ -192,7 +222,7 @@ const Collections: FC<PropsType> = ({
                 in={!itemList[1].isOpening && activeItem !== 1}
                 timeout={500}
                 unmountOnExit
-                onEnter={memoUpdateItem(1, [false, true])}
+                onEnter={memoUpdateItem(1, [false, true], true)}
                 onExited={memoUpdateItem(1, [true, false])}
               >
                 {
@@ -230,7 +260,7 @@ const Collections: FC<PropsType> = ({
                 in={!itemList[2].isOpening && activeItem !== 2}
                 timeout={500}
                 unmountOnExit
-                onEnter={memoUpdateItem(2, [false, true])}
+                onEnter={memoUpdateItem(2, [false, true], true)}
                 onExited={memoUpdateItem(2, [true, false])}
               >
                 {
@@ -388,15 +418,21 @@ const Collections: FC<PropsType> = ({
     }
   }
 
-  function updateItem(index: number, state: [boolean, boolean], needTimerToClose?: boolean) {
+  function updateItem(index: number, state: [boolean, boolean], isClosing = false) {
     return () => {
-      const buffer = [...itemList];
+      let buffer = [...itemList];
       buffer[index] = {
         ...buffer[index],
         isOpening: state[0],
         isClosing: state[1],
-        imgIndex: (buffer[index].imgIndex + 1) % 5,
       };
+
+      if (index === 2 && isClosing) {
+        buffer = buffer.map((item, itemIndex) => ({
+          ...item,
+          imgIndex: (buffer[itemIndex].imgIndex + 1) % CARD_LIST[itemIndex].length,
+        }));
+      }
 
       setItemIndexList(buffer);
 
