@@ -101,7 +101,7 @@ const Roadmap: FC<PropsType> = ({
                 <span>100%</span>
               </div>
               <p>
-                Unique tokens are going to be created too: 3D pagers, EroticCaps and many more. The future is closer than you think
+                Unique tokens are going to be created too: 3D Beeper, EroticCaps and many more. The future is closer than you think
               </p>
             </div>
           </div>
@@ -198,7 +198,7 @@ const Roadmap: FC<PropsType> = ({
                     <span>100%</span>
                   </div>
                   <p>
-                    Unique tokens are going to be created too: 3D pagers, EroticCaps and many more. The future is closer than you think
+                    Unique tokens are going to be created too: 3D Beeper, EroticCaps and many more. The future is closer than you think
                   </p>
                 </div>
               </div>
@@ -254,7 +254,7 @@ const Roadmap: FC<PropsType> = ({
                     <span>100%</span>
                   </div>
                   <p>
-                    Unique tokens are going to be created too: 3D pagers, EroticCaps and many more. The future is closer than you think
+                    Unique tokens are going to be created too: 3D Beeper, EroticCaps and many more. The future is closer than you think
                   </p>
                 </div>
               </div>
