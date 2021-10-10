@@ -49,7 +49,7 @@ const Facts: FC<PropsType> = ({
             First ArtCaps token owners will
             <br />
             {' '}
-            receive 3 exclusive materials,
+            receive 3 exclusive items
             <br />
             {' '}
             inspired by our artists
@@ -61,16 +61,16 @@ const Facts: FC<PropsType> = ({
             Each token is
             <br />
             {' '}
-            generated
+            randomly
             {' '}
             <br />
-            randomly
+            generated
           </p>
         </div>
       </div>
       <div className={classes.row}>
         <div className={classes.item}>
-          <p>Active community participation in life of ArtCaps</p>
+          <p>Active community participation</p>
         </div>
         <div className={classes.separator} />
         <div className={clsx(classes.item, classes.noLineMobile)}>
@@ -78,10 +78,7 @@ const Facts: FC<PropsType> = ({
             Blockchain storage
             <br />
             {' '}
-            with access possible
-            <br />
-            {' '}
-            only by the owner
+            accessible only by the owner
           </p>
         </div>
       </div>

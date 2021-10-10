@@ -87,7 +87,7 @@ const HiFromArtcaps: FC<PropsType> = ({
                 <div className={classes['slide_0--content']}>
                   <img src={HiFromArtCapsTextImg} alt="" />
                   <p>
-                    A unique NFT-token collection is already here! Are you ready? Connect your wallet to start the game! 30 000 unique tokens from various artists! Start your own collection!
+                    A unique NFT-token collection is already here! Over 30,000 unique tokens from multiple artists! Are you ready? Connect your wallet and start your own collection!
                   </p>
                 </div>
                 <div className={classes['slide_0--chips']}>
@@ -114,12 +114,12 @@ const HiFromArtcaps: FC<PropsType> = ({
             activeSlideIndex === 1 && (
               <>
                 <div className="">
-                  <p>Our team not only wants to show how unique and multifaceted the NFT universe is but also to introduce you to the world of interesting and young authors.</p>
+                  <p>Our team will introduce you to a new dimension of the metaverse and a whole world of interesting young creators.</p>
                   <img src={ArtCapsNftScreenImg} alt="" />
                 </div>
                 <div className="">
                   <img src={ArtCapsPrizeImg} alt="" />
-                  <p>As the project evolves we will launch cool events for our NFT-gang. You will be able to participate in competitions and receive awesome goodies from our artists.</p>
+                  <p>As the project evolves we will launch cool events for our NFT-gang. You will be able to participate in competitions and receive limited-edition goodies from our artists.</p>
                 </div>
               </>
             )
@@ -128,7 +128,7 @@ const HiFromArtcaps: FC<PropsType> = ({
             activeSlideIndex === 2 && (
               <>
                 <p>
-                  Here’s a bonus for y’all - be one of the first to make a purchase and get 4 items for the price of 1.
+                  Be among the first to make a purchase, and get 4 NFT chips for the price of 1.
                 </p>
                 <img src={ArtCapsChipSetImg} alt="" />
               </>
@@ -168,7 +168,7 @@ const HiFromArtcaps: FC<PropsType> = ({
                   {/* <img src={HiFromArtCapsChip2Img} alt="" /> */}
                 </div>
                 <p>
-                  A unique NFT-token collection is already here! Are you ready? Connect your wallet to start the game! 30 000 unique tokens from various artists! Start your own collection!
+                  A unique NFT-token collection is already here! Over 30,000 unique tokens from multiple artists! Are you ready? Connect your wallet and start your own collection!
                 </p>
               </>
             )
@@ -178,7 +178,7 @@ const HiFromArtcaps: FC<PropsType> = ({
               <>
                 <img src={ArtCapsNftScreenImg} alt="" />
                 <p>
-                  Our team not only wants to show how unique and multifaceted the NFT universe is but also to introduce you to the world of interesting and young authors.
+                  Our team will introduce you to a new dimension of the metaverse and a whole world of interesting young creators.
                 </p>
               </>
             )
@@ -188,7 +188,7 @@ const HiFromArtcaps: FC<PropsType> = ({
               <>
                 <img src={ArtCapsPrizeMobileImg} alt="" />
                 <p>
-                  As the project evolves we will launch cool events for our NFT-gang. You will be able to participate in competitions and receive awesome goodies from our artists.
+                  As the project evolves we will launch cool events for our NFT-gang. You will be able to participate in competitions and receive limited-edition goodies from our artists.
                 </p>
               </>
             )
@@ -198,7 +198,7 @@ const HiFromArtcaps: FC<PropsType> = ({
               <>
                 <img src={ArtCapsChipSetShortImg} alt="" />
                 <p className={classes.big}>
-                  Here’s a bonus for y’all – be one of the first to make a purchase and get 4 items for the price of 1.
+                  Be among the first to make a purchase, and get 4 NFT chips for the price of 1.
                 </p>
               </>
             )

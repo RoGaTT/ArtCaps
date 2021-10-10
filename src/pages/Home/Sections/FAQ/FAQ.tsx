@@ -33,22 +33,22 @@ const FAQ: FC<PropsType> = ({
       <img src={FAQTextImage} alt="" />
       <div>
         <span>What is ArtCaps?</span>
-        <p>It is a brand-new crypto project that is aimed to develop NFT-world and promote original artists and their art</p>
+        <p>A brand-new crypto project aimed to promote original artists and their art.</p>
       </div>
       <div>
         <span>How much does one token cost?</span>
-        <p>The Price is 0.06 EHT plus gas-fee.</p>
+        <p>0.06 EHT plus gas fee.</p>
       </div>
       <div>
         <span>What does “four-for-one” mean?</span>
-        <p>First 60% of customers will receive three exclusive NFT-materials created by ArtCaps artists.</p>
+        <p>First 60% of supporters will receive three exclusive NFT-materials created by ArtCaps’ artists.</p>
       </div>
       <div>
         <span>When will the sale begin?</span>
         <p>
-          NFT tokens will be available for sale really soon. Watch the timer! The exact date will be announced on our social media.
+          NFT tokens will be available for sale ASAP. Watch the timer! The exact date will be announced on our social media.
           <br />
-          Follow the news on our Twitter and Discord server.
+          Follow updates on our Twitter and Discord server.
         </p>
       </div>
       <div className={classes.socials}>

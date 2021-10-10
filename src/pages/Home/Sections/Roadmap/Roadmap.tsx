@@ -46,7 +46,7 @@ const Roadmap: FC<PropsType> = ({
               <span>0%</span>
             </div>
             <p>
-              The first 100 tokens will be created for competitions, gifts, and our team’s collection
+              The first 100 tokens will be given away as prizes, gifts and used to build our team’s collection
             </p>
           </div>
           {/* <div className={classes.done}>
@@ -54,7 +54,7 @@ const Roadmap: FC<PropsType> = ({
             <div className={clsx(classes.checkpoint, classes.green)}>
               <span>20%</span>
               <p>
-                NFT-token owners will get free exclusive gifts! T-shirts, caps and other unique stuff.
+                NFT-token owners will be given away free exclusive gifts: T-shirts, caps and other unique merch!
               </p>
             </div>
           </div> */}
@@ -69,7 +69,7 @@ const Roadmap: FC<PropsType> = ({
                 <span>20%</span>
               </div>
               <p>
-                NFT-token owners will get free exclusive gifts! T-shirts, caps and other unique stuff.
+                NFT-token owners will be given away free exclusive gifts: T-shirts, caps and other unique merch!
               </p>
             </div>
             <div className={clsx(classes.checkpoint)}>
@@ -77,7 +77,7 @@ const Roadmap: FC<PropsType> = ({
                 <span>40%</span>
               </div>
               <p>
-                10% from every sold token will be donated to charity
+                10% from every token sale goes to charity
               </p>
             </div>
             <div className={clsx(classes.checkpoint)}>
@@ -85,7 +85,7 @@ const Roadmap: FC<PropsType> = ({
                 <span>60%</span>
               </div>
               <p>
-                We are going to create a comic book and exclusive NFT-materials based on projects from ArtCaps leading artists, which will go straight to the first participants for free. Every NFT holder at this point will get exlcusive NFTs
+                Our first supporters will recieve a comic book and exclusive NFT-materials both based on projects by ArtCaps top artists. Every NFT holder at this point will get additional exclusive NFTs
               </p>
             </div>
             <div className={clsx(classes.checkpoint)}>
@@ -93,7 +93,7 @@ const Roadmap: FC<PropsType> = ({
                 <span>80%</span>
               </div>
               <p>
-                Another 10% from every sold token will be donated to charity
+                Another 10% from every token sale goes to charity
               </p>
             </div>
             <div className={clsx(classes.checkpoint)}>
@@ -101,7 +101,7 @@ const Roadmap: FC<PropsType> = ({
                 <span>100%</span>
               </div>
               <p>
-                Unique tokens are going to be created too: 3D Beeper, EroticCaps and many more. The future is closer than you think
+                New unique tokens: 3D Beeper, EroticCaps and many others. The future is closer than you think
               </p>
             </div>
           </div>
@@ -123,7 +123,7 @@ const Roadmap: FC<PropsType> = ({
                   <span>0%</span>
                 </div>
                 <p>
-                  The first 100 tokens will be created for competitions, gifts, and our team’s collection
+                  The first 100 tokens will be given away as prizes, gifts and used to build our team’s collection
                 </p>
               </div>
               <div className={classes.next}>
@@ -131,7 +131,7 @@ const Roadmap: FC<PropsType> = ({
                 <div onClick={memoOnClick(1)} className={clsx(classes.checkpoint)}>
                   <span>20%</span>
                   <p>
-                    NFT-token owners will get free exclusive gifts! T-shirts, caps and other unique stuff.
+                    NFT-token owners will be given away free exclusive gifts: T-shirts, caps and other unique merch!
                   </p>
                   <img src={RoadmapArrowYellowImg} alt="" />
                 </div>
@@ -141,7 +141,7 @@ const Roadmap: FC<PropsType> = ({
                 <div onClick={memoOnClick(2)} className={clsx(classes.checkpoint, classes.green)}>
                   <span>20%</span>
                   <p>
-                    NFT-token owners will get free exclusive gifts! T-shirts, caps and other unique stuff.
+                    NFT-token owners will be given away free exclusive gifts: T-shirts, caps and other unique merch!
                   </p>
                   <img src={RoadmapArrowGreenImg} alt="" />
                 </div>
@@ -166,7 +166,7 @@ const Roadmap: FC<PropsType> = ({
                     <span>20%</span>
                   </div>
                   <p>
-                    NFT-token owners will get free exclusive gifts! T-shirts, caps and other unique stuff.
+                    NFT-token owners will be given away free exclusive gifts: T-shirts, caps and other unique merch!
                   </p>
                 </div>
                 <div className={clsx(classes.checkpoint)}>
@@ -174,7 +174,7 @@ const Roadmap: FC<PropsType> = ({
                     <span>40%</span>
                   </div>
                   <p>
-                    10% from every sold token will be donated to charity
+                    10% from every token sale goes to charity
                   </p>
                 </div>
                 <div className={clsx(classes.checkpoint)}>
@@ -182,7 +182,7 @@ const Roadmap: FC<PropsType> = ({
                     <span>60%</span>
                   </div>
                   <p>
-                    We are going to create a comic book and exclusive NFT-materials based on projects from ArtCaps leading artists, which will go straight to the first participants for free. Every NFT holder at this point will get exlcusive NFTs
+                    Our first supporters will recieve a comic book and exclusive NFT-materials both based on projects by ArtCaps top artists. Every NFT holder at this point will get additional exclusive NFTs
                   </p>
                 </div>
                 <div className={clsx(classes.checkpoint)}>
@@ -190,7 +190,7 @@ const Roadmap: FC<PropsType> = ({
                     <span>80%</span>
                   </div>
                   <p>
-                    Another 10% from every sold token will be donated to charity
+                    Another 10% from every token sale goes to charity
                   </p>
                 </div>
                 <div className={clsx(classes.checkpoint)}>
@@ -198,7 +198,7 @@ const Roadmap: FC<PropsType> = ({
                     <span>100%</span>
                   </div>
                   <p>
-                    Unique tokens are going to be created too: 3D Beeper, EroticCaps and many more. The future is closer than you think
+                    New unique tokens: 3D Beeper, EroticCaps and many others. The future is closer than you think
                   </p>
                 </div>
               </div>
@@ -222,7 +222,7 @@ const Roadmap: FC<PropsType> = ({
                     <span>20%</span>
                   </div>
                   <p>
-                    NFT-token owners will get free exclusive gifts! T-shirts, caps and other unique stuff.
+                    NFT-token owners will be given away free exclusive gifts: T-shirts, caps and other unique merch!
                   </p>
                 </div>
                 <div className={clsx(classes.checkpoint, classes.green)}>
@@ -230,7 +230,7 @@ const Roadmap: FC<PropsType> = ({
                     <span>40%</span>
                   </div>
                   <p>
-                    10% from every sold token will be donated to charity
+                    10% from every token sale goes to charity
                   </p>
                 </div>
                 <div className={clsx(classes.checkpoint, classes.green)}>
@@ -238,7 +238,7 @@ const Roadmap: FC<PropsType> = ({
                     <span>60%</span>
                   </div>
                   <p>
-                    We are going to create a comic book and exclusive NFT-materials based on projects from ArtCaps leading artists, which will go straight to the first participants for free. Every NFT holder at this point will get exlcusive NFTs
+                    Our first supporters will recieve a comic book and exclusive NFT-materials both based on projects by ArtCaps top artists. Every NFT holder at this point will get additional exclusive NFTs
                   </p>
                 </div>
                 <div className={clsx(classes.checkpoint, classes.green)}>
@@ -246,7 +246,7 @@ const Roadmap: FC<PropsType> = ({
                     <span>80%</span>
                   </div>
                   <p>
-                    Another 10% from every sold token will be donated to charity
+                    Another 10% from every token sale goes to charity
                   </p>
                 </div>
                 <div className={clsx(classes.checkpoint, classes.green)}>
@@ -254,7 +254,7 @@ const Roadmap: FC<PropsType> = ({
                     <span>100%</span>
                   </div>
                   <p>
-                    Unique tokens are going to be created too: 3D Beeper, EroticCaps and many more. The future is closer than you think
+                    New unique tokens: 3D Beeper, EroticCaps and many others. The future is closer than you think
                   </p>
                 </div>
               </div>

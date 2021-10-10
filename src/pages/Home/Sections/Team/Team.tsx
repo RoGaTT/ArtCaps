@@ -58,7 +58,7 @@ const Team: FC<PropsType> = ({
                 <div className={classes['slide_0--title']}>
                   <img className={classes.noMobile} src={TeamTextImg} alt="" />
                   <p>
-                    ArtCaps is a community, which is passionate about crypto-art. We have nine team members, each making a special contribution to the project’s development. We believe, that NFTs are the NEW art, which will leave its mark in the modern world’s art.
+                    ArtCaps is a community passionate about crypto-art. Each of our nine team members makes a unique contribution to the project. We believe that NFTs are the art of the future and will leave a lasting mark on the art world.
                   </p>
                 </div>
                 <div className={classes['slide_0--items']}>

@@ -27,27 +27,27 @@ type Item = {
 
 const itemList: Item[] = [
   {
-    text: () => (<>Register your Ethereum-wallet on the Metamask platform</>),
+    text: () => (<>Register your Ethereum-wallet on Metamask</>),
     buttonState: MintButtonStateEnum.DEFAULT,
   },
   {
-    text: () => (<>Press &quot;MINT&quot; on the website’s main page</>),
+    text: () => (<>Press &quot;MINT&quot; on the ArtCaps main page</>),
     buttonState: MintButtonStateEnum.READY_SOON,
   },
   {
     text: () => (
       <>
-        Make 0.06 ETH plus gas fee payment
+        Make a payment of 0.06 ETH plus gas fee
       </>
     ),
     buttonState: MintButtonStateEnum.WITH_COINS,
   },
   {
-    text: () => (<>Wait for the transaction’s confirmation and go to the section &quot;My ArtCaps&quot;</>),
+    text: () => (<>Wait for the transaction to be confirmed and go to the section &quot;My ArtCaps&quot;</>),
     buttonState: MintButtonStateEnum.WAITING,
   },
   {
-    text: () => (<>Admire uniqueness and singularity of purchased ArtCaps Tokens</>),
+    text: () => (<>Admire your unique ArtCaps Tokens</>),
     buttonState: MintButtonStateEnum.FINAL,
   },
 ];
