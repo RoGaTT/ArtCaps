@@ -6,7 +6,7 @@ import clsx from 'clsx';
 
 import classes from './TeamCard.module.scss';
 
-import TwitterIcon from '@/assets/img/icons/twitter_extra.svg';
+import TwitterIcon from '@/assets/img/icons/twitter_extra.png';
 
 interface PropsType {
   // eslint-disable-next-line react/require-default-props
