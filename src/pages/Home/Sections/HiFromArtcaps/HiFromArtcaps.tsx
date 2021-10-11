@@ -87,7 +87,7 @@ const HiFromArtcaps: FC<PropsType> = ({
                 <div className={classes['slide_0--content']}>
                   <img src={HiFromArtCapsTextImg} alt="" />
                   <p>
-                    A unique NFT-token collection is already here! Over 30,000 unique tokens from multiple artists! Are you ready? Connect your wallet and start your own collection!
+                    A unique NFT collection is already here! Over 30,000 unique tokens from multiple artists! Are you ready? Connect your wallet and start your own collection!
                   </p>
                 </div>
                 <div className={classes['slide_0--chips']}>
@@ -168,7 +168,7 @@ const HiFromArtcaps: FC<PropsType> = ({
                   {/* <img src={HiFromArtCapsChip2Img} alt="" /> */}
                 </div>
                 <p>
-                  A unique NFT-token collection is already here! Over 30,000 unique tokens from multiple artists! Are you ready? Connect your wallet and start your own collection!
+                  A unique NFT collection is already here! Over 30,000 unique tokens from multiple artists! Are you ready? Connect your wallet and start your own collection!
                 </p>
               </>
             )

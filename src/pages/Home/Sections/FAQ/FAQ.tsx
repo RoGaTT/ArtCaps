@@ -46,7 +46,7 @@ const FAQ: FC<PropsType> = ({
       <div>
         <span>When will the sale begin?</span>
         <p>
-          NFT tokens will be available for sale ASAP. Watch the timer! The exact date will be announced on our social media.
+          NFTs will be available for sale ASAP. Watch the timer! The exact date will be announced on our social media.
           <br />
           Follow updates on our Twitter and Discord server.
         </p>

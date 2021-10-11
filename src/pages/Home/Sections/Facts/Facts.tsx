@@ -49,7 +49,7 @@ const Facts: FC<PropsType> = ({
             First ArtCaps token owners will
             <br />
             {' '}
-            receive 3 exclusive items
+            receive 3 special tokens
             <br />
             {' '}
             inspired by our artists

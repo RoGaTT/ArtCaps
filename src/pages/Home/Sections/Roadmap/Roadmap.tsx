@@ -54,7 +54,7 @@ const Roadmap: FC<PropsType> = ({
             <div className={clsx(classes.checkpoint, classes.green)}>
               <span>20%</span>
               <p>
-                NFT-token owners will be given away free exclusive gifts: T-shirts, caps and other unique merch!
+                NFT owners will be given away free exclusive gifts: T-shirts, caps and other unique merch!
               </p>
             </div>
           </div> */}
@@ -69,7 +69,7 @@ const Roadmap: FC<PropsType> = ({
                 <span>20%</span>
               </div>
               <p>
-                NFT-token owners will be given away free exclusive gifts: T-shirts, caps and other unique merch!
+                NFT owners will be given away free exclusive gifts: T-shirts, caps and other unique merch!
               </p>
             </div>
             <div className={clsx(classes.checkpoint)}>
@@ -85,7 +85,7 @@ const Roadmap: FC<PropsType> = ({
                 <span>60%</span>
               </div>
               <p>
-                Our first supporters will recieve a comic book and exclusive NFT-materials both based on projects by ArtCaps top artists. Every NFT holder at this point will get additional exclusive NFTs
+                Every NFT holder at this point will get 3 additional special tokens based on artists&apos; collections
               </p>
             </div>
             <div className={clsx(classes.checkpoint)}>
@@ -131,7 +131,7 @@ const Roadmap: FC<PropsType> = ({
                 <div onClick={memoOnClick(1)} className={clsx(classes.checkpoint)}>
                   <span>20%</span>
                   <p>
-                    NFT-token owners will be given away free exclusive gifts: T-shirts, caps and other unique merch!
+                    NFT owners will be given away free exclusive gifts: T-shirts, caps and other unique merch!
                   </p>
                   <img src={RoadmapArrowYellowImg} alt="" />
                 </div>
@@ -141,7 +141,7 @@ const Roadmap: FC<PropsType> = ({
                 <div onClick={memoOnClick(2)} className={clsx(classes.checkpoint, classes.green)}>
                   <span>20%</span>
                   <p>
-                    NFT-token owners will be given away free exclusive gifts: T-shirts, caps and other unique merch!
+                    NFT owners will be given away free exclusive gifts: T-shirts, caps and other unique merch!
                   </p>
                   <img src={RoadmapArrowGreenImg} alt="" />
                 </div>
@@ -166,7 +166,7 @@ const Roadmap: FC<PropsType> = ({
                     <span>20%</span>
                   </div>
                   <p>
-                    NFT-token owners will be given away free exclusive gifts: T-shirts, caps and other unique merch!
+                    NFT owners will be given away free exclusive gifts: T-shirts, caps and other unique merch!
                   </p>
                 </div>
                 <div className={clsx(classes.checkpoint)}>
@@ -182,7 +182,7 @@ const Roadmap: FC<PropsType> = ({
                     <span>60%</span>
                   </div>
                   <p>
-                    Our first supporters will recieve a comic book and exclusive NFT-materials both based on projects by ArtCaps top artists. Every NFT holder at this point will get additional exclusive NFTs
+                    Every NFT holder at this point will get 3 additional special tokens based on artists&apos; collections
                   </p>
                 </div>
                 <div className={clsx(classes.checkpoint)}>
@@ -222,7 +222,7 @@ const Roadmap: FC<PropsType> = ({
                     <span>20%</span>
                   </div>
                   <p>
-                    NFT-token owners will be given away free exclusive gifts: T-shirts, caps and other unique merch!
+                    NFT owners will be given away free exclusive gifts: T-shirts, caps and other unique merch!
                   </p>
                 </div>
                 <div className={clsx(classes.checkpoint, classes.green)}>
@@ -238,7 +238,7 @@ const Roadmap: FC<PropsType> = ({
                     <span>60%</span>
                   </div>
                   <p>
-                    Our first supporters will recieve a comic book and exclusive NFT-materials both based on projects by ArtCaps top artists. Every NFT holder at this point will get additional exclusive NFTs
+                    Every NFT holder at this point will get 3 additional special tokens based on artists&apos; collections
                   </p>
                 </div>
                 <div className={clsx(classes.checkpoint, classes.green)}>
