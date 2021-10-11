@@ -16,9 +16,9 @@ import TimerSecTextImg from '@/assets/img/texts/sec.svg';
 
 import FollowUsTextIcon from '@/assets/img/texts/follow_us.svg';
 import FollowArrowsRightIcon from '@/assets/img/icons/follow_arrows_right.svg';
-import TwitterIcon from '@/assets/img/icons/twitter.svg';
-import DiscordIcon from '@/assets/img/icons/discord.svg';
-import InstagramIcon from '@/assets/img/icons/instagram.svg';
+import TwitterIcon from '@/assets/img/icons/twitter.png';
+import DiscordIcon from '@/assets/img/icons/discord.png';
+import InstagramIcon from '@/assets/img/icons/instagram.png';
 
 import { RELEASE_DATE } from '@/const/time';
 import { addZeroToNumber } from '@/utils/functions/number';

@@ -7,8 +7,7 @@ import HiFromArtCapsTextImg from '@/assets/img/texts/hi_from_artcaps.svg';
 import ArtCapsNftScreenImg from '@/assets/img/hi_from_artcaps/nft_screen.svg';
 import ArtCapsPrizeImg from '@/assets/img/hi_from_artcaps/artcaps_prize.png';
 import ArtCapsChipSetImg from '@/assets/img/hi_from_artcaps/chip_set.png';
-import HiFromArtCapsChip1Img from '@/assets/img/chips/hi_from_artcaps_1.svg';
-import HiFromArtCapsChip2Img from '@/assets/img/chips/hi_from_artcaps_2.svg';
+import HiFromArtCapsChip1Img from '@/assets/img/chips/hi_from_artcaps_1.png';
 
 import TeamCardChipImage1 from '@/assets/img/chips/team/1.png';
 import TeamCardChipImage2 from '@/assets/img/chips/team/2.png';
@@ -22,7 +21,7 @@ import TeamCardChipImage9 from '@/assets/img/chips/team/9.png';
 
 import HiFromArtCapsTextMobileImg from '@/assets/img/texts/hi_from_artcaps_mobile.svg';
 import ArtCapsPrizeMobileImg from '@/assets/img/hi_from_artcaps/artcaps_prize_mobile.png';
-import ArtCapsChipSetShortImg from '@/assets/img/hi_from_artcaps/chip_set_short.svg';
+import ArtCapsChipSetShortImg from '@/assets/img/hi_from_artcaps/chip_set_short.png';
 import CollectionsTextImg from '@/assets/img/texts/collections.svg';
 import CollectionsChipImg_1_1 from '@/assets/img/chips/1/1.png';
 import CollectionsChipImg_1_2 from '@/assets/img/chips/1/2.png';
@@ -61,12 +60,12 @@ import TimerHoursTextImg from '@/assets/img/texts/hours.svg';
 import TimerMinTextImg from '@/assets/img/texts/min.svg';
 import TimerSecTextImg from '@/assets/img/texts/sec.svg';
 import TimerMsecTextImg from '@/assets/img/texts/msec.svg';
-import TimerChipIcon from '@/assets/img/chips/timer.svg';
+import FAQChipImage from '@/assets/img/chips/faq.png';
 import FollowUsTextIcon from '@/assets/img/texts/follow_us.svg';
 import FollowArrowsRightIcon from '@/assets/img/icons/follow_arrows_right.svg';
-import TwitterIcon from '@/assets/img/icons/twitter.svg';
-import DiscordIcon from '@/assets/img/icons/discord.svg';
-import InstagramIcon from '@/assets/img/icons/instagram.svg';
+import TwitterIcon from '@/assets/img/icons/twitter.png';
+import DiscordIcon from '@/assets/img/icons/discord.png';
+import InstagramIcon from '@/assets/img/icons/instagram.png';
 
 const HomePage: FC = () => (
   <>
@@ -76,7 +75,6 @@ const HomePage: FC = () => (
       <link rel="preload" as="image" href={ArtCapsPrizeImg} />
       <link rel="preload" as="image" href={ArtCapsChipSetImg} />
       <link rel="preload" as="image" href={HiFromArtCapsChip1Img} />
-      <link rel="preload" as="image" href={HiFromArtCapsChip2Img} />
       <link rel="preload" as="image" href={TeamCardChipImage1} />
       <link rel="preload" as="image" href={TeamCardChipImage2} />
       <link rel="preload" as="image" href={TeamCardChipImage3} />
@@ -127,7 +125,7 @@ const HomePage: FC = () => (
       <link rel="preload" as="image" href={TimerMinTextImg} />
       <link rel="preload" as="image" href={TimerSecTextImg} />
       <link rel="preload" as="image" href={TimerMsecTextImg} />
-      <link rel="preload" as="image" href={TimerChipIcon} />
+      <link rel="preload" as="image" href={FAQChipImage} />
       <link rel="preload" as="image" href={FollowUsTextIcon} />
       <link rel="preload" as="image" href={FollowArrowsRightIcon} />
       <link rel="preload" as="image" href={TwitterIcon} />

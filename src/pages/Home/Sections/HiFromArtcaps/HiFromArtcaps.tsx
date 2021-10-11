@@ -17,8 +17,8 @@ import ArtCapsNftScreenImg from '@/assets/img/hi_from_artcaps/nft_screen.svg';
 import ArtCapsPrizeImg from '@/assets/img/hi_from_artcaps/artcaps_prize.png';
 import ArtCapsPrizeMobileImg from '@/assets/img/hi_from_artcaps/artcaps_prize_mobile.png';
 import ArtCapsChipSetImg from '@/assets/img/hi_from_artcaps/chip_set.png';
-import ArtCapsChipSetShortImg from '@/assets/img/hi_from_artcaps/chip_set_short.svg';
-import HiFromArtCapsChip1Img from '@/assets/img/chips/hi_from_artcaps_1.svg';
+import ArtCapsChipSetShortImg from '@/assets/img/hi_from_artcaps/chip_set_short.png';
+import HiFromArtCapsChip1Img from '@/assets/img/chips/hi_from_artcaps_1.png';
 
 import CollectionsChipImg_1_4 from '@/assets/img/chips/1/4.png';
 import CollectionsChipImg_2_4 from '@/assets/img/chips/2/4.png';

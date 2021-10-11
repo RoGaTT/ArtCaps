@@ -7,11 +7,11 @@ import clsx from 'clsx';
 import classes from './FAQ.module.scss';
 import Container from '@/utils/components/Container';
 import FAQTextImage from '@/assets/img/texts/faq.svg';
-import FAQChipImage from '@/assets/img/chips/faq.svg';
+import FAQChipImage from '@/assets/img/chips/faq.png';
 
-import TwitterIcon from '@/assets/img/icons/twitter.svg';
-import DiscordIcon from '@/assets/img/icons/discord.svg';
-import InstagramIcon from '@/assets/img/icons/instagram.svg';
+import TwitterIcon from '@/assets/img/icons/twitter.png';
+import DiscordIcon from '@/assets/img/icons/discord.png';
+import InstagramIcon from '@/assets/img/icons/instagram.png';
 import { goBlank } from '@/utils/functions/dom';
 
 interface PropsType {
