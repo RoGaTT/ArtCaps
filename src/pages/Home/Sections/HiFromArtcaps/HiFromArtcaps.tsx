@@ -134,7 +134,7 @@ const HiFromArtcaps: FC<PropsType> = ({
             activeSlideIndex === 2 && (
               <>
                 <p>
-                  Be among the first to make a purchase, and get 3 more special NFT-materials chips for the price of 1.
+                  Be among the first to make a purchase, and get 3 more special NFT-materials for the price of 1.
                 </p>
                 <img src={ArtCapsChipSetImg} alt="" />
               </>
@@ -204,7 +204,7 @@ const HiFromArtcaps: FC<PropsType> = ({
               <>
                 <img src={ArtCapsChipSetShortImg} alt="" />
                 <p className={classes.big}>
-                  Be among the first to make a purchase, and get 3 more special NFT-materials chips for the price of 1.
+                  Be among the first to make a purchase, and get 3 more special NFT-materials for the price of 1.
                 </p>
               </>
             )
