@@ -46,7 +46,7 @@ const Roadmap: FC<PropsType> = ({
               <span>0%</span>
             </div>
             <p>
-              The first 100 tokens will be given away as prizes, gifts and used to build our team’s collection
+              We will generate he first 100 tokens, which will be used as prizes, gifts and used for building our team’s collection
             </p>
           </div>
           {/* <div className={classes.done}>
@@ -123,7 +123,7 @@ const Roadmap: FC<PropsType> = ({
                   <span>0%</span>
                 </div>
                 <p>
-                  The first 100 tokens will be given away as prizes, gifts and used to build our team’s collection
+                  We will generate he first 100 tokens, which will be used as prizes, gifts and used for building our team’s collection
                 </p>
               </div>
               <div className={classes.next}>

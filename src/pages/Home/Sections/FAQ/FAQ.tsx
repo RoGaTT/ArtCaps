@@ -41,7 +41,7 @@ const FAQ: FC<PropsType> = ({
       </div>
       <div>
         <span>What does “four-for-one” mean?</span>
-        <p>First 60% of supporters will receive three exclusive NFT-materials created by ArtCaps’ artists.</p>
+        <p>First 60% of supporters will receive three special NFT-materials created by ArtCaps’ artists.</p>
       </div>
       <div>
         <span>When will the sale begin?</span>

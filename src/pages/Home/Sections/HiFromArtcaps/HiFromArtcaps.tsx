@@ -23,6 +23,7 @@ import HiFromArtCapsChip1Img from '@/assets/img/chips/hi_from_artcaps_1.png';
 import CollectionsChipImg_1_4 from '@/assets/img/chips/1/4.png';
 import CollectionsChipImg_2_4 from '@/assets/img/chips/2/4.png';
 import CollectionsChipImg_3_4 from '@/assets/img/chips/3/4.png';
+import useResize from '@/utils/hooks/useResize';
 
 const CHIP_LIST = [
   CollectionsChipImg_1_4,
@@ -44,6 +45,8 @@ const HiFromArtcaps: FC<PropsType> = ({
   const [activeSlideChipIndex, setActiveSlideChipIndex] = useState(0);
   const [isSlideChipChanging, setSlideChipChanging] = useState(false);
 
+  const size = useResize();
+
   const memoGetAnimationClass = useCallback(getAnimationClass, [lastWaitingDirection]);
   const memoOnSwitch = useCallback(onSwitch, []);
   const memoOnClick = useCallback(onClick, [activeSlideIndex, waitingDirection, memoOnSwitch]);
@@ -52,16 +55,19 @@ const HiFromArtcaps: FC<PropsType> = ({
   const memoSetNextActiveSlideChip = useCallback(setNextActiveSlideChip, [activeSlideChipIndex]);
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      setSlideChipChanging(true);
-      setTimeout(() => {
-        setActiveSlideIndex(activeSlideIndex % CHIP_LIST.length);
-      }, 500);
-    }, 4000);
+    let interval: NodeJS.Timer | null = null;
+    if (size.width > 450) {
+      interval = setInterval(() => {
+        setSlideChipChanging(true);
+        setTimeout(() => {
+          setActiveSlideIndex(activeSlideIndex % CHIP_LIST.length);
+        }, 500);
+      }, 4000);
+    }
     return () => {
-      clearInterval(interval);
+      if (interval) clearInterval(interval);
     };
-  }, [activeSlideIndex, memoOnClick]);
+  }, [activeSlideIndex, memoOnClick, size.width]);
 
   return (
     <Container
@@ -128,7 +134,7 @@ const HiFromArtcaps: FC<PropsType> = ({
             activeSlideIndex === 2 && (
               <>
                 <p>
-                  Be among the first to make a purchase, and get 4 NFT chips for the price of 1.
+                  Be among the first to make a purchase, and get 3 more special NFT-materials chips for the price of 1.
                 </p>
                 <img src={ArtCapsChipSetImg} alt="" />
               </>
@@ -198,7 +204,7 @@ const HiFromArtcaps: FC<PropsType> = ({
               <>
                 <img src={ArtCapsChipSetShortImg} alt="" />
                 <p className={classes.big}>
-                  Be among the first to make a purchase, and get 4 NFT chips for the price of 1.
+                  Be among the first to make a purchase, and get 3 more special NFT-materials chips for the price of 1.
                 </p>
               </>
             )
