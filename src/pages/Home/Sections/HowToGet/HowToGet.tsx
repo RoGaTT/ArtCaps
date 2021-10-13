@@ -27,7 +27,7 @@ type Item = {
 
 const itemList: Item[] = [
   {
-    text: () => (<>Register your Ethereum-wallet on Metamask</>),
+    text: () => (<>Connect your MetaMask wallet to website</>),
     buttonState: MintButtonStateEnum.DEFAULT,
   },
   {

@@ -41,7 +41,7 @@ const Facts: FC<PropsType> = ({
       </div>
       <div className={clsx(classes.row, classes.triple)}>
         <div className={classes.item}>
-          <p>More than 600 attributes are fully handmade</p>
+          <p>More than 540 attributes are fully handmade</p>
         </div>
         <div className={classes.separator} />
         <div className={clsx(classes.item, classes.big)}>
