@@ -116,6 +116,8 @@ const Button: FC<PropsType> = ({
 
   function setTimeData() {
     const diff = new Date(+RELEASE_DATE - (+(new Date())));
+    console.log(RELEASE_DATE);
+    diff.setDate(diff.getDate() - 1);
     const diffMiliseconds = +diff;
     if (diffMiliseconds < 0) {
       setTime({
@@ -128,7 +130,8 @@ const Button: FC<PropsType> = ({
       if (timerIntervalRef.current) clearInterval(timerIntervalRef.current);
     } else {
       setTime({
-        days: Math.floor(diffMiliseconds / (1000 * 60 * 60 * 24)),
+        // days: Math.ceil(diffMiliseconds / (1000 * 60 * 60 * 24)),
+        days: diff.getDate(),
         hours: diff.getHours(),
         minutes: diff.getMinutes(),
         seconds: diff.getSeconds(),
