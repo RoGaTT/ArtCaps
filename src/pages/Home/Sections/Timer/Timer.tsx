@@ -117,6 +117,7 @@ const Button: FC<PropsType> = ({
   function setTimeData() {
     const diff = new Date(+RELEASE_DATE - (+(new Date())));
     console.log(RELEASE_DATE);
+    console.log(new Date());
     diff.setDate(diff.getDate() - 1);
     const diffMiliseconds = +diff;
     if (diffMiliseconds < 0) {
