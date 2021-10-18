@@ -4,10 +4,12 @@ import React, {
 import { Helmet } from 'react-helmet-async';
 import { Switch, Route } from 'react-router-dom';
 import '@/assets/styles/index.scss';
+import { Ripple } from 'react-spinners-css';
 import Layout from '@/utils/components/Layout';
 import ROUTES from '@/const/routes';
 
 const HomePage = lazy(() => import('@/pages/Home'));
+const EastersPage = lazy(() => import('@/pages/Easters'));
 
 const App: FC = () => (
   <>
@@ -25,15 +27,18 @@ const App: FC = () => (
           display: 'flex',
           flexDirection: 'row',
           justifyContent: 'center',
-          marginTop: '50vh',
+          alignItems: 'center',
+          height: '100vh',
+          width: '100vw',
+          backgroundColor: '#5E0CC3',
         }}
         >
-          {/* <LoadingCircle isLoading size={64} /> */}
-          LOADING
+          <Ripple color="#FDCE0A" />
         </div>
-        )}
+          )}
       >
         <Switch>
+          <Route path={ROUTES.EASTERS} exact component={EastersPage} />
           <Route path={ROUTES.HOME} exact component={HomePage} />
         </Switch>
       </Suspense>
