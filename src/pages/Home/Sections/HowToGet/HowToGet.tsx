@@ -13,7 +13,7 @@ import classes from './HowToGet.module.scss';
 import Container from '@/utils/components/Container';
 
 import HowToGetTextImg from '@/assets/img/texts/how_to_get.svg';
-import ScrollMeImg from '@/assets/img/icons/scroll_me.svg';
+import ScrollMeImg from '@/assets/img/icons/scroll_me.png';
 import MintButton, { MintButtonStateEnum } from '@/ui/MintButton/MintButton';
 
 interface PropsType {

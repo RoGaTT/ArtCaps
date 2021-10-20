@@ -1,6 +1,6 @@
 /* eslint-disable react/require-default-props */
 import React, {
-  FC, useMemo,
+  FC, useCallback, useMemo, useRef, useState,
 } from 'react';
 import clsx from 'clsx';
 
@@ -69,12 +69,17 @@ const MintButton: FC<PropsType> = ({
   type = MintButtonStateEnum.DEFAULT,
   className,
 }) => {
+  const animationEndTimeout = useRef<NodeJS.Timer | null>(null);
   const memoConfig = useMemo(() => ButtonConfigDict[type], [type]);
+  const [isAnimation, setAnimationState] = useState<boolean>(false);
+
+  const memoStartEasterAnimation = useCallback(startEasterAnimation, [type]);
 
   return (
     <button
       type="button"
-      className={clsx(classes.root, className)}
+      className={clsx(classes.root, className, 'animated__animate', !isAnimation ? `animate__pulse ${classes.infinite}` : 'animate__tada')}
+      onClick={memoStartEasterAnimation}
     >
       <img className={classes.img} src={memoConfig.img} alt="" />
       {
@@ -89,6 +94,18 @@ const MintButton: FC<PropsType> = ({
       }
     </button>
   );
+
+  function startEasterAnimation(): void {
+    if (type !== MintButtonStateEnum.DEFAULT) return;
+    if (animationEndTimeout.current) clearTimeout(animationEndTimeout.current);
+    setAnimationState(false);
+    setTimeout(() => {
+      setAnimationState(true);
+      animationEndTimeout.current = setTimeout(() => {
+        setAnimationState(false);
+      }, 1000);
+    }, 0);
+  }
 };
 
 export default MintButton;
