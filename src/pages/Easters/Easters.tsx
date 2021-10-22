@@ -51,7 +51,7 @@ const Easters: React.FC = () => {
         <div className={classes.borderBlock}>
           <p>Each few days we’ll notify you about the Easter egg hunting event and give you all instructions on how to find them.</p>
         </div>
-        <div className={clsx(classes.block, classes.noBg)}>
+        <div className={clsx(classes.block, classes.noBg, classes.mobileReverse)}>
           <div className={classes['block-img']}>
             <img src={CrownDiscordImg} alt="" />
           </div>
@@ -67,7 +67,7 @@ const Easters: React.FC = () => {
             <p>So here comes an example of our easter egg.</p>
           </div>
         </div>
-        <div className={classes.block}>
+        <div className={clsx(classes.block, classes.mobileReverse)}>
           <div className={classes['block-text']}>
             <p className={classes.bold}>Look at this cap carefully. There’s one easter here. All you need to do is simply click on the eye and you will get a notification of successfully discovering an easter egg.</p>
           </div>
