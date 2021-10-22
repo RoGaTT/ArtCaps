@@ -116,6 +116,16 @@
       text-transform: uppercase;
       letter-spacing: 5px;
     }
+    & > div {
+      position: relative;
+      & > div {
+        top: 0;
+        height: 100%;
+        right: 38%;
+        width: 38%;
+        position: absolute;
+      }
+    }
   }
 }
 

@@ -3,7 +3,7 @@
 /* eslint-disable max-len */
 /* eslint-disable react/require-default-props */
 import React, {
-  FC, useCallback, useState,
+  FC, useCallback, useContext, useState,
 } from 'react';
 import clsx from 'clsx';
 
@@ -21,6 +21,7 @@ import TeamCardChipImage6 from '@/assets/img/chips/team/6.png';
 import TeamCardChipImage7 from '@/assets/img/chips/team/7.png';
 import TeamCardChipImage8 from '@/assets/img/chips/team/8.png';
 import TeamCardChipImage9 from '@/assets/img/chips/team/9.png';
+import EastersContext, { EasterTypeEnum } from '@/context/easters';
 
 interface PropsType extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   className?: string;
@@ -34,11 +35,14 @@ const Team: FC<PropsType> = ({
   const [lastWaitingDirection, setLastWaitingDirection] = useState<'left' | 'right' | null>(null);
   const [touchStart, setTouchStart] = useState<null | number>(null);
 
+  const eastersContext = useContext(EastersContext);
+
   const memoGetAnimationClass = useCallback(getAnimationClass, [lastWaitingDirection]);
   const memoOnSwitch = useCallback(onSwitch, []);
   const memoOnClick = useCallback(onClick, [activeSlideIndex, waitingDirection, memoOnSwitch]);
   const memoOnTouchStart = useCallback(onTouchStart, []);
   const memoOnTouchEnd = useCallback(onTouchEnd, [activeSlideIndex, memoOnClick, touchStart]);
+  const memoActivateEaster = useCallback(activateEaster, [eastersContext]);
 
   return (
     <Container
@@ -67,6 +71,8 @@ const Team: FC<PropsType> = ({
                     nickname="Xcurseovoid"
                     role={() => (<>Boss</>)}
                     twitterBio="Xcurseovoid1"
+                    isEaster
+                    onEasterClick={memoActivateEaster}
                   />
                   <TeamCard
                     img={TeamCardChipImage2}
@@ -172,6 +178,10 @@ const Team: FC<PropsType> = ({
     </Container>
   );
 
+  function activateEaster(): void {
+    if (!eastersContext.isModeActive || eastersContext.easterList.includes(EasterTypeEnum.BOSS_TWITTER)) return;
+    eastersContext.activateEaster(EasterTypeEnum.BOSS_TWITTER);
+  }
   function onTouchStart(e: React.TouchEvent<HTMLDivElement>) {
     setTouchStart(e.touches[0].clientX);
   }

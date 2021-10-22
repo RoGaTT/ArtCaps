@@ -4,7 +4,7 @@
 /* eslint-disable max-len */
 /* eslint-disable react/require-default-props */
 import React, {
-  FC, useCallback, useEffect, useState,
+  FC, useCallback, useContext, useEffect, useState,
 } from 'react';
 import clsx from 'clsx';
 
@@ -24,6 +24,7 @@ import CollectionsChipImg_1_4 from '@/assets/img/chips/1/4.png';
 import CollectionsChipImg_2_4 from '@/assets/img/chips/2/4.png';
 import CollectionsChipImg_3_4 from '@/assets/img/chips/3/4.png';
 import useResize from '@/utils/hooks/useResize';
+import EastersContext, { EasterTypeEnum } from '@/context/easters';
 
 const CHIP_LIST = [
   CollectionsChipImg_1_4,
@@ -46,6 +47,7 @@ const HiFromArtcaps: FC<PropsType> = ({
   const [isSlideChipChanging, setSlideChipChanging] = useState(false);
 
   const size = useResize();
+  const eastersContext = useContext(EastersContext);
 
   const memoGetAnimationClass = useCallback(getAnimationClass, [lastWaitingDirection]);
   const memoOnSwitch = useCallback(onSwitch, []);
@@ -53,6 +55,7 @@ const HiFromArtcaps: FC<PropsType> = ({
   const memoOnTouchStart = useCallback(onTouchStart, []);
   const memoOnTouchEnd = useCallback(onTouchEnd, [activeSlideIndex, memoOnClick, touchStart]);
   const memoSetNextActiveSlideChip = useCallback(setNextActiveSlideChip, [activeSlideChipIndex]);
+  const memoActivateEaster = useCallback(activateEaster, [eastersContext]);
 
   useEffect(() => {
     let interval: NodeJS.Timer | null = null;
@@ -136,7 +139,10 @@ const HiFromArtcaps: FC<PropsType> = ({
                 <p>
                   Be among the first to make a purchase, and get 3 more special NFT-materials for the price of 1.
                 </p>
-                <img src={ArtCapsChipSetImg} alt="" />
+                <div className={classes.easter}>
+                  <img src={ArtCapsChipSetImg} alt="" />
+                  <div onClick={memoActivateEaster} />
+                </div>
               </>
             )
           }
@@ -252,6 +258,11 @@ const HiFromArtcaps: FC<PropsType> = ({
       </div>
     </Container>
   );
+
+  function activateEaster(): void {
+    if (!eastersContext.isModeActive || eastersContext.easterList.includes(EasterTypeEnum.CHIP_SET_ITEM)) return;
+    eastersContext.activateEaster(EasterTypeEnum.CHIP_SET_ITEM);
+  }
 
   function setNextActiveSlideChip() {
     setActiveSlideChipIndex((activeSlideChipIndex + 1) % CHIP_LIST.length);

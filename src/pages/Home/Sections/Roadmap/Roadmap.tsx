@@ -3,7 +3,7 @@
 /* eslint-disable max-len */
 /* eslint-disable react/require-default-props */
 import React, {
-  FC, useCallback, useState,
+  FC, useCallback, useContext, useState,
 } from 'react';
 import clsx from 'clsx';
 
@@ -12,6 +12,7 @@ import Container from '@/utils/components/Container';
 
 import RoadmapTextImg from '@/assets/img/texts/roadmap.svg';
 import RoadmapArrowYellowImg from '@/assets/img/icons/roadmap_arrow_yellow.svg';
+import EastersContext, { EasterTypeEnum } from '@/context/easters';
 
 interface PropsType {
   className?: string;
@@ -25,11 +26,14 @@ const Roadmap: FC<PropsType> = ({
   const [lastWaitingDirection, setLastWaitingDirection] = useState<'left' | 'right' | null>(null);
   const [touchStart, setTouchStart] = useState<null | number>(null);
 
+  const eastersContext = useContext(EastersContext);
+
   const memoOnTouchStart = useCallback(onTouchStart, []);
   const memoGetAnimationClass = useCallback(getAnimationClass, [lastWaitingDirection]);
   const memoOnSwitch = useCallback(onSwitch, []);
   const memoOnClick = useCallback(onClick, [activeSlideIndex, waitingDirection, memoOnSwitch]);
   const memoOnTouchEnd = useCallback(onTouchEnd, [activeSlideIndex, memoOnClick, touchStart]);
+  const memoActivateEaster = useCallback(activateEaster, [eastersContext]);
 
   return (
     <Container
@@ -98,7 +102,7 @@ const Roadmap: FC<PropsType> = ({
             </div>
             <div className={clsx(classes.checkpoint)}>
               <div>
-                <span>100%</span>
+                <span onClick={memoActivateEaster}>100%</span>
               </div>
               <p>
                 New unique tokens: 3D Beeper, EroticCaps and many others. The future is closer than you think
@@ -195,7 +199,7 @@ const Roadmap: FC<PropsType> = ({
                 </div>
                 <div className={clsx(classes.checkpoint)}>
                   <div>
-                    <span>100%</span>
+                    <span onClick={memoActivateEaster}>100%</span>
                   </div>
                   <p>
                     New unique tokens: 3D Beeper, EroticCaps and many others. The future is closer than you think
@@ -251,7 +255,7 @@ const Roadmap: FC<PropsType> = ({
                 </div>
                 <div className={clsx(classes.checkpoint, classes.green)}>
                   <div>
-                    <span>100%</span>
+                    <span onClick={memoActivateEaster}>100%</span>
                   </div>
                   <p>
                     New unique tokens: 3D Beeper, EroticCaps and many others. The future is closer than you think
@@ -293,6 +297,11 @@ const Roadmap: FC<PropsType> = ({
       </div>
     </Container>
   );
+
+  function activateEaster(): void {
+    if (!eastersContext.isModeActive || eastersContext.easterList.includes(EasterTypeEnum.ROADMAP_FINAL)) return;
+    eastersContext.activateEaster(EasterTypeEnum.ROADMAP_FINAL);
+  }
 
   function onTouchStart(e: React.TouchEvent<HTMLDivElement>) {
     setTouchStart(e.touches[0].clientX);

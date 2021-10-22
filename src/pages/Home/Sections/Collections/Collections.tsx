@@ -5,7 +5,7 @@
 /* eslint-disable camelcase */
 /* eslint-disable react/require-default-props */
 import React, {
-  FC, useCallback, useEffect, useState,
+  FC, useCallback, useContext, useEffect, useState,
 } from 'react';
 import clsx from 'clsx';
 
@@ -47,6 +47,7 @@ import CollectionsChipImg_3_9 from '@/assets/img/chips/3/9.png';
 import CollectionsChipImg_3_10 from '@/assets/img/chips/3/10.png';
 import CollectionChipBackImg from '@/assets/img/chips/back.png';
 import useResize from '@/utils/hooks/useResize';
+import EastersContext, { EasterTypeEnum } from '@/context/easters';
 
 interface PropsType {
   className?: string;
@@ -127,6 +128,7 @@ const Collections: FC<PropsType> = ({
   const [isSlideChanging, setSlideChangingState] = useState<boolean>(false);
 
   const size = useResize();
+  const eastersContext = useContext(EastersContext);
 
   const memoUpdateItem = useCallback(updateItem, [itemList]);
   const memoGetAnimationClass = useCallback(getAnimationClass, [lastWaitingDirection]);
@@ -134,6 +136,7 @@ const Collections: FC<PropsType> = ({
   const memoOnClick = useCallback(onClick, [activeSlideIndex, waitingDirection, memoOnSwitch]);
   const memoOnTouchStart = useCallback(onTouchStart, []);
   const memoOnTouchEnd = useCallback(onTouchEnd, [activeSlideIndex, memoOnClick, touchStart]);
+  const memoActivateEaster = useCallback(activateEaster, [eastersContext]);
 
   useEffect(() => {
     let interval: NodeJS.Timer | null = null;
@@ -240,7 +243,11 @@ const Collections: FC<PropsType> = ({
                   {' '}
                   Kids
                 </h6>
-                <p>GPOT</p>
+                <p>
+                  GP
+                  <span onClick={memoActivateEaster}>O</span>
+                  T
+                </p>
               </div>
             </div>
             <div className={classes['cards-item']}>
@@ -337,7 +344,11 @@ const Collections: FC<PropsType> = ({
                     {' '}
                     Kids
                   </h6>
-                  <p>GPOT</p>
+                  <p>
+                    GP
+                    <span onClick={memoActivateEaster}>O</span>
+                    T
+                  </p>
                 </div>
               </>
             )
@@ -402,6 +413,10 @@ const Collections: FC<PropsType> = ({
     </Container>
   );
 
+  function activateEaster(): void {
+    if (!eastersContext.isModeActive || eastersContext.easterList.includes(EasterTypeEnum.COLLECTION_LETTER)) return;
+    eastersContext.activateEaster(EasterTypeEnum.COLLECTION_LETTER);
+  }
   function onTouchStart(e: React.TouchEvent<HTMLDivElement>) {
     setTouchStart(e.touches[0].clientX);
   }
