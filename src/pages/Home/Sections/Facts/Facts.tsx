@@ -75,10 +75,7 @@ const Facts: FC<PropsType> = ({
         <div className={classes.separator} />
         <div className={clsx(classes.item, classes.noLineMobile)}>
           <p>
-            Blockchain storage
-            <br />
-            {' '}
-            accessible only by the owner
+            Chance to win an extra NFT in our unique ArtCaps Game
           </p>
         </div>
       </div>

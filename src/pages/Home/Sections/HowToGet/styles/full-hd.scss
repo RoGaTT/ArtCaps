@@ -23,6 +23,10 @@
     margin-top: 80px;
     min-height: 170px;
     position: relative;
+    & > button {
+      animation-iteration-count: initial !important;
+      animation-duration: 0.7s !important;
+    }
   }
 }
 

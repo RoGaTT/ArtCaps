@@ -51,6 +51,12 @@ const FAQ: FC<PropsType> = ({
           Follow updates on our Twitter and Discord server.
         </p>
       </div>
+      <div>
+        <span>What is artcaps game?</span>
+        <p>
+          It’s a chance to win an extra NFT in our unique caps game. Every Artcapser can play right after Mint! Don&apos;t miss your chance, participation is free!
+        </p>
+      </div>
       <div className={classes.socials}>
         <img onClick={goBlank('https://twitter.com/ar1caps')} src={TwitterIcon} alt="" />
         <img onClick={goBlank('https://discord.gg/xuTPCQRtfq')} src={DiscordIcon} alt="" />

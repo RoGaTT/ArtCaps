@@ -1,6 +1,7 @@
+/* eslint-disable max-len */
 /* eslint-disable react/require-default-props */
 import React, {
-  FC, useCallback, useContext, useMemo, useRef, useState,
+  FC, useCallback, useContext, useEffect, useMemo, useRef, useState,
 } from 'react';
 import clsx from 'clsx';
 
@@ -83,11 +84,14 @@ const MintButton: FC<PropsType> = ({
 
   const memoStartEasterAnimation = useCallback(startEasterAnimation, [
     clickCounter, easterContext.easterList, easterContext.isModeActive, type]);
+  useEffect(() => {
+    console.log('animationEndTimeout');
+  }, [clickCounter, easterContext.easterList, easterContext.isModeActive, type, openModal, isAnimation, animationEndTimeout]);
 
   return (
     <button
       type="button"
-      className={clsx(classes.root, className, 'animated__animate', !isAnimation ? `animate__pulse ${classes.infinite}` : 'animate__tada')}
+      className={clsx(classes.root, 'animated__animate', !isAnimation ? `animate__pulse ${classes.infinite}` : 'animate__tada', className)}
       onClick={memoStartEasterAnimation}
     >
       <img className={classes.img} src={memoConfig.img} alt="" />
@@ -107,7 +111,7 @@ const MintButton: FC<PropsType> = ({
   function startEasterAnimation(): void {
     if (
       type !== MintButtonStateEnum.DEFAULT
-      || easterContext.isModeActive
+      || !easterContext.isModeActive
       || easterContext.easterList.includes(EasterTypeEnum.MINT_BUTTON)
     ) return;
 
