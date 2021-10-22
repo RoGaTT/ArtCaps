@@ -120,7 +120,7 @@ const HiFromArtcaps: FC<PropsType> = ({
             activeSlideIndex === 1 && (
               <>
                 <div className="">
-                  <p>Our team will introduce you to a new dimension of the metaverse and a whole world of interesting young creators.</p>
+                  <p>Win an extra NFT in our unique ArtCaps Game. You can play right after Mint! Don&apos;t miss your chance, participation is free!</p>
                   <img src={ArtCapsNftScreenImg} alt="" />
                 </div>
                 <div className="">
@@ -184,7 +184,7 @@ const HiFromArtcaps: FC<PropsType> = ({
               <>
                 <img src={ArtCapsNftScreenImg} alt="" />
                 <p>
-                  Our team will introduce you to a new dimension of the metaverse and a whole world of interesting young creators.
+                  Win an extra NFT in our unique ArtCaps Game. You can play right after Mint! Don&apos;t miss your chance, participation is free!
                 </p>
               </>
             )
