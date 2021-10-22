@@ -172,10 +172,10 @@ const HiFromArtcaps: FC<PropsType> = ({
                     onExited={memoSetNextActiveSlideChip}
                   >
                     {
-                    (state) => (
-                      <img src={CHIP_LIST[activeSlideChipIndex]} className={classes[state]} alt="" />
-                    )
-                  }
+                      (state) => (
+                        <img src={CHIP_LIST[activeSlideChipIndex]} className={classes[state]} alt="" />
+                      )
+                    }
                   </Transition>
                   {/* <img src={HiFromArtCapsChip2Img} alt="" /> */}
                 </div>

@@ -24,3 +24,31 @@
     }
   }
 }
+
+.easterPopover {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 10000;
+  width: 30%;
+  max-width: 441px;
+  & > img {
+    width: 100%;
+  }
+}
+
+.easterEgg {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 20%;
+  min-width: 40px;
+  z-index: 10000;
+  cursor: pointer;
+  max-width: 100px;
+  animation-iteration-count: infinite;
+  animation-duration: 2s;
+  & > img {
+    width: 100%;
+  }
+}

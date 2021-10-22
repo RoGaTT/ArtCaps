@@ -1,7 +1,7 @@
 /* eslint-disable max-len */
 /* eslint-disable react/require-default-props */
 import React, {
-  FC, useCallback, useContext, useEffect, useMemo, useRef, useState,
+  FC, useCallback, useContext, useMemo, useRef, useState,
 } from 'react';
 import clsx from 'clsx';
 
@@ -19,7 +19,6 @@ import WaitingStateButtonImg from '@/assets/img/mint/waiting.svg';
 import WaitingStateButtonExtraImg from '@/assets/img/mint/waiting_extra.svg';
 import FinalStateButtonImg from '@/assets/img/mint/final.svg';
 import FinalStateButtonExtraImg from '@/assets/img/mint/final_extra.svg';
-import ModalContext from '@/context/modal';
 import EastersContext, { EasterTypeEnum } from '@/context/easters';
 import ROUTES from '@/const/routes';
 
@@ -83,9 +82,7 @@ const MintButton: FC<PropsType> = ({
   const memoConfig = useMemo(() => ButtonConfigDict[type], [type]);
   const [isAnimation, setAnimationState] = useState<boolean>(false);
 
-  const { openModal } = useContext(ModalContext);
-
-  const memoStartEasterAnimation = useCallback(startEasterAnimation, [clickCounter, easterContext.easterList, easterContext.isModeActive, history, type]);
+  const memoStartEasterAnimation = useCallback(startEasterAnimation, [clickCounter, easterContext, history, type]);
 
   return (
     <button

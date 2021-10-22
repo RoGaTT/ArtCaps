@@ -16,8 +16,7 @@ import CrownImg from '@/assets/img/crown.png';
 import TwitterIcon from '@/assets/img/icons/twitter_yellow.png';
 import DiscordIcon from '@/assets/img/icons/discord_yellow.png';
 import InstagramIcon from '@/assets/img/icons/instagram_yellow.png';
-import EastersContext, { EasterTypeEnum } from '@/context/easters';
-import { ModalTypeEnum } from '@/context/modal';
+import EastersContext from '@/context/easters';
 
 const Easters: React.FC = () => {
   const history = useHistory();
