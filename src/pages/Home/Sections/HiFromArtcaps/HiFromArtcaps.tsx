@@ -208,7 +208,10 @@ const HiFromArtcaps: FC<PropsType> = ({
           {
             activeSlideIndex === 3 && (
               <>
-                <img src={ArtCapsChipSetShortImg} alt="" />
+                <div className={classes.easter}>
+                  <div onClick={memoActivateEaster} />
+                  <img src={ArtCapsChipSetShortImg} alt="" />
+                </div>
                 <p className={classes.big}>
                   Be among the first to make a purchase, and get 3 more special NFT-materials for the price of 1.
                 </p>

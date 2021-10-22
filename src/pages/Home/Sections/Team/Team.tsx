@@ -71,7 +71,7 @@ const Team: FC<PropsType> = ({
                     nickname="Xcurseovoid"
                     role={() => (<>Boss</>)}
                     twitterBio="Xcurseovoid1"
-                    isEaster
+                    isEaster={!eastersContext.easterList.includes(EasterTypeEnum.BOSS_TWITTER)}
                     onEasterClick={memoActivateEaster}
                   />
                   <TeamCard

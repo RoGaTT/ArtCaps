@@ -12,6 +12,7 @@ import ModalContext, { ModalType, ModalTypeEnum, ModalTypeOptions } from '@/cont
 import MODAL_CONFIG from '@/const/modal_config';
 import EastersContext, { EasterTypeEnum } from '@/context/easters';
 import { CookiesEnum } from '@/types/cookies';
+import { RELEASE_DATE } from '@/const/time';
 
 type PropsType = {
     children: React.ReactNode
@@ -34,11 +35,17 @@ const Layout: FC<PropsType> = ({ children }) => {
   const handleActivateMode = useCallback(activateMode, []);
 
   useEffect(() => {
-    setCookie(CookiesEnum.EASTER_LIST, easterList);
+    setCookie(CookiesEnum.EASTER_LIST, easterList, {
+      // maxAge: 60 * 60 * 24 * 10,
+      expires: RELEASE_DATE,
+    });
   }, [easterList, setCookie]);
 
   useEffect(() => {
-    setCookie(CookiesEnum.IS_EASTER_MODE_ACTIVATED, isEasterModeActivated);
+    setCookie(CookiesEnum.IS_EASTER_MODE_ACTIVATED, isEasterModeActivated, {
+      // maxAge: 60 * 60 * 24 * 10,
+      expires: RELEASE_DATE,
+    });
   }, [isEasterModeActivated, setCookie]);
 
   return (
