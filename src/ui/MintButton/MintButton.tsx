@@ -5,6 +5,7 @@ import React, {
 } from 'react';
 import clsx from 'clsx';
 
+import { useHistory } from 'react-router';
 import classes from './MintButton.module.scss';
 
 import DefaultStateButtonImg from '@/assets/img/mint/default.svg';
@@ -20,6 +21,7 @@ import FinalStateButtonImg from '@/assets/img/mint/final.svg';
 import FinalStateButtonExtraImg from '@/assets/img/mint/final_extra.svg';
 import ModalContext from '@/context/modal';
 import EastersContext, { EasterTypeEnum } from '@/context/easters';
+import ROUTES from '@/const/routes';
 
 export enum MintButtonStateEnum {
   DEFAULT = 'default',
@@ -75,6 +77,7 @@ const MintButton: FC<PropsType> = ({
   const [clickCounter, setClickCounter] = useState<number>(0);
 
   const easterContext = useContext(EastersContext);
+  const history = useHistory();
 
   const animationEndTimeout = useRef<NodeJS.Timer | null>(null);
   const memoConfig = useMemo(() => ButtonConfigDict[type], [type]);
@@ -82,11 +85,7 @@ const MintButton: FC<PropsType> = ({
 
   const { openModal } = useContext(ModalContext);
 
-  const memoStartEasterAnimation = useCallback(startEasterAnimation, [
-    clickCounter, easterContext.easterList, easterContext.isModeActive, type]);
-  useEffect(() => {
-    console.log('animationEndTimeout');
-  }, [clickCounter, easterContext.easterList, easterContext.isModeActive, type, openModal, isAnimation, animationEndTimeout]);
+  const memoStartEasterAnimation = useCallback(startEasterAnimation, [clickCounter, easterContext.easterList, easterContext.isModeActive, history, type]);
 
   return (
     <button
@@ -111,11 +110,18 @@ const MintButton: FC<PropsType> = ({
   function startEasterAnimation(): void {
     if (
       type !== MintButtonStateEnum.DEFAULT
-      || !easterContext.isModeActive
       || easterContext.easterList.includes(EasterTypeEnum.MINT_BUTTON)
     ) return;
+    if (!easterContext.isModeActive) {
+      history.push(ROUTES.EASTERS);
+      return;
+    }
 
     if (animationEndTimeout.current) clearTimeout(animationEndTimeout.current);
+    if (clickCounter + 1 >= 10) {
+      easterContext.activateEaster(EasterTypeEnum.MINT_BUTTON);
+      return;
+    }
     setClickCounter(clickCounter + 1);
     setAnimationState(false);
     setTimeout(() => {

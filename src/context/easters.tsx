@@ -14,12 +14,14 @@ type EastersContextType = {
   easterList: EasterTypeEnum[],
   activateEaster: { (type: EasterTypeEnum): void },
   isModeActive: boolean
+  activateMode: { (): void },
 }
 
 const EastersContext = React.createContext<EastersContextType>({
   easterList: [],
   activateEaster: () => {},
   isModeActive: false,
+  activateMode: () => {},
 });
 
 export default EastersContext;

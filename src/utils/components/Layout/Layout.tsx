@@ -31,6 +31,7 @@ const Layout: FC<PropsType> = ({ children }) => {
   const handleCloseAllModal = useCallback(closeAllModal, []);
 
   const handleActivateEaster = useCallback(activateEaster, [easterList]);
+  const handleActivateMode = useCallback(activateMode, []);
 
   useEffect(() => {
     setCookie(CookiesEnum.EASTER_LIST, easterList);
@@ -43,8 +44,9 @@ const Layout: FC<PropsType> = ({ children }) => {
   return (
     <EastersContext.Provider value={{
       easterList,
-      isModeActive: false,
+      isModeActive: isEasterModeActivated,
       activateEaster: handleActivateEaster,
+      activateMode: handleActivateMode,
     }}
     >
       <ModalContext.Provider value={{
@@ -62,7 +64,7 @@ const Layout: FC<PropsType> = ({ children }) => {
         </div>
         {
         modalList.map(({
-          type, onClose, data, isClosingDisabled, classes: extraClasess, maxWidth,
+          type, data,
         }) => (
           <Modal key={type} open>
             {
@@ -75,6 +77,9 @@ const Layout: FC<PropsType> = ({ children }) => {
     </EastersContext.Provider>
   );
 
+  function activateMode() {
+    setEasterModeActivatedState(true);
+  }
   function activateEaster(type: EasterTypeEnum) {
     if (!easterList.length) setEasterModeActivatedState(true);
     setEasterList(Array.from(new Set([

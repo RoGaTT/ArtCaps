@@ -2,7 +2,7 @@
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable camelcase */
 /* eslint-disable max-len */
-import React, { useCallback } from 'react';
+import React, { useCallback, useContext, useEffect } from 'react';
 import clsx from 'clsx';
 import { useHistory } from 'react-router';
 import classes from './Easters.module.scss';
@@ -16,11 +16,19 @@ import CrownImg from '@/assets/img/crown.png';
 import TwitterIcon from '@/assets/img/icons/twitter_yellow.png';
 import DiscordIcon from '@/assets/img/icons/discord_yellow.png';
 import InstagramIcon from '@/assets/img/icons/instagram_yellow.png';
+import EastersContext, { EasterTypeEnum } from '@/context/easters';
+import { ModalTypeEnum } from '@/context/modal';
 
 const Easters: React.FC = () => {
   const history = useHistory();
 
   const memoOnLogoClick = useCallback(onLogoClick, [history]);
+
+  const eastersContext = useContext(EastersContext);
+
+  useEffect(() => {
+    eastersContext.activateMode();
+  }, [eastersContext]);
 
   return (
     <div className={classes.root}>
