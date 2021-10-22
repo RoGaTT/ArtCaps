@@ -1,6 +1,6 @@
 /* eslint-disable react/require-default-props */
 import React, {
-  FC, useCallback, useMemo, useRef, useState,
+  FC, useCallback, useContext, useMemo, useRef, useState,
 } from 'react';
 import clsx from 'clsx';
 
@@ -17,6 +17,8 @@ import WaitingStateButtonImg from '@/assets/img/mint/waiting.svg';
 import WaitingStateButtonExtraImg from '@/assets/img/mint/waiting_extra.svg';
 import FinalStateButtonImg from '@/assets/img/mint/final.svg';
 import FinalStateButtonExtraImg from '@/assets/img/mint/final_extra.svg';
+import ModalContext from '@/context/modal';
+import EastersContext, { EasterTypeEnum } from '@/context/easters';
 
 export enum MintButtonStateEnum {
   DEFAULT = 'default',
@@ -28,7 +30,7 @@ export enum MintButtonStateEnum {
 
 interface PropsType {
   type?: MintButtonStateEnum,
-  className?: string
+  className?: string,
 }
 
 type ButtonConfig = {
@@ -69,11 +71,18 @@ const MintButton: FC<PropsType> = ({
   type = MintButtonStateEnum.DEFAULT,
   className,
 }) => {
+  const [clickCounter, setClickCounter] = useState<number>(0);
+
+  const easterContext = useContext(EastersContext);
+
   const animationEndTimeout = useRef<NodeJS.Timer | null>(null);
   const memoConfig = useMemo(() => ButtonConfigDict[type], [type]);
   const [isAnimation, setAnimationState] = useState<boolean>(false);
 
-  const memoStartEasterAnimation = useCallback(startEasterAnimation, [type]);
+  const { openModal } = useContext(ModalContext);
+
+  const memoStartEasterAnimation = useCallback(startEasterAnimation, [
+    clickCounter, easterContext.easterList, easterContext.isModeActive, type]);
 
   return (
     <button
@@ -96,8 +105,14 @@ const MintButton: FC<PropsType> = ({
   );
 
   function startEasterAnimation(): void {
-    if (type !== MintButtonStateEnum.DEFAULT) return;
+    if (
+      type !== MintButtonStateEnum.DEFAULT
+      || easterContext.isModeActive
+      || easterContext.easterList.includes(EasterTypeEnum.MINT_BUTTON)
+    ) return;
+
     if (animationEndTimeout.current) clearTimeout(animationEndTimeout.current);
+    setClickCounter(clickCounter + 1);
     setAnimationState(false);
     setTimeout(() => {
       setAnimationState(true);
