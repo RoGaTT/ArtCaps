@@ -15,6 +15,7 @@ type EastersContextType = {
   activateEaster: { (type: EasterTypeEnum): void },
   isModeActive: boolean
   activateMode: { (): void },
+  showTestPopover: { (): void }
 }
 
 const EastersContext = React.createContext<EastersContextType>({
@@ -22,6 +23,7 @@ const EastersContext = React.createContext<EastersContextType>({
   activateEaster: () => {},
   isModeActive: false,
   activateMode: () => {},
+  showTestPopover: () => {},
 });
 
 export default EastersContext;

@@ -13,10 +13,15 @@
   align-items: center;
 }
 
+.content {
+  flex-direction: column !important;
+  align-items: center;
+}
+
 .title {
   max-width: initial;
   & > img {
-    height: 60px;
+    height: 54px;
   }
 }
 

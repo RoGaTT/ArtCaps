@@ -115,7 +115,7 @@ const MintButton: FC<PropsType> = ({
     }
 
     if (animationEndTimeout.current) clearTimeout(animationEndTimeout.current);
-    if (clickCounter + 1 >= 10) {
+    if (clickCounter + 1 >= 7) {
       easterContext.activateEaster(EasterTypeEnum.MINT_BUTTON);
       return;
     }

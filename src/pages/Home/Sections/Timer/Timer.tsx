@@ -111,6 +111,7 @@ const Button: FC<PropsType> = ({
         </div>
       </div>
       <h6 className={classes.location}>Artcaps on opensea</h6>
+      <h5 className={classes.limit}>Only 96 hours for mint</h5>
     </Container>
   );
 

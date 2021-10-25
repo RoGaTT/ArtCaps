@@ -46,6 +46,7 @@ const Layout: FC<PropsType> = ({ children }) => {
   const handleCloseAllModal = useCallback(closeAllModal, []);
 
   const handleShowPopover = useCallback(showPopover, [isActiveEasterPopover]);
+  const handleShowTestPopover = useCallback(showTestPopover, [handleShowPopover]);
   const handleActivateEaster = useCallback(activateEaster, [easterList, handleShowPopover]);
   const handleActivateMode = useCallback(activateMode, []);
   const handleOnPopoverClick = useCallback(onPopoverClick, []);
@@ -71,6 +72,7 @@ const Layout: FC<PropsType> = ({ children }) => {
       isModeActive: isEasterModeActivated,
       activateEaster: handleActivateEaster,
       activateMode: handleActivateMode,
+      showTestPopover: handleShowTestPopover,
     }}
     >
       <ModalContext.Provider value={{
@@ -150,6 +152,10 @@ const Layout: FC<PropsType> = ({ children }) => {
       </ModalContext.Provider>
     </EastersContext.Provider>
   );
+
+  function showTestPopover() {
+    handleShowPopover(false);
+  }
 
   function onEasterEggClick() {
     history.push(ROUTES.EASTERS);

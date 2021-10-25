@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/no-static-element-interactions */
 /* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable camelcase */
@@ -21,10 +22,10 @@ import EastersContext from '@/context/easters';
 const Easters: React.FC = () => {
   const history = useHistory();
 
-  const memoOnLogoClick = useCallback(onLogoClick, [history]);
-
   const eastersContext = useContext(EastersContext);
 
+  const memoOnLogoClick = useCallback(onLogoClick, [history]);
+  const memoOnTestEasterClick = useCallback(onTestEasterClick, [eastersContext]);
   useEffect(() => {
     eastersContext.activateMode();
   }, [eastersContext]);
@@ -73,6 +74,7 @@ const Easters: React.FC = () => {
           </div>
           <div className={classes['block-img']}>
             <img src={ChipImg} alt="" />
+            <div onClick={memoOnTestEasterClick} />
           </div>
         </div>
         <div className={classes.instruction}>
@@ -133,6 +135,10 @@ const Easters: React.FC = () => {
       </Container>
     </div>
   );
+
+  function onTestEasterClick() {
+    eastersContext.showTestPopover();
+  }
   function onLogoClick(): void {
     history.push('/');
   }

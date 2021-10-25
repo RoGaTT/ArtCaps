@@ -70,7 +70,7 @@ const Facts: FC<PropsType> = ({
       </div>
       <div className={classes.row}>
         <div className={classes.item}>
-          <p>Active community participation</p>
+          <p>Mint is available only for 96 hours</p>
         </div>
         <div className={classes.separator} />
         <div className={clsx(classes.item, classes.noLineMobile)}>

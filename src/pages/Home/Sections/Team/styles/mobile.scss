@@ -1,4 +1,6 @@
 .content {
+  flex-direction: column !important;
+  align-items: center !important;
   min-height: 770px;
   & > img {
     display: flex;

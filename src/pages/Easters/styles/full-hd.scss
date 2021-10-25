@@ -98,8 +98,17 @@
     justify-content: flex-start;
     flex-basis: 28%;
     width: 100%;
+    position: relative;
     & > img {
       width: 100%;
+    }
+    & > div {
+      position: absolute;
+      z-index: 1000;
+      right: 51%;
+      top: 31%;
+      width: 10%;
+      height: 8%;
     }
   }
 }
