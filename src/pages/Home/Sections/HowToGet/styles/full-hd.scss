@@ -5,11 +5,9 @@
 .root {
   margin-top: 64px;
   display: flex;
-  flex-direction: column-reverse;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
+  flex-direction: column !important;
+  justify-content: flex-start !important;
+  align-items: flex-start !important;
   padding-bottom: 90px;
   & > img {
     margin-bottom: 8px;
