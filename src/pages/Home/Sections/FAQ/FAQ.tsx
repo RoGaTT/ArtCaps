@@ -6,13 +6,10 @@ import clsx from 'clsx';
 
 import classes from './FAQ.module.scss';
 import Container from '@/utils/components/Container';
-import FAQTextImage from '@/assets/img/texts/faq.svg';
-import FAQChipImage from '@/assets/img/chips/faq.png';
+import FAQChipImage1 from '@/assets/img/chips/faq_1.png';
+import FAQChipImage2 from '@/assets/img/chips/faq_2.png';
 
-import TwitterIcon from '@/assets/img/icons/twitter.png';
-import DiscordIcon from '@/assets/img/icons/discord.png';
-import InstagramIcon from '@/assets/img/icons/instagram.png';
-import { goBlank } from '@/utils/functions/dom';
+import Title from '@/ui/Title';
 
 interface PropsType {
   // eslint-disable-next-line react/require-default-props
@@ -25,42 +22,50 @@ const FAQ: FC<PropsType> = ({
   <Container
     className={clsx(classes.root, className)}
     wrapperClassName={classes.wrapper}
+    id="faq"
   >
-    <div className={clsx(classes.image, classes.noMobile)}>
-      <img src={FAQChipImage} alt="" />
+    <Title className={classes.title}>FAQ</Title>
+    <div className={classes.row}>
+      <div className={classes['row-text']}>
+        <div>
+          <span>What is ArtCaps?</span>
+          <p>ArtCaps offers 3 different token collections from three original artists. Each collection consists of 10,000 AI-generated collectibles minted on the Ethereum Blockchain</p>
+        </div>
+        <div>
+          <span>When is the launch date? </span>
+          <p>The ArtCaps project will go live on…</p>
+        </div>
+        <div>
+          <span>Are all the caps exclusive?</span>
+          <p>Each image is randomly generated with combinations of signs of having variable rarity: outfit, headwear and much more. Some tokens are rarer than others. That being said, there are a few images that are even rarer! In this regard, the value of rare items increases.</p>
+        </div>
+      </div>
+      <div className={clsx(classes['row-image'], classes.noMobile)}>
+        <img src={FAQChipImage1} alt="" />
+      </div>
     </div>
-    <div className={classes.content}>
-      <img src={FAQTextImage} alt="" />
-      <div>
-        <span>What is ArtCaps?</span>
-        <p>A brand-new crypto project aimed to promote original artists and their art.</p>
+    <div className={classes.row}>
+      <div className={clsx(classes['row-image'], classes.noMobile)}>
+        <img src={FAQChipImage2} alt="" />
       </div>
-      <div>
-        <span>How much does one token cost?</span>
-        <p>0.06 EHT plus gas fee.</p>
-      </div>
-      <div>
-        <span>What does “four-for-one” mean?</span>
-        <p>First 60% of supporters will receive three special NFT-materials created by ArtCaps’ artists.</p>
-      </div>
-      <div>
-        <span>When will the sale begin?</span>
-        <p>
-          NFTs will be available for sale ASAP. Watch the timer! The exact date will be announced on our social media.
-          <br />
-          Follow updates on our Twitter and Discord server.
-        </p>
-      </div>
-      <div>
-        <span>What is artcaps game?</span>
-        <p>
-          It’s a chance to win an extra NFT in our unique caps game. Every Artcapser can play right after Mint! Don&apos;t miss your chance, participation is free!
-        </p>
-      </div>
-      <div className={classes.socials}>
-        <img onClick={goBlank('https://twitter.com/ar1caps')} src={TwitterIcon} alt="" />
-        <img onClick={goBlank('https://discord.gg/xuTPCQRtfq')} src={DiscordIcon} alt="" />
-        <img onClick={goBlank('https://instagram.com/ar1caps')} src={InstagramIcon} alt="" />
+      <div className={classes['row-text']}>
+        <div>
+          <span>Will there be a presale? </span>
+          <p>NFT tokens will be visible on sale in the nearest time. The exact date will be announced on our social media.</p>
+          <p>Follow the news on our Twitter and Discord server.</p>
+        </div>
+        <div>
+          <span>How much does one token cost? </span>
+          <p>The price will be announced very soon.</p>
+        </div>
+        <div>
+          <span>Do I own the Caps after minting it? </span>
+          <p>Yes, you will own all intellectual property to the Cap, which means you can use it to create and sell merch.</p>
+        </div>
+        <div>
+          <span>What can I do with my Caps? </span>
+          <p>You can use your Caps as a profile picture online, and you can also resell your tokens for profit. You can also participate in battles to raise the price of your chips and have fun playing.</p>
+        </div>
       </div>
     </div>
   </Container>

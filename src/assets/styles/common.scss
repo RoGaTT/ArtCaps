@@ -12,3 +12,15 @@ body {
     display: none;
   }
 }
+
+.justMobile {
+  @media (min-width: $mobile-width) {
+    display: none !important;
+  }
+}
+
+.noMobile {
+  @media (max-width: $mobile-width) {
+    display: none !important;
+  }
+}

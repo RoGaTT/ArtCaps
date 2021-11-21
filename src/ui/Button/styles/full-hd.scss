@@ -1,0 +1,24 @@
+.root {
+  width: 100%;
+  border: none;
+  position: relative;
+  z-index: 10;
+  &::before {
+    content: '';
+    width: 100%;
+    height: 100%;
+    background-color: #F9B60D;
+    position: absolute;
+    z-index: -1;
+  }
+  &::after {
+    content: '';
+    width: 100%;
+    height: 100%;
+    background-color: #FF4681;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: -2;
+  }
+}

@@ -45,7 +45,17 @@
     font-size: 100px;
     line-height: 1;
     letter-spacing: 6.48px;
-    color: #FCC855;
+    // color: #FCC855;
+    color: #8C8C8C;
+  }
+  & > p, & > div > p {
+    font-family: 'Press Start 2P';
+    font-weight: 400;
+    font-size: 36px;
+    text-transform: uppercase;
+    line-height: 1;
+    // color: #FCC855;
+    color: #8C8C8C;
   }
   & > div {
     display: flex;
@@ -70,6 +80,9 @@
         margin-bottom: 20px;
         letter-spacing: 0;
       }
+      & > p {
+        font-size: 22px;
+      }
     }
   }
 }
@@ -81,59 +94,30 @@
   justify-content: center;
   position: relative;
   width: 100%;
-  padding-top: 32px;
-  padding-bottom: 32px;
+  margin-top: 16px;
   margin-bottom: 32px;
-  & > img {
-    position: absolute;
-    right: 92%;
-    height: 100%;
-  }
 }
 
-.follow-mobile {
-  display: none;
-}
-
-.links {
+.joinDiscord {
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-between;
-  margin-bottom: 52px;
-  & > div {
-    margin-right: 36px;
-    &:last-child {
-      margin-right: 0;
-    }
-  }
-  &-follow {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    animation-name: slideInLeft;
-    animation-duration: 2s;
-    animation-iteration-count: infinite;
-    &:last-child {
-      animation-name: slideInRight;
-    }
-    & > img {
-      &:first-child {
-        margin-right: 24px;
-      }
-      &.inverted {
-        transform: rotate(180deg);
-      }
-    }
-  }
-  &-icons {
-    & > img {
-      cursor: pointer;
-      margin-right: 28px;
-      &:last-child {
-        margin-right: 0;
-      }
-    }
+  justify-content: center;
+  position: relative;
+  width: 100%;
+  margin-top: 32px;
+  margin-bottom: 32px;
+  padding: 32px;
+  color: #5E0CC3;
+  font-family: 'Futura PT';
+  font-weight: 700;
+  font-size: 50px;
+  line-height: 1;
+  text-transform: uppercase;
+  max-width: 462px;
+
+  &:hover {
+    color: #FF4681;
   }
 }
 
@@ -148,49 +132,4 @@
   text-transform: uppercase;
 
   color: white;
-}
-
-.limit {
-  font-family: "Press Start 2P";
-  font-style: normal;
-  font-weight: normal;
-  font-size: 18px;
-  line-height: 24px;
-  margin-top: 24px;
-
-  letter-spacing: 2px;
-  text-transform: uppercase;
-
-  color: #FCC855;
-  text-align: center;
-}
-
-@keyframes slideInLeft {
-  from {
-    transform: translate3d(-20%, 0, 0);
-    visibility: visible;
-  }
-
-  50% {
-    transform: translate3d(0, 0, 0);
-  }
-
-  to {
-    transform: translate3d(-20%, 0, 0);
-  }
-}
-
-@keyframes slideInRight {
-  from {
-    transform: translate3d(20%, 0, 0);
-    visibility: visible;
-  }
-
-  50% {
-    transform: translate3d(0, 0, 0);
-  }
-
-  to {
-    transform: translate3d(20%, 0, 0);
-  }
 }

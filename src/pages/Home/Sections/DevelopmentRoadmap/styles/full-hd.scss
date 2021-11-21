@@ -1,12 +1,5 @@
 .wrapper {
   width: 100%;
-  background-color: #FDCE0A;
-}
-
-.adventurer {
-  position: absolute;
-  top: -16px;
-  right: 10px;
 }
 
 .root {
@@ -14,7 +7,6 @@
   flex-direction: column;
   padding-top: 92px;
   padding-bottom: 110px;
-  position: relative;
 }
 
 .content {
@@ -31,17 +23,21 @@
   justify-content: space-between;
   padding-top: 48px;
   &-title {
-    flex-basis: 15%;
+    flex-basis: 20%;
+    padding-top: 16px;
     & > span {
-      color: #5E0CC3;
+      color: white;
       font-size: 30px;
       line-height: 1.3;
       text-transform: uppercase;
-      font-family: "Press Start 2P";
+      font-family: "Futura PT";
+      font-weight: bold;
     }
   }
   &-content {
-    flex-basis: 85%;
+    flex-basis: 72%;
+    background-color: #FF4681;
+    padding: 16px 40px;
     & > h5 {
       font-family: 'Futura PT';
       color: #320E43;
@@ -52,7 +48,7 @@
     }
     & > p {
       font-family: 'Futura PT';
-      color: #320E43;
+      color: white;
       font-size: 30px;
       line-height: 1.3;
     }

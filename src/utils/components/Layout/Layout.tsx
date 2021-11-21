@@ -37,7 +37,8 @@ const Layout: FC<PropsType> = ({ children }) => {
   const [modalList, setModalList] = useState<ModalType[]>([]);
   const [easterList, setEasterList] = useState<EasterTypeEnum[]>(cookies[CookiesEnum.EASTER_LIST] || []);
   const [isEasterModeActivated, setEasterModeActivatedState] = useState<boolean>(
-    cookies[CookiesEnum.IS_EASTER_MODE_ACTIVATED],
+    // cookies[CookiesEnum.IS_EASTER_MODE_ACTIVATED],
+    false,
   );
 
   const [isActiveEasterPopover, setActiveEasterPopoverState] = useState<boolean | 'final'>(false);

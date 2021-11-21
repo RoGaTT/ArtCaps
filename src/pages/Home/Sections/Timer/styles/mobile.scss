@@ -49,24 +49,6 @@
   }
 }
 
-.follow-mobile {
-  display: flex;
-  margin-bottom: 32px;
-}
-
-.links {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  &-follow {
-    display: none;
-  }
-  & > div {
-    margin-right: 0;
-  }
-}
 
 .location {
   font-size: 3vw;

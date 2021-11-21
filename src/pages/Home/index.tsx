@@ -60,7 +60,8 @@ import TimerHoursTextImg from '@/assets/img/texts/hours.svg';
 import TimerMinTextImg from '@/assets/img/texts/min.svg';
 import TimerSecTextImg from '@/assets/img/texts/sec.svg';
 import TimerMsecTextImg from '@/assets/img/texts/msec.svg';
-import FAQChipImage from '@/assets/img/chips/faq.png';
+import FAQChipImage1 from '@/assets/img/chips/faq_1.png';
+import FAQChipImage2 from '@/assets/img/chips/faq_2.png';
 import FollowUsTextIcon from '@/assets/img/texts/follow_us.svg';
 import FollowArrowsRightIcon from '@/assets/img/icons/follow_arrows_right.svg';
 import TwitterIcon from '@/assets/img/icons/twitter.png';
@@ -125,7 +126,8 @@ const HomePage: FC = () => (
       <link rel="preload" as="image" href={TimerMinTextImg} />
       <link rel="preload" as="image" href={TimerSecTextImg} />
       <link rel="preload" as="image" href={TimerMsecTextImg} />
-      <link rel="preload" as="image" href={FAQChipImage} />
+      <link rel="preload" as="image" href={FAQChipImage1} />
+      <link rel="preload" as="image" href={FAQChipImage2} />
       <link rel="preload" as="image" href={FollowUsTextIcon} />
       <link rel="preload" as="image" href={FollowArrowsRightIcon} />
       <link rel="preload" as="image" href={TwitterIcon} />

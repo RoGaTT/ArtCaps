@@ -1,0 +1,98 @@
+.root {
+  margin-top: 90px;
+  display: flex;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  width: 100%;
+  padding: 0 !important;
+  margin-bottom: 80px;
+}
+
+.content {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 40px;
+}
+
+.text {
+  margin-top: 40px;
+  font-family: 'Futura PT';
+  font-size: 34px;
+  font-weight: 00;
+  line-height: 1.2;
+  color: white;
+  width: 100%;
+  flex-basis: 70%;
+  & > span {
+    font-weight: bold;
+    &.pink {
+      color: #F75AFD;
+    }
+    &.yellow {
+      color: #FDCE0A;
+    }
+    &.green {
+      color: #2AB408;
+    }
+  }
+}
+
+.chips {
+  position: relative;
+  padding-left: 180px;
+  flex-basis: 30%;
+  width: 100%;
+  &-main {
+    width: 280px;
+    height: 280px;
+    z-index: 20;
+    position: relative;
+  }
+  &-extra {
+    width: 280px;
+    height: 280px;
+    position: absolute;
+    z-index: 10;
+    top: 100px;
+    right: 100px;
+    &.entering {
+      animation: chipIn  0.8s ease-in-out;
+    }
+    &.exiting {
+      animation: chipOut  0.8s ease-in-out;
+    }
+    &.exited {
+      display: none;
+    }
+  }
+}
+
+@keyframes chipIn {
+  from {
+    top: 0;
+    right: 0;
+    transform: scale((0.6));
+  }
+  to {
+    top: 100px;
+    right: 100px;
+    transform: scale((1));
+  }
+}
+
+@keyframes chipOut {
+  from {
+    top: 100px;
+    right: 100px;
+    transform: scale((1));
+  }
+  to {
+    top: 0;
+    right: 0;
+    transform: scale((0.6));
+  }
+}
