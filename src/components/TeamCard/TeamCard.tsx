@@ -4,14 +4,11 @@
 /* eslint-disable react/require-default-props */
 /* eslint-disable react/no-array-index-key */
 import React, {
-  FC, useCallback,
+  FC,
 } from 'react';
 import clsx from 'clsx';
 
 import classes from './TeamCard.module.scss';
-
-import TwitterIcon from '@/assets/img/icons/twitter_extra.png';
-import { goBlank } from '@/utils/functions/dom';
 
 interface PropsType {
   // eslint-disable-next-line react/require-default-props
@@ -33,33 +30,23 @@ const TeamCard: FC<PropsType> = ({
   role,
   isEaster,
   onEasterClick,
-}) => {
-  const memoOnLinkClick = useCallback(onLinkClick, [isEaster, onEasterClick]);
-
-  return (
-    <div className={clsx(classes.root, className)}>
-      <div>
-        <img src={img} alt="" />
-        <div>
+}) => (
+  <div className={clsx(classes.root, className)}>
+    <div>
+      <img src={img} alt="" />
+      {/* <div>
           <span>{role()}</span>
           {
-              twitterBio && (
-                <a onClick={memoOnLinkClick(`https://twitter.com/${twitterBio}`)} target="_blank" rel="noreferrer">
-                  <img src={TwitterIcon} alt="" />
-                </a>
-              )
-            }
-        </div>
-      </div>
-      <span>{nickname}</span>
+            twitterBio && (
+              <a onClick={memoOnLinkClick(`https://twitter.com/${twitterBio}`)} target="_blank" rel="noreferrer">
+                <img src={TwitterIcon} alt="" />
+              </a>
+            )
+          }
+        </div> */}
     </div>
-  );
-  function onLinkClick(path: string): { (): void } {
-    return () => {
-      if (isEaster && onEasterClick) onEasterClick();
-      else goBlank(path)();
-    };
-  }
-};
+    <span>{nickname}</span>
+  </div>
+);
 
 export default TeamCard;

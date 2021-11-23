@@ -60,10 +60,10 @@
     top: 100px;
     right: 100px;
     &.entering {
-      animation: chipIn  0.8s ease-in-out;
+      animation: chipIn 0.8s ease-in-out;
     }
     &.exiting {
-      animation: chipOut  0.8s ease-in-out;
+      animation: chipOut 0.8s ease-in-out;
     }
     &.exited {
       display: none;

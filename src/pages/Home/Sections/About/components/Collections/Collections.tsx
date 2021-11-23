@@ -193,7 +193,7 @@ const Collections: FC<PropsType> = ({
               {' '}
               <br />
               {' '}
-              Kids
+              Kid
             </h6>
           </div>
         </div>

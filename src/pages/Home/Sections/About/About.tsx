@@ -16,7 +16,6 @@ import AboutChip1Img from '@/assets/img/chips/hi_from_artcaps_1.png';
 import CollectionsChipImg_1_4 from '@/assets/img/chips/1/4.png';
 import CollectionsChipImg_2_4 from '@/assets/img/chips/2/4.png';
 import CollectionsChipImg_3_4 from '@/assets/img/chips/3/4.png';
-import useResize from '@/utils/hooks/useResize';
 import Title from '@/ui/Title';
 import Collections from './components/Collections';
 
@@ -37,24 +36,19 @@ const About: FC<PropsType> = ({
   const [activeSlideChipIndex, setActiveSlideChipIndex] = useState(0);
   const [isSlideChipChanging, setSlideChipChanging] = useState(false);
 
-  const size = useResize();
-
   const memoSetNextActiveSlideChip = useCallback(setNextActiveSlideChip, [activeSlideChipIndex]);
 
   useEffect(() => {
-    let interval: NodeJS.Timer | null = null;
-    if (size.width > 450) {
-      interval = setInterval(() => {
-        setSlideChipChanging(true);
-        setTimeout(() => {
-          setActiveSlideIndex(activeSlideIndex % CHIP_LIST.length);
-        }, 500);
-      }, 4000);
-    }
+    const interval = setInterval(() => {
+      setSlideChipChanging(true);
+      setTimeout(() => {
+        setActiveSlideIndex(activeSlideIndex % CHIP_LIST.length);
+      }, 500);
+    }, 4000);
     return () => {
       if (interval) clearInterval(interval);
     };
-  }, [activeSlideIndex, size.width]);
+  }, [activeSlideIndex]);
 
   return (
     <Container
@@ -69,7 +63,7 @@ const About: FC<PropsType> = ({
       </Title>
       <div className={clsx(classes.content)}>
         <p className={classes.text}>
-          Welcome to the battle of 9999 Artcaps chips! — with these words, the story began.
+          Welcome to the battle of 10 000 ArtCaps! — with these words, the story began.
           <br />
           <br />
           There were three worlds in which powerful rulers ruled:
@@ -82,13 +76,13 @@ const About: FC<PropsType> = ({
           and
           {' '}
           <span className={classes.green}>Katana Master</span>
-          . They maintained peace and harmony in their universes. But everything changed when the people of the Master decided to start a war.
+          .
           <br />
           <br />
-          The narrator witnessed those hard wars.  He tried to try on the peoples and maintain the balance of power in the universe. 9999 legendary warriors bowed their heads before a powerful stranger, having changed from their war.
+          They maintained peace and harmony in their universes. But everything changed when the GameMaster decided to start a war.
           <br />
           <br />
-          Choose your class, create your warrior and change the outcome of the war!
+          <span>Choose your side, create your warrior and change the outcome of the war!</span>
         </p>
         <div className={classes.chips}>
           <img src={AboutChip1Img} className={classes['chips-main']} alt="" />

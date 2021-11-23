@@ -1,27 +1,15 @@
-.onlyMobile {
-  display: flex !important;
+.title {
+  margin-bottom: 48px;
 }
 
-.noMobile {
-  display: none !important;
-}
-
-.content {
-  flex-basis: initial;
-  & > img {
-    height: 60px;
-    margin-bottom: 48px;
+.row {
+  &-image {
+    display: none;
   }
-  & > div {
-    & > span {
-      font-size: 25px;
-      line-height: 1.2;
-      font-weight: 700;
-      text-transform: uppercase;
+  &-text {
+    flex-basis: initial;
+    & > div {
+      margin-bottom: 24px;
     }
   }
-}
-
-.socials {
-  justify-content: center !important;
 }

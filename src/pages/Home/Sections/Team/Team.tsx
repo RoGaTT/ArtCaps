@@ -33,27 +33,23 @@ const Team: FC<PropsType> = ({
     <div className={clsx(classes.content)}>
       <TeamCard
         img={TeamCardChipImage1}
-        nickname="Xcurseovoid"
+        nickname="GameMaster"
         role={() => (<>Boss</>)}
-        twitterBio="Xcurseovoid1"
       />
       <TeamCard
         img={TeamCardChipImage2}
-        nickname="Nadin Ego"
+        nickname="Queen Of Glitch"
         role={() => (<>Queen of Glitch</>)}
-        twitterBio="Nadinegotrip"
       />
       <TeamCard
         img={TeamCardChipImage3}
-        nickname="Krasovski"
+        nickname="Katana Master"
         role={() => (<>Katana Master</>)}
-        twitterBio="KrasovskiArt"
       />
       <TeamCard
         img={TeamCardChipImage4}
-        nickname="GPOT"
+        nickname="Cult kid"
         role={() => (<>Cult kid</>)}
-        twitterBio="GPotArt"
       />
     </div>
   </Container>

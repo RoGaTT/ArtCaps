@@ -2,7 +2,7 @@
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable react/require-default-props */
 import React, {
-  FC, useState,
+  FC, useCallback, useEffect, useRef, useState,
 } from 'react';
 import clsx from 'clsx';
 
@@ -15,6 +15,7 @@ import { addZeroToNumber } from '@/utils/functions/number';
 import MintButton from '@/ui/MintButton';
 import { goBlank } from '@/utils/functions/dom';
 import Button from '@/ui/Button';
+import { RELEASE_DATE } from '@/const/time';
 
 interface PropsType {
   className?: string;
@@ -23,9 +24,9 @@ interface PropsType {
 const Timer: FC<PropsType> = ({
   className,
 }) => {
-  // const timerIntervalRef = useRef<null | NodeJS.Timer>(null);
+  const timerIntervalRef = useRef<null | NodeJS.Timer>(null);
 
-  const [time] = useState({
+  const [time, setTime] = useState({
     days: 88,
     hours: 88,
     minutes: 88,
@@ -33,17 +34,17 @@ const Timer: FC<PropsType> = ({
     miliseconds: 88,
   });
 
-  // const memoSetTimeData = useCallback(setTimeData, []);
+  const memoSetTimeData = useCallback(setTimeData, []);
 
-  // useEffect(() => {
-  //   timerIntervalRef.current = setInterval(memoSetTimeData, 1000);
+  useEffect(() => {
+    timerIntervalRef.current = setInterval(memoSetTimeData, 1000);
 
-  //   memoSetTimeData();
+    memoSetTimeData();
 
-  //   return () => {
-  //     if (timerIntervalRef.current) clearInterval(timerIntervalRef.current);
-  //   };
-  // }, [memoSetTimeData]);
+    return () => {
+      if (timerIntervalRef.current) clearInterval(timerIntervalRef.current);
+    };
+  }, [memoSetTimeData]);
 
   return (
     <Container
@@ -87,30 +88,30 @@ const Timer: FC<PropsType> = ({
     </Container>
   );
 
-  // function setTimeData() {
-  //   const diff = new Date(+RELEASE_DATE - (+(new Date())));
-  //   diff.setDate(diff.getDate() - 1);
-  //   const diffMiliseconds = +diff;
-  //   if (diffMiliseconds < 0) {
-  //     setTime({
-  //       days: 0,
-  //       hours: 0,
-  //       minutes: 0,
-  //       seconds: 0,
-  //       miliseconds: 0,
-  //     });
-  //     if (timerIntervalRef.current) clearInterval(timerIntervalRef.current);
-  //   } else {
-  //     setTime({
-  //       // days: Math.ceil(diffMiliseconds / (1000 * 60 * 60 * 24)),
-  //       days: diff.getDate(),
-  //       hours: diff.getHours(),
-  //       minutes: diff.getMinutes(),
-  //       seconds: diff.getSeconds(),
-  //       miliseconds: diff.getMilliseconds(),
-  //     });
-  //   }
-  // }
+  function setTimeData() {
+    const diff = new Date(+RELEASE_DATE - (+(new Date())));
+    diff.setDate(diff.getDate() - 1);
+    const diffMiliseconds = +diff;
+    if (diffMiliseconds < 0) {
+      setTime({
+        days: 0,
+        hours: 0,
+        minutes: 0,
+        seconds: 0,
+        miliseconds: 0,
+      });
+      if (timerIntervalRef.current) clearInterval(timerIntervalRef.current);
+    } else {
+      setTime({
+        // days: Math.ceil(diffMiliseconds / (1000 * 60 * 60 * 24)),
+        days: diff.getDate(),
+        hours: diff.getHours(),
+        minutes: diff.getMinutes(),
+        seconds: diff.getSeconds(),
+        miliseconds: diff.getMilliseconds(),
+      });
+    }
+  }
 };
 
 export default Timer;

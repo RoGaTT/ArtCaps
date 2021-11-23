@@ -19,8 +19,8 @@
     width: 8vw;
   }
   & > div {
-    & > img {
-      height: 5vw;
+    & > p {
+      font-size: 16px;
     }
   }
   &-minor {
@@ -33,8 +33,8 @@
       & > span {
         font-size: 3.5vw;
       }
-      & > img {
-        height: 11px;
+      & > p {
+        font-size: 9px;
       }
     }
   }
@@ -55,6 +55,8 @@
   text-align: center;
 }
 
-.limit {
-  font-size: 14px;
+.joinDiscord {
+  width: 90%;
+  max-width: 360px;
+  font-size: 35px;
 }

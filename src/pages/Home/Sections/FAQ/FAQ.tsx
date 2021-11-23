@@ -29,14 +29,14 @@ const FAQ: FC<PropsType> = ({
       <div className={classes['row-text']}>
         <div>
           <span>What is ArtCaps?</span>
-          <p>ArtCaps offers 3 different token collections from three original artists. Each collection consists of 10,000 AI-generated collectibles minted on the Ethereum Blockchain</p>
+          <p>ArtCaps offers 3 different token collections from three original artists. Each collection consists of 3,333 AI-generated collectibles minted on the Ethereum Blockchain</p>
         </div>
         <div>
           <span>When is the launch date? </span>
-          <p>The ArtCaps project will go live on…</p>
+          <p>12.12.2021</p>
         </div>
         <div>
-          <span>Are all the caps exclusive?</span>
+          <span>Are all the ArtCaps exclusive?</span>
           <p>Each image is randomly generated with combinations of signs of having variable rarity: outfit, headwear and much more. Some tokens are rarer than others. That being said, there are a few images that are even rarer! In this regard, the value of rare items increases.</p>
         </div>
       </div>
@@ -50,21 +50,21 @@ const FAQ: FC<PropsType> = ({
       </div>
       <div className={classes['row-text']}>
         <div>
-          <span>Will there be a presale? </span>
+          <span>Will there be a presale?</span>
           <p>NFT tokens will be visible on sale in the nearest time. The exact date will be announced on our social media.</p>
-          <p>Follow the news on our Twitter and Discord server.</p>
+          <p>Follow the news on our Discord server.</p>
         </div>
         <div>
           <span>How much does one token cost? </span>
           <p>The price will be announced very soon.</p>
         </div>
         <div>
-          <span>Do I own the Caps after minting it? </span>
-          <p>Yes, you will own all intellectual property to the Cap, which means you can use it to create and sell merch.</p>
+          <span>Do I own the ArtCaps after minting it?</span>
+          <p>Yes, you will own all intellectual property to the ArtCap, which means you can use it to create and sell merch.</p>
         </div>
         <div>
-          <span>What can I do with my Caps? </span>
-          <p>You can use your Caps as a profile picture online, and you can also resell your tokens for profit. You can also participate in battles to raise the price of your chips and have fun playing.</p>
+          <span>What can I do with my ArtCaps?</span>
+          <p>You can use your ArtCaps as a profile picture online, and you can also resell your tokens for profit. You can also participate in battles to raise the price of your caps and have fun playing.</p>
         </div>
       </div>
     </div>
