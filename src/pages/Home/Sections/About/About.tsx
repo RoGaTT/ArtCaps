@@ -71,7 +71,7 @@ const About: FC<PropsType> = ({
           <span className={classes.pink}>Queen of Glitch</span>
           ,
           {' '}
-          <span className={classes.yellow}>Kult Kid</span>
+          <span className={classes.yellow}>Cult Kid</span>
           {' '}
           and
           {' '}

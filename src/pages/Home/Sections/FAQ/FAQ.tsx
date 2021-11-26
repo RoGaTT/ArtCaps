@@ -29,7 +29,7 @@ const FAQ: FC<PropsType> = ({
       <div className={classes['row-text']}>
         <div>
           <span>What is ArtCaps?</span>
-          <p>ArtCaps offers 3 different token collections from three original artists. Each collection consists of 3,333 AI-generated collectibles minted on the Ethereum Blockchain</p>
+          <p>ArtCaps offers 3 different token collections from three original artists. Each collection consists of 3,330 AI-generated and 3 unique collectibles minted of the Ethereum Blockchain</p>
         </div>
         <div>
           <span>When is the launch date? </span>

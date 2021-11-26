@@ -1,7 +1,6 @@
 /* eslint-disable @typescript-eslint/explicit-module-boundary-types */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 export const goBlank = (path: string) => (): void => {
-  console.log(path);
   window?.open(path, '_blank', 'noreferrer,noopener');
 };
 
